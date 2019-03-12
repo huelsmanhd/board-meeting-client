@@ -1,0 +1,12 @@
+.logo {
+    margin: .5em;
+    width: 13vw;
+    height: 14vh;
+}
+
+.nav-btn {
+    margin: 1.5em;
+    padding: .5em;
+    text-align: center;
+    border: 1px solid black;
+}
