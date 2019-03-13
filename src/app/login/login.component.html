@@ -2,6 +2,8 @@
 
   <div *ngIf="loginView !== false" class="authDiv">
     <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+      <h2>Sign In</h2>
       
       <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
@@ -17,14 +19,18 @@
 
       <br>
 
-      <button mat-button type="submit" class="submit-btn">Sign In</button>
-      <button mat-button (click)="newUser()">Toggle</button>
+      <div class="btnBox">
+        <button mat-button type="submit" class="submit-btn">Sign In</button>
+        <button mat-button (click)="newUser()">Don't have an account?</button>
+      </div>
 
     </form>
   </div>
   
   <div *ngIf="loginView === false">
     <form [formGroup]="signupForm" (ngSubmit)="signup()">
+
+      <h2>Sign Up</h2>
       
       <mat-form-field appearance="outline">
         <mat-label>Username</mat-label>
@@ -41,11 +47,12 @@
         <input matInput placeholder="Placeholder" formControlName="password" type="password" class="form-control" name="password" required />
       </mat-form-field>
       
-      <button mat-button type="submit" class="submit-btn">Sign Up</button>
-      
+      <div class="btnBox">
+        <button mat-button type="submit" class="submit-btn">Sign Up</button>
+        <button mat-button (click)="newUser()">Already have an account?</button>
+      </div>
+
     </form>
   </div>
-  
-  <button mat-button (click)="newUser()">Toggle</button>
 
 </mat-card>
