@@ -16,7 +16,7 @@ export class EventsComponent implements OnInit {
     this.sessionToken = this.token.getToken();
     this.admin = this.token.getAdmin();
     // console.log(this.sessionToken)
-    // console.log(this.admin)
+    // console.log(this.admin)l
   }
 
 }
