@@ -14,6 +14,8 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup
   signupForm: FormGroup
 
+  loginView: boolean = true;
+
   constructor(
     private userService: UserService,
     private tokenService: TokenService,
@@ -45,6 +47,11 @@ export class LoginComponent implements OnInit {
   signup() {
     this.userService.signupUser(this.signupForm.value)
     .subscribe(res => console.log(res))
+  }
+
+  newUser() {
+    const _loginView = !this.loginView
+    this.loginView = _loginView
   }
 
 }
