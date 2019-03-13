@@ -1,12 +1,32 @@
+.navbar{
+    position: relative;
+    width: 100vw !important;
+}
+
 .logo {
     margin: .5em;
     width: 13vw;
     height: 14vh;
 }
 
+
 .nav-btn {
-    margin: 1.5em;
-    padding: .5em;
-    text-align: center;
-    border: 1px solid black;
+    text-decoration: none;
+    float: right;
+    margin-left: .5em;
+    margin-right: .5em;
+    position: relative;
+    height: 100%;
+}
+
+.nav-spacing {
+    flex: 1 1 auto;
+}
+
+.btn-wrapper {
+    height: 100%;
+}
+
+.btn-wrapper:hover {
+    background-color: pink;
 }

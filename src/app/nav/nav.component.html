@@ -1,11 +1,37 @@
-<mat-toolbar>
+<mat-toolbar class="navbar">
+
   <span>
     <img class='logo' alt='boards' src='../../assets/03f8734b-26d7-4d22-80f1-21e101ddc8bb.png' />
   </span>
+
+  <div class='nav-spacing'></div>
+
   <span  class='links'>
-    <a class='nav-btn' style="flex: 1 1 auto" routerLink='/home'>Home</a>
-    <a class='nav-btn' style="flex: 1 1 auto" routerLink='/events'>Events</a>
-    <a class='nav-btn' style="flex: 1 1 auto" routerLink='/profile'>My Events</a>
-    <a class='nav-btn' style="flex: 1 1 auto" routerLink='/login'>Login</a>
+
+    <a class='nav-btn' routerLink='/home'>
+      <div class='btn-wrapper'>
+        Home
+      </div>
+    </a>
+    
+    <a class='nav-btn' routerLink='/events'>
+      <!-- <div class='btn-wrapper'> -->
+        Events
+      <!-- </div> -->
+    </a>
+  
+    <a class='nav-btn' routerLink='/profile'>
+      <!-- <div class='btn-wrapper'> -->
+        My Events
+      <!-- </div> -->
+    </a>
+    
+    <a class='nav-btn' routerLink='/login'>
+      <!-- <div class='btn-wrapper'> -->
+        Login
+      <!-- </div> -->
+    </a>
+    
   </span>
+
 </mat-toolbar>
