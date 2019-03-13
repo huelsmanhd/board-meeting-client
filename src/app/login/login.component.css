@@ -1,22 +1,28 @@
 .authCard{
     position: absolute;
-    width: 50%;
-    height: 50%;
-    top: 50%;
+    width: 30%;
+    height: flex;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 2em;
 }
 
-.authCard > * {
+.btnBox {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+}
+
+h2 {
+    position: relative;
+    top: 5%;
+}
+
+mat-form-field {
     width: 100%;
-  }
-
-  .authDiv input {
-      width: 100% !important;
-  }
-
-  mat-form-field {
-      width: 100%;
-  }
+}
