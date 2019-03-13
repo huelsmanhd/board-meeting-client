@@ -24,6 +24,6 @@ export class UserService {
   signupUser(newUser) {
     const signupURL2 = "http://localhost:3000/user/signup";
     const signupURL = 'https://board-meeting-server.herokuapp.com/user/signup';
-    return this.http.post(signupURL2, newUser, httpOptions)
+    return this.http.post(signupURL, newUser, httpOptions)
   }
 }
