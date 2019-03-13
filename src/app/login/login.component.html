@@ -1,42 +1,51 @@
-<div *ngIf="loginView !== false">
-  <form [formGroup]="loginForm" (ngSubmit)="login()">
-    
-    <mat-form-field appearance="outline">
-      <mat-label>Email</mat-label>
-      <input matInput placeholder="Placeholder" formControlName="email" type="email" class="form-control" name="email" required>
-    </mat-form-field>
+<mat-card class="authCard">
 
-    <mat-form-field appearance="outline">
-      <mat-label>Password</mat-label>
-      <input matInput placeholder="Placeholder" formControlName="password" type="password" class="form-control" name="password" required />
-    </mat-form-field>
+  <div *ngIf="loginView !== false" class="authDiv">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="email" type="email" class="form-control" name="email" required>
+      </mat-form-field>
 
-    <button mat-button type="submit" class="submit-btn">Sign In</button>
+      <br>
 
-  </form>
-</div>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="password" type="password" class="form-control" name="password" required />
+      </mat-form-field>
 
-<div *ngIf="loginView === false">
-  <form [formGroup]="signupForm" (ngSubmit)="signup()">
+      <br>
 
-    <mat-form-field appearance="outline">
-      <mat-label>Username</mat-label>
-      <input matInput placeholder="Placeholder" formControlName="username" type="text" class="form-control" name="username" required />
-    </mat-form-field>
+      <button mat-button type="submit" class="submit-btn">Sign In</button>
+      <button mat-button (click)="newUser()">Toggle</button>
 
-    <mat-form-field appearance="outline">
-      <mat-label>Email</mat-label>
-      <input matInput placeholder="Placeholder" formControlName="email" type="email" class="form-control" name="email" required />
-    </mat-form-field>
+    </form>
+  </div>
+  
+  <div *ngIf="loginView === false">
+    <form [formGroup]="signupForm" (ngSubmit)="signup()">
+      
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="username" type="text" class="form-control" name="username" required />
+      </mat-form-field>
+      
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="email" type="email" class="form-control" name="email" required />
+      </mat-form-field>
+      
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Placeholder" formControlName="password" type="password" class="form-control" name="password" required />
+      </mat-form-field>
+      
+      <button mat-button type="submit" class="submit-btn">Sign Up</button>
+      
+    </form>
+  </div>
+  
+  <button mat-button (click)="newUser()">Toggle</button>
 
-    <mat-form-field appearance="outline">
-      <mat-label>Password</mat-label>
-      <input matInput placeholder="Placeholder" formControlName="password" type="password" class="form-control" name="password" required />
-    </mat-form-field>
-
-    <button mat-button type="submit" class="submit-btn">Sign Up</button>
-
-  </form>
-</div>
-
-<button mat-button (click)="newUser()">Toggle</button>
+</mat-card>
