@@ -6,24 +6,26 @@
 
   <div class='nav-spacing'></div>
 
-  <span  class='links'>
+  
+  <span  *ngIf="logoutView()" class='links'>
+    
+      <button mat-button routerLink='/home'>
+        Home
+      </button>
+      <button mat-button routerLink='/events'>
+        Events
+      </button>
+      <button mat-button routerLink='/profile'>
+        Profile
+      </button>
+      <button (click)="logOut()" mat-button routerLink='/login'>
+        Logout
+      </button>
 
-    <button mat-button routerLink='/home'>
-      Home
-    </button>
-
-    <button mat-button routerLink='/events'>
-      Events
-    </button>
-
-    <button mat-button routerLink='/profile'>
-      Profile
-    </button>
-
-    <button mat-button routerLink='/login'>
+    
+    </span>
+    <button  *ngIf="!logoutView()" mat-button routerLink='/login'>
       Login
     </button>
-    
-  </span>
 
 </mat-toolbar>
