@@ -15,12 +15,15 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   loginUser(user) {
-    const loginURL = 'https://board-meeting-server.herokuapp.com/user/login'
-    return this.http.post(loginURL, user, httpOptions)
+    console.log(user);
+    const loginURL2 = 'http://localhost:3000/user/login'
+    const loginURL = `https://board-meeting-server.herokuapp.com/user/login`
+    return this.http.post(loginURL2, user, httpOptions)
   }
 
   signupUser(newUser) {
-    const signupURL = 'https://board-meeting-server.herokuapp.com/user/signup'
-    return this.http.post(signupURL, newUser, httpOptions)
+    const signupURL2 = "http://localhost:3000/user/signup";
+    const signupURL = 'https://board-meeting-server.herokuapp.com/user/signup';
+    return this.http.post(signupURL2, newUser, httpOptions)
   }
 }
