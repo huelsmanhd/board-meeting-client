@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="loginView !== false">
   <div class="center">
     <div class="container">
       <h1>Login</h1>
@@ -15,10 +15,8 @@
       </form>
     </div>
   </div>
-  <button>Create Account</button>
 </div>
-
-<div>
+<div *ngIf="loginView === false">
   <div>
     <div>
       <h1>Sign Up</h1>
@@ -35,8 +33,10 @@
           <label for="password">Password</label>
           <input formControlName="password" type="password" class="form-control" name="password" required />
         </div>
-        <button type="submit" class="submit-btn">Create Account</button>
+        <button type="submit" class="submit-btn">New User</button>
       </form>
     </div>
   </div>
+  
 </div>
+<button (click)="newUser()">Create Account</button>
