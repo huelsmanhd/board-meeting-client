@@ -54,10 +54,9 @@ export class LoginComponent implements OnInit {
       this.router.navigate(["/events"]);
     })
   }
-
   newUser() {
     const _loginView = !this.loginView
     this.loginView = _loginView
   }
-
+  
 }
