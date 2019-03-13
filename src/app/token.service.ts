@@ -7,6 +7,9 @@ import { HttpClient } from '@angular/common/http';
 export class TokenService {
   sessionToken: string = '';
   admin: string = "";
+
+  
+
   constructor(private http: HttpClient) { }
 
   storeSession( admin, token ) {
@@ -24,5 +27,9 @@ export class TokenService {
   getAdmin() {
     return sessionStorage.getItem("admin");
   }
+  clearSessionToken() {
+    this.sessionToken = "";
+  }
+  
 
 }
