@@ -10,6 +10,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { EventFocusComponent } from './event-focus/event-focus.component';
 import { HomeComponent } from './home/home.component';
 import { MatToolbarModule, MatButtonModule, MatCardModule, MatMenuModule, MatIconModule, MatListModule } from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,10 @@ import { MatToolbarModule, MatButtonModule, MatCardModule, MatMenuModule, MatIco
     MatCardModule, 
     MatMenuModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
