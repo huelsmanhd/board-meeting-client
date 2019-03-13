@@ -6,12 +6,23 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TokenService {
   sessionToken: string = '';
-
+  admin: string = "";
   constructor(private http: HttpClient) { }
 
-  storeSession( {admin}, token ) {
+  storeSession( admin, token ) {
     sessionStorage.setItem('admin', admin)
     sessionStorage.setItem('token', token)
     this.sessionToken = token
+    this.admin = sessionStorage.getItem(("admin"));
+    console.log(this.sessionToken)
+    console.log(this.admin);
   }
+
+  getToken() {
+    return sessionStorage.getItem("token");
+  }
+  getAdmin() {
+    return sessionStorage.getItem("admin");
+  }
+
 }

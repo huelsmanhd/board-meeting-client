@@ -40,13 +40,19 @@ export class LoginComponent implements OnInit {
     const loginString = JSON.stringify(this.loginForm.value)
     // console.log(this.loginForm.value, this.loginForm.value.email, this.loginForm.value.password);
     this.userService.loginUser(loginString)
-    .subscribe(res => console.log(res))
-    // this.tokenService.storeSession(res.admin, res.token)
+    .subscribe(res => {
+      console.log(res)
+      this.tokenService.storeSession(res["user"].admin, res["sessionToken"])
+      this.router.navigate(["/events"]);
+    }) 
   }
-
   signup() {
     this.userService.signupUser(this.signupForm.value)
-    .subscribe(res => console.log(res))
+    .subscribe(res => {
+      console.log(res)
+      this.tokenService.storeSession(res["user"].admin, res["sessionToken"])
+      this.router.navigate(["/events"]);
+    })
   }
 
   newUser() {
