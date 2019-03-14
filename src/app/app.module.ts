@@ -11,10 +11,7 @@ import { EventsComponent } from './events/events.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EventFocusComponent } from './event-focus/event-focus.component';
 import { HomeComponent } from './home/home.component';
-<<<<<<< HEAD
 // import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-=======
->>>>>>> 498e5f27eb01cb50e3a6a214b76a9269e4cf6c98
 
 import { 
   MatToolbarModule, 
@@ -70,12 +67,9 @@ import { CreateEventComponent } from './create-event/create-event.component';
     MatSelectModule,
     MatInputModule,
     MatCardModule,
-<<<<<<< HEAD
     MatDatepickerModule,
     MatNativeDateModule
     // NgbCarouselModule
-=======
->>>>>>> 498e5f27eb01cb50e3a6a214b76a9269e4cf6c98
   ],
   providers: [],
   bootstrap: [AppComponent]
