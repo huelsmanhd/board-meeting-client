@@ -1,6 +1,10 @@
 .navbar{
-    position: relative;
+    position: fixed;
     width: 100vw !important;
+    background-color: rgba(233, 233, 233, 0.653);
+    z-index: 1;
+    height: 2.5em;
+    
 }
 
 .logo {
@@ -29,4 +33,9 @@
 
 .btn-wrapper:hover {
     background-color: pink;
+}
+
+mat-toolbar img {
+    width: 5em;
+    height: 3em;
 }
