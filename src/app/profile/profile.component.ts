@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BoardService } from "../board.service"
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(private boardService: BoardService) { }
 
   ngOnInit() {
+    this.getUserEvents();
+  }
+
+  getUserEvents() {
+    this.boardService.getUserEvents().subscribe(userEvents => {
+      console.log(userEvents);
+    })
   }
 
 }
