@@ -68,6 +68,7 @@ import { CreateEventComponent } from './create-event/create-event.component';
     MatCardModule,
     MatDatepickerModule,
     MatNativeDateModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
