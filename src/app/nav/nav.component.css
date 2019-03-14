@@ -9,7 +9,11 @@
 
 .logo {
     margin: .5em;
+    padding-top: .5em;
     height: 5%;
+    width: 8em;
+    height: 6em;
+    background-size: contain;
 }
 
 
