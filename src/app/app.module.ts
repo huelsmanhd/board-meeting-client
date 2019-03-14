@@ -61,7 +61,7 @@ import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatOptionModule,
     MatSelectModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
