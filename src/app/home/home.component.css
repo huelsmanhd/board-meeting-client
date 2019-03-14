@@ -10,3 +10,14 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.home-title {
+    text-align: center;
+
+}
+
+.home-info {
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+}
