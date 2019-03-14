@@ -1,26 +1,28 @@
-<div class="cardDisplay">
-  
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav class="sidenav" mode="side" opened>
+    <app-create-event></app-create-event>
+  </mat-sidenav>
+  <mat-sidenav-content class="main-content">
+    <div class="cardDisplay">
       <mat-card class="example-card">
-        
-        <mat-card-header >
-          <mat-card-title class="title">Title</mat-card-title>
-        </mat-card-header>
-        <img mat-card-image class="img-article">
-        <mat-card-content>
-          <p>Location</p>
-          <p>Type</p>
-          <p>location</p>
-          <p>description</p>
-        </mat-card-content>
-        <mat-card-footer>
-        <mat-card-actions>
-          <a routerLink="/create">Add Event</a>
-          <button mat-button color="secondary"><mat-icon>edit</mat-icon>Edit</button>
-          <button mat-button color="warn"><mat-icon>delete</mat-icon>Delete</button>
-        </mat-card-actions>
-      </mat-card-footer>
-          
-    
-    </mat-card>
-    
-  </div>
+          <mat-card-header >
+            <mat-card-title class="title">Title</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image class="img-article">
+          <mat-card-content>
+            <p>Location</p>
+            <p>Type</p>
+            <p>location</p>
+            <p>description</p>
+          </mat-card-content>
+          <mat-card-footer>
+          <mat-card-actions>
+            <a routerLink="/create" class="card-btn">Add Event</a>
+            <button mat-button color="secondary" class="card-btn"><mat-icon>edit</mat-icon>Edit</button>
+            <button mat-button color="warn" class="card-btn"><mat-icon>delete</mat-icon>Delete</button>
+          </mat-card-actions>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
