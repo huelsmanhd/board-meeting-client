@@ -31,11 +31,17 @@ export class CreateEventComponent implements OnInit {
   }
 
   createEvent() {
+    let date =  this.eventForm.value["date"].getDate()
+    let month = this.eventForm.value["date"].getMonth() + 1;
+    let year = this.eventForm.value["date"].getFullYear()
+    let eventDate = `${year}-${month}-${date}`;
+    this.eventForm.value["date"] = eventDate;
 
-    const eventString = JSON.stringify
-    (this.eventForm.value)
-    
-    this.createEventService.createEvent(eventString)
+    console.log(this.eventForm.value);
+    let eventString = JSON.stringify(this.eventForm.value);
+    this.createEventService.createEvent(eventString).subscribe(event => {
+      console.log(event);
+    })
     
   }
 
