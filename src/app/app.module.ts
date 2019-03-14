@@ -11,7 +11,7 @@ import { EventsComponent } from './events/events.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EventFocusComponent } from './event-focus/event-focus.component';
 import { HomeComponent } from './home/home.component';
-// import {NgbCarouselModule} from '@ng-bootstrap/ng-bootstrap';
+// import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { 
   MatToolbarModule, 
@@ -22,7 +22,9 @@ import {
   MatListModule,
   MatOptionModule,
   MatSelectModule,
-  MatInputModule
+  MatInputModule,
+  MatDatepickerModule,
+  MatNativeDateModule
 } from '@angular/material';
 
 import { 
@@ -32,6 +34,7 @@ import {
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CreateEventComponent } from './create-event/create-event.component';
 
 
 
@@ -43,7 +46,8 @@ import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
     EventsComponent,
     ProfileComponent,
     EventFocusComponent,
-    HomeComponent
+    HomeComponent,
+    CreateEventComponent
   ],
   imports: [
     BrowserModule,
@@ -63,6 +67,8 @@ import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatSelectModule,
     MatInputModule,
     MatCardModule,
+    MatDatepickerModule,
+    MatNativeDateModule
     // NgbCarouselModule
   ],
   providers: [],
