@@ -12,9 +12,10 @@ export class TokenService {
 
   constructor(private http: HttpClient) { }
 
-  storeSession( admin, token ) {
+  storeSession( admin, token, username ) {
     sessionStorage.setItem('admin', admin)
     sessionStorage.setItem('token', token)
+    sessionStorage.setItem('username', username)
     this.sessionToken = token
     this.admin = sessionStorage.getItem(("admin"));
     console.log(this.sessionToken)
