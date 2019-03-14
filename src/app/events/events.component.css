@@ -1,3 +1,29 @@
+.sidenav-container {
+    position: fixed;
+    top: 3.1em;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+}
+
+.sidenav {
+    width: 35%;
+}
+
+.main-content {
+    margin-top: 3%;
+}
+
+.cardDisplay {
+    margin: 2em 2em;
+    
+}
+
+.card-btn {
+    margin: 1em;
+}
+
 .mat-card-actions {
     margin: 0px !important;
 }
