@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
     // console.log(this.loginForm.value, this.loginForm.value.email, this.loginForm.value.password);
     this.userService.loginUser(loginString)
     .subscribe(res => {
-      console.log(res)
+      // console.log(res)
       this.tokenService.storeSession(res["user"].admin, res["sessionToken"], res["user"].username)
       this.router.navigate(["/events"]);
     }) 
@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
   signup() {
     this.userService.signupUser(this.signupForm.value)
     .subscribe(res => {
-      console.log(res)
+      // console.log(res)
       this.tokenService.storeSession(res["user"].admin, res["sessionToken"], res["user"].username)
       this.router.navigate(["/events"]);
     })
