@@ -17,13 +17,13 @@ export class UserService {
   loginUser(user) {
     console.log(user);
     const loginURL2 = 'http://localhost:3000/user/login'
-    const loginURL = `https://board-meeting-server.herokuapp.com/user/login`
+    const loginURL = `https://board-meeting-sever.herokuapp.com/user/login`
     return this.http.post(loginURL, user, httpOptions)
   }
 
   signupUser(newUser) {
     const signupURL2 = "http://localhost:3000/user/signup";
-    const signupURL = 'https://board-meeting-server.herokuapp.com/user/signup';
+    const signupURL = 'https://board-meeting-sever.herokuapp.com/user/signup';
     return this.http.post(signupURL, newUser, httpOptions)
   }
 }
