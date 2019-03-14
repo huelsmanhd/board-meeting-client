@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from "@angular/common/http"
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +7,18 @@ import { HttpClient, HttpHeaders } from "@angular/common/http"
 export class BoardService {
 
   constructor(private http: HttpClient) { }
+
+  getAllEvents(){
+
+    let baseURL = 'https://board-meeting-sever.herokuapp.com/event/all';
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type" : "application/json"
+      })
+    }
+
+    return this.http.get(baseURL, httpOptions)
+  }
 
   getUserEvents() {
     let token = sessionStorage.getItem("token");
@@ -19,7 +31,5 @@ export class BoardService {
     const userEventURL = `https://board-meeting-sever.herokuapp.com/event/user`
     return this.http.get(userEventURL, httpOptions)
   }
-
-
 
 }
