@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BoardService } from "../board.service"
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-profile',
@@ -8,7 +9,10 @@ import { BoardService } from "../board.service"
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private boardService: BoardService) { }
+  constructor(
+    private boardService: BoardService,
+    private router: Router
+    ) { }
 
   ngOnInit() {
     this.getUserEvents();
@@ -18,6 +22,11 @@ export class ProfileComponent implements OnInit {
     this.boardService.getUserEvents().subscribe(userEvents => {
       console.log(userEvents);
     })
+  }
+
+  viewEvent(id) {
+    this.boardService.setSingleEventId(id);
+    this.router.navigate(["/event-focus"]);
   }
 
   editEvent(id) {
