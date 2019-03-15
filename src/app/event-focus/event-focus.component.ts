@@ -23,10 +23,7 @@ export class EventFocusComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.boardService.findSingleEvent().subscribe(singleEvent => {
-      this.event = singleEvent
-      console.log(singleEvent);
-    })
+    this.getSingleEvent();
     this.eventForm = this.fb.group({
       type: new FormControl(),
       title: new FormControl(),
@@ -38,11 +35,28 @@ export class EventFocusComponent implements OnInit {
     })
   }
 
+  getSingleEvent() {
+    this.boardService.findSingleEvent().subscribe(singleEvent => {
+      this.event = singleEvent
+      console.log(singleEvent);
+    })
+  }
+
 
   updateEvent(id) {
     console.log(this.eventForm.value);
-    this.boardService.updateUserEvent(this.eventForm.value, id)
-    this.router.navigate(["/profile"])
+    this.boardService.updateUserEvent(this.eventForm.value, id).subscribe(event => {
+      this.getSingleEvent();
+    })
+  
+    this.editToggle();
+  }
+
+  deleteEvent(id) {
+    this.boardService.deleteUserEvent(id).subscribe(event => {
+      this.router.navigate(["/profile"]);
+      alert("You deleted an event!");
+    })
   }
 
   editToggle() {

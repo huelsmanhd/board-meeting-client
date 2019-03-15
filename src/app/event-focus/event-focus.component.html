@@ -24,13 +24,13 @@
 
         <div *ngIf="editView !== false">
 
-            <form [formGroup]="eventForm">
+            <form [formGroup]="eventForm" (submit)="updateEvent(event.id)">
 
                 <h2>Edit Event</h2>
 
                 <mat-form-field appearance="outline">
                   <mat-label>Title</mat-label>
-                  <input matInput placeholder={{event.title}} formControlName="title" type="title" class="form-control" name="title" defaultValue="{{event.title}}">
+                  <input matInput placeholder={{event.title}} formControlName="title" type="title" class="form-control" name="title">
                 </mat-form-field>
               
                 <mat-form-field appearance="outline">
@@ -43,33 +43,33 @@
                 </mat-form-field>
               
                 <mat-form-field appearance="outline">
-                  <input matInput [matDatepicker]="picker" placeholder={{event.date}} defaultValue={{event.date}} formControlName="date" class="form-control" name="date">
+                  <input matInput [matDatepicker]="picker" placeholder={{event.date}} formControlName="date" class="form-control" name="date">
                   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                   <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
               
                 <mat-form-field appearance="outline">
                   <mat-label>Latitude</mat-label>
-                  <input matInput placeholder={{event.lat}} defaultValue={{event.lat}} formControlName="lat" class="form-control" name="latitude">
+                  <input matInput placeholder={{event.lat}}  formControlName="lat" class="form-control" name="latitude">
                 </mat-form-field>
               
                 <mat-form-field appearance="outline">
                   <mat-label>Longitude</mat-label>
-                  <input matInput placeholder={{event.long}} defaultValue={{event.long}} formControlName="long" class="form-control" name="longitude">
+                  <input matInput placeholder={{event.long}} formControlName="long" class="form-control" name="longitude">
                 </mat-form-field>
               
                 <mat-form-field appearance="outline">
                   <mat-label>Address</mat-label>
-                  <input matInput placeholder={{event.location}} defaultValue={{event.location}} formControlName="location" class="form-control" name="location">
+                  <input matInput placeholder={{event.location}} formControlName="location" class="form-control" name="location">
                 </mat-form-field>
               
                 <mat-form-field appearance="outline">
                   <mat-label>Description</mat-label>
-                  <textarea matInput placeholder={{event.description}} defaultValue={{event.description}} formControlName="description" class="form-control" name="description"></textarea>
+                  <textarea matInput placeholder={{event.description}}  formControlName="description" class="form-control" name="description"></textarea>
                 </mat-form-field>
               
                 <div class="btnBox">
-                  <button mat-button type="submit" class="submit-btn" (click)="editToggle()">Submit Changes</button>
+                  <button mat-button type="submit" class="submit-btn">Submit Changes</button>
                   <button mat-button (click)="editToggle()">Cancel</button>
                 </div>
 
