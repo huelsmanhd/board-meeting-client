@@ -9,6 +9,8 @@ import { Router } from "@angular/router";
 })
 export class ProfileComponent implements OnInit {
 
+  userEvents: Array<any> = [];
+  
   constructor(
     private boardService: BoardService,
     private router: Router
@@ -19,8 +21,9 @@ export class ProfileComponent implements OnInit {
   }
 
   getUserEvents() {
-    this.boardService.getUserEvents().subscribe(userEvents => {
-      console.log(userEvents);
+    this.boardService.getUserEvents().subscribe(events => {
+      console.log(events);
+      this.userEvents = events;
     })
   }
 
