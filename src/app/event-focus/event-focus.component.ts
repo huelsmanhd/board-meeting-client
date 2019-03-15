@@ -8,12 +8,15 @@ import { BoardService } from "../board.service";
 })
 export class EventFocusComponent implements OnInit {
 
+  event=<any>[];
+
   constructor(
     private boardService: BoardService
   ) { }
 
   ngOnInit() {
     this.boardService.findSingleEvent().subscribe(singleEvent => {
+      this.event = singleEvent
       console.log(singleEvent);
     })
   }
