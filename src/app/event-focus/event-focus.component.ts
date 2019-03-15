@@ -1,17 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, ViewEncapsulation, AfterViewInit } from '@angular/core';
 import { BoardService } from "../board.service";
 import { Router } from "@angular/router";
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { TokenService } from "../token.service";
 
 
 @Component({
   selector: 'app-event-focus',
   templateUrl: './event-focus.component.html',
-  styleUrls: ['./event-focus.component.css']
+  styleUrls: ['./event-focus.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
-export class EventFocusComponent implements OnInit {
-
-  
+export class EventFocusComponent implements OnInit, AfterViewInit {
+  @ViewChild('sideNav') sideNav: ElementRef;
   eventForm: FormGroup;
   event=<any>[];
   editView: boolean = false;
@@ -19,7 +20,8 @@ export class EventFocusComponent implements OnInit {
   constructor(
     private boardService: BoardService,
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private token: TokenService,
   ) { }
 
   ngOnInit() {
@@ -66,6 +68,10 @@ export class EventFocusComponent implements OnInit {
     const _editView = !this.editView
     this.editView = _editView
 
+  }
+
+  ngAfterViewInit() {
+    this.token.sideNav = this.sideNav;
   }
 
 }
