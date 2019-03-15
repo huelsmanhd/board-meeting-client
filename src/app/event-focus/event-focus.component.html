@@ -1,0 +1,17 @@
+<div class="eventWrapper">
+
+<h2>{{event.title}}</h2>
+<p>{{event.type}}</p>
+<p>{{event.date}}</p>
+<p>{{event.location}}</p>
+<p>{{event.lat}}</p>
+<p>{{event.long}}</p>
+<p>{{event.description}}</p>
+
+<button mat-button (click)="editEvent()">Edit</button>
+
+</div>
+
+<div *ngIf="editView === true">
+    
+</div>

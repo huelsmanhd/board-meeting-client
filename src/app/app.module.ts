@@ -25,6 +25,7 @@ import {
   MatDatepickerModule,
   MatNativeDateModule,
   MatSidenavModule,
+  MatDialogModule
 } from '@angular/material';
 
 import { 
@@ -69,7 +70,8 @@ import { CreateEventComponent } from './create-event/create-event.component';
     MatCardModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatDialogModule
     
   ],
   providers: [],
