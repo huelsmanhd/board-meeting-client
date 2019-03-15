@@ -9,6 +9,7 @@ import { BoardService } from "../board.service";
 export class EventFocusComponent implements OnInit {
 
   event=<any>[];
+  editView: boolean = false;
 
   constructor(
     private boardService: BoardService
@@ -19,6 +20,12 @@ export class EventFocusComponent implements OnInit {
       this.event = singleEvent
       console.log(singleEvent);
     })
+  }
+
+  editToggle() {
+    const _editView = !this.editView
+    this.editView = _editView
+
   }
 
 }
