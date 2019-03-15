@@ -1,17 +1,23 @@
-<div class="eventWrapper">
-
-<h2>{{event.title}}</h2>
-<p>{{event.type}}</p>
-<p>{{event.date}}</p>
-<p>{{event.location}}</p>
-<p>{{event.lat}}</p>
-<p>{{event.long}}</p>
-<p>{{event.description}}</p>
-
-<button mat-button (click)="editEvent()">Edit</button>
-
-</div>
-
 <div *ngIf="editView === true">
     
 </div>
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav class="sidenav" mode="side" opened>
+        <app-create-event></app-create-event>
+    </mat-sidenav>
+    <mat-sidenav-content class="main-content">
+            <div class="eventWrapper">
+
+                    <h2>{{event.title}}</h2>
+                    <p>{{event.type}}</p>
+                    <p>{{event.date}}</p>
+                    <p>{{event.location}}</p>
+                    <p>{{event.lat}}</p>
+                    <p>{{event.long}}</p>
+                    <p>{{event.description}}</p>
+                    
+                    <button mat-button (click)="editEvent()">Edit</button>
+                    
+                    </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
