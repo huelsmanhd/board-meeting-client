@@ -6,33 +6,26 @@
     right: 0;
     height: 100vh;
 }
-
 .sidenav {
     width: 35%;
 }
-
 .main-content {
     margin-top: 3%;
 }
-
 .cardDisplay {
     margin: 2em 2em;
     
 }
-
 .card-btn {
     margin: 1em;
     float: right;
 }
-
 .mat-card-actions {
     margin: 0px !important;
 }
-
 .eventCard {
     width: 45%;
     margin-right: 1%;
     margin-bottom: 1%;
     display: inline-block;
-
 }
