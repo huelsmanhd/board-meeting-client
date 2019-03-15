@@ -56,10 +56,13 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
 
   deleteEvent(id) {
     
-    this.boardService.deleteUserEvent(id);
+    this.boardService.deleteUserEvent(id).subscribe(event => {
+      console.log(event);
+    
+    });
+    this.router.navigate(["/events"]);
     // console.log(window.location);
     // console.log(document.referrer)
-    this.router.navigate(["/events"]);
     // history.back();
     alert(`You removed event ${id}`)
   }
