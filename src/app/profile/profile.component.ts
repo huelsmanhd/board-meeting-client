@@ -22,6 +22,7 @@ export class ProfileComponent implements OnInit {
 
   getUserEvents() {
     this.boardService.getUserEvents().subscribe(events => {
+      console.log(events);
       this.userEvents = events;
     })
   }
