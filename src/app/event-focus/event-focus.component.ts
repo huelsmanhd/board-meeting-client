@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BoardService } from "../board.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-event-focus',
@@ -8,14 +9,26 @@ import { BoardService } from "../board.service";
 })
 export class EventFocusComponent implements OnInit {
 
+  modal = false;
+
   constructor(
-    private boardService: BoardService
+    private boardService: BoardService,
+    private router: Router
   ) { }
 
   ngOnInit() {
     this.boardService.findSingleEvent().subscribe(singleEvent => {
       console.log(singleEvent);
     })
+  }
+
+  toggleModal() {
+    this.modal = true;
+  }
+
+  updateEvent(id) {
+    this.boardService.updateUserEvent(id)
+    this.router.navigate(["/profile"])
   }
 
 }

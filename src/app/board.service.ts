@@ -61,5 +61,16 @@ export class BoardService {
     const baseURL = `https://board-meeting-sever.herokuapp.com/event/event/${this.singleEvent}`
     return this.http.get(baseURL, httpOptions);
   }
+  updateUserEvent(id) {
+    let token = sessionStorage.getItem("token");
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type" : "application/json",
+        "Authorization": token
+      })
+    }
+    let baseURL = `https://board-meeting-sever.herokuapp.com/event/update/${id}`
+    return this.http.put(baseURL, httpOptions)
+  }
 
 }
