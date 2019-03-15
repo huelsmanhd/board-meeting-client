@@ -40,4 +40,5 @@ export class NavComponent implements OnInit {
     this.token.clearSessionToken();
      
   }
+
 }
