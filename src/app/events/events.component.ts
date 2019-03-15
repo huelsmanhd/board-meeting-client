@@ -27,11 +27,10 @@ export class EventsComponent implements OnInit {
   }
 
   getAllEvents(){
-
     this.boardService.getAllEvents().subscribe(events => {
       console.log(events)
     });
-
   }
+  
 
 }

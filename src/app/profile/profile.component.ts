@@ -20,4 +20,10 @@ export class ProfileComponent implements OnInit {
     })
   }
 
+  editEvent(id) {
+    this.boardService.editUserEvents(id).subscribe(event => {
+      console.log(event)
+    })
+  }
+
 }
