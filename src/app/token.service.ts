@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class TokenService {
   sessionToken: string = '';
   admin: string = "";
-
+  public sideNav: any;
   
 
   constructor(private http: HttpClient) { }
@@ -31,6 +31,13 @@ export class TokenService {
   clearSessionToken() {
     this.sessionToken = "";
   }
-  
+
+  public openNav() {
+    this.sideNav.open();
+  }
+
+  public closeNav() {
+    this.sideNav.close();
+  }
 
 }
