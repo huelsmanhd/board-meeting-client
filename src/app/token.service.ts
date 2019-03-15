@@ -32,10 +32,12 @@ export class TokenService {
     this.sessionToken = "";
   }
 
-  openNav() {
+  public openNav() {
     this.sideNav.open();
   }
 
-  
+  public closeNav() {
+    this.sideNav.close();
+  }
 
 }

@@ -1,19 +1,19 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #sideNav class="sidenav" mode="side" opened="false">
+  <mat-sidenav #sideNav class="sidenav" mode="over" opened="false">
     <app-create-event></app-create-event>
   </mat-sidenav>
   <mat-sidenav-content class="main-content">
     <button mat-button>Create Event</button>
     <div class="cardDisplay">
-      <mat-card class="example-card" *ngFor="let events of events">
+      <mat-card class="eventCard" *ngFor="let events of events">
           <mat-card-header >
             <mat-card-title class="title">{{events.title}}</mat-card-title>
           </mat-card-header>
           <img mat-card-image class="img-article">
           <mat-card-content>
-            <p>{{events.type}}</p>
-            <p>{{events.location}}</p>
-            <p>{{events.date}}</p>
+            <p>Activity: {{events.type}}</p>
+            <p>Address: {{events.location}}</p>
+            <p>Date: {{events.date}}</p>
           </mat-card-content>
           <mat-card-footer>
           <mat-card-actions>
