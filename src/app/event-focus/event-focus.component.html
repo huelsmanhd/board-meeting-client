@@ -5,19 +5,77 @@
     <mat-sidenav class="sidenav" mode="side" opened>
         <app-create-event></app-create-event>
     </mat-sidenav>
+    
     <mat-sidenav-content class="main-content">
-            <div class="eventWrapper">
 
-                    <h2>{{event.title}}</h2>
-                    <p>{{event.type}}</p>
-                    <p>{{event.date}}</p>
-                    <p>{{event.location}}</p>
-                    <p>{{event.lat}}</p>
-                    <p>{{event.long}}</p>
-                    <p>{{event.description}}</p>
-                    
-                    <button mat-button (click)="editEvent()">Edit</button>
-                    
-                    </div>
+        <div class="eventWrapper" *ngIf="editView === false">
+
+            <h2>{{event.title}}</h2>
+            <p>{{event.type}}</p>
+            <p>{{event.date}}</p>
+            <p>{{event.location}}</p>
+            <p>{{event.lat}}</p>
+            <p>{{event.long}}</p>
+            <p>{{event.description}}</p>
+            
+            <button mat-button (click)="editToggle()">Edit</button>
+        
+        </div>
+
+        <div *ngIf="editView !== false">
+
+            <form [formGroup]="eventForm">
+
+                <h2>Edit Event</h2>
+
+                <mat-form-field appearance="outline">
+                  <mat-label>Title</mat-label>
+                  <input matInput placeholder={{event.title}} formControlName="title" type="title" class="form-control" name="title" defaultValue="{{event.title}}">
+                </mat-form-field>
+              
+                <mat-form-field appearance="outline">
+                  <mat-label>Activity</mat-label>
+                  <mat-select placeholder={{event.type}} formControlName="type" type="select" class="form-control" name="type" required>
+                    <mat-option value="Skate">Skate</mat-option>
+                    <mat-option value="Surf">Surf</mat-option>
+                    <mat-option value="Skate">Snow</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              
+                <mat-form-field appearance="outline">
+                  <input matInput [matDatepicker]="picker" placeholder={{event.date}} defaultValue={{event.date}} formControlName="date" class="form-control" name="date">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+              
+                <mat-form-field appearance="outline">
+                  <mat-label>Latitude</mat-label>
+                  <input matInput placeholder={{event.lat}} defaultValue={{event.lat}} formControlName="lat" class="form-control" name="latitude">
+                </mat-form-field>
+              
+                <mat-form-field appearance="outline">
+                  <mat-label>Longitude</mat-label>
+                  <input matInput placeholder={{event.long}} defaultValue={{event.long}} formControlName="long" class="form-control" name="longitude">
+                </mat-form-field>
+              
+                <mat-form-field appearance="outline">
+                  <mat-label>Address</mat-label>
+                  <input matInput placeholder={{event.location}} defaultValue={{event.location}} formControlName="location" class="form-control" name="location">
+                </mat-form-field>
+              
+                <mat-form-field appearance="outline">
+                  <mat-label>Description</mat-label>
+                  <textarea matInput placeholder={{event.description}} defaultValue={{event.description}} formControlName="description" class="form-control" name="description"></textarea>
+                </mat-form-field>
+              
+                <div class="btnBox">
+                  <button mat-button type="submit" class="submit-btn" (click)="editToggle()">Submit Changes</button>
+                  <button mat-button (click)="editToggle()">Cancel</button>
+                </div>
+
+            </form>
+
+        </div>
+
     </mat-sidenav-content>
 </mat-sidenav-container>

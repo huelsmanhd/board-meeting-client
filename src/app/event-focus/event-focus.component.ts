@@ -14,6 +14,7 @@ export class EventFocusComponent implements OnInit {
   
   eventForm: FormGroup;
   event=<any>[];
+  editView: boolean = false;
 
   constructor(
     private boardService: BoardService,
@@ -42,6 +43,12 @@ export class EventFocusComponent implements OnInit {
     console.log(this.eventForm.value);
     this.boardService.updateUserEvent(this.eventForm.value, id)
     this.router.navigate(["/profile"])
+  }
+
+  editToggle() {
+    const _editView = !this.editView
+    this.editView = _editView
+
   }
 
 }
