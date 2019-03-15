@@ -18,8 +18,8 @@ export class TokenService {
     sessionStorage.setItem('username', username)
     this.sessionToken = token
     this.admin = sessionStorage.getItem(("admin"));
-    console.log(this.sessionToken)
-    console.log(this.admin);
+    // console.log(this.sessionToken)
+    // console.log(this.admin);
   }
 
   getToken() {
