@@ -61,7 +61,7 @@ export class BoardService {
     const baseURL = `https://board-meeting-sever.herokuapp.com/event/event/${this.singleEvent}`
     return this.http.get(baseURL, httpOptions);
   }
-  updateUserEvent(id) {
+  updateUserEvent(eventString, id) {
     let token = sessionStorage.getItem("token");
     const httpOptions = {
       headers: new HttpHeaders({
@@ -70,7 +70,7 @@ export class BoardService {
       })
     }
     let baseURL = `https://board-meeting-sever.herokuapp.com/event/update/${id}`
-    return this.http.put(baseURL, httpOptions)
+    return this.http.put(baseURL, eventString, httpOptions);
   }
 
 }
