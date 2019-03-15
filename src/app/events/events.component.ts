@@ -29,12 +29,11 @@ export class EventsComponent implements OnInit {
   }
 
   getAllEvents(){
-
     this.boardService.getAllEvents().subscribe(events => {
       this.events = events;
       console.log(events)
     });
-
   }
+  
 
 }
