@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BoardService } from "../board.service";
 
 @Component({
   selector: 'app-event-focus',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventFocusComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private boardService: BoardService
+  ) { }
 
   ngOnInit() {
+    this.boardService.findSingleEvent().subscribe(singleEvent => {
+      console.log(singleEvent);
+    })
   }
 
 }

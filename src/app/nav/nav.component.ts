@@ -19,13 +19,15 @@ export class NavComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
+    // this.sessionToken = sessionStorage.getItem("token");
     this.sessionToken = this.token.getToken();
+    // this.admin = this.token.getAdmin();
     this.admin = this.token.getAdmin();
 
   }
 
   logoutView() {
-    if(this.token.sessionToken === "") {
+    if(sessionStorage.getItem("token") === null) {
       return false;
     } else {
       return true;

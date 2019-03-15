@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { getToken } from '@angular/router/src/utils/preactivation';
 import { TokenService } from "../token.service";
-import { BoardService } from '../board.service'
+import { BoardService } from '../board.service';
+import { Router } from "@angular/router"
 
 @Component({
   selector: 'app-events',
@@ -17,7 +18,8 @@ export class EventsComponent implements OnInit {
 
   constructor(
     private token: TokenService,
-    private boardService: BoardService
+    private boardService: BoardService,
+    private router: Router
     ) { }
 
   ngOnInit() {
@@ -26,6 +28,11 @@ export class EventsComponent implements OnInit {
 
     this.getAllEvents();
 
+  }
+
+  viewEvent(id) {
+    this.boardService.setSingleEventId(id);
+    this.router.navigate(["/event-focus"]);
   }
 
   getAllEvents(){

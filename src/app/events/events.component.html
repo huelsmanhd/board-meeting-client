@@ -19,7 +19,7 @@
             <a routerLink="/create" class="card-btn">Add Event</a>
             <button mat-button color="secondary" class="card-btn"><mat-icon>edit</mat-icon>Edit</button>
             <button mat-button color="warn" class="card-btn"><mat-icon>delete</mat-icon>Delete</button>
-            <button mat-button color="secondary" class="card-btn">View Full</button>
+            <button mat-button color="secondary" class="card-btn" (click)="viewEvent(events.id)">View Full</button>
           </mat-card-actions>
         </mat-card-footer>
       </mat-card>
