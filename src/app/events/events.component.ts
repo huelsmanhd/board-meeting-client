@@ -9,8 +9,12 @@ import { BoardService } from '../board.service'
   styleUrls: ['./events.component.css']
 })
 export class EventsComponent implements OnInit {
+
   sessionToken: string = "";
   admin: string = "";
+
+  events = <any>[];
+
   constructor(
     private token: TokenService,
     private boardService: BoardService
@@ -19,8 +23,6 @@ export class EventsComponent implements OnInit {
   ngOnInit() {
     this.sessionToken = this.token.getToken();
     this.admin = this.token.getAdmin();
-    // console.log(this.sessionToken)
-    // console.log(this.admin)l
 
     this.getAllEvents();
 
@@ -29,6 +31,7 @@ export class EventsComponent implements OnInit {
   getAllEvents(){
 
     this.boardService.getAllEvents().subscribe(events => {
+      this.events = events;
       console.log(events)
     });
 
