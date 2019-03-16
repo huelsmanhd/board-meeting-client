@@ -11,7 +11,8 @@ import { TokenService } from "../token.service";
 })
 export class ProfileComponent implements OnInit {
   @ViewChild('sideNav') sideNav: ElementRef;
-  userEvents: Array<any>[];
+
+  userEvents = <any>[];
   
   constructor(
     private boardService: BoardService,
