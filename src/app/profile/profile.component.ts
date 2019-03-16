@@ -11,7 +11,7 @@ import { TokenService } from "../token.service";
 })
 export class ProfileComponent implements OnInit {
   @ViewChild('sideNav') sideNav: ElementRef;
-  userEvents: Array<any> = [];
+  userEvents: Array<any>[];
   
   constructor(
     private boardService: BoardService,
@@ -25,12 +25,14 @@ export class ProfileComponent implements OnInit {
 
   getUserEvents() {
     this.boardService.getUserEvents().subscribe(events => {
-      console.log(events);
-      // this.userEvents = events;
+      this.userEvents = events;
+      console.log(this.userEvents);
     })
   }
 
   viewEvent(id) {
+    this.boardService.location = window.location.href;
+    console.log(window.location.href)
     this.boardService.setSingleEventId(id);
     this.router.navigate(["/event-focus"]);
   }
