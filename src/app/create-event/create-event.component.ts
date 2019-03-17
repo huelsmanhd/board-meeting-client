@@ -1,21 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, ViewEncapsulation } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CreateEventService } from '../create-event.service'
+import { TokenService } from '../token.service';
 
 @Component({
   selector: 'app-create-event',
   templateUrl: './create-event.component.html',
-  styleUrls: ['./create-event.component.css']
+  styleUrls: ['./create-event.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
-export class CreateEventComponent implements OnInit {
-
+export class CreateEventComponent implements OnInit, AfterViewInit {
+  @ViewChild('sideNav') sideNav: ElementRef;
   eventForm: FormGroup
 
   constructor(
     private createEventService: CreateEventService,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private token: TokenService
   ) { }
 
   ngOnInit() {
@@ -45,6 +48,10 @@ export class CreateEventComponent implements OnInit {
       
     })
    
+  }
+
+  ngAfterViewInit() {
+    this.token.sideNav = this.sideNav;
   }
 
 }
