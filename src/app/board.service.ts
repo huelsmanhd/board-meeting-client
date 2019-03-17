@@ -24,6 +24,8 @@ export class BoardService {
     return this.http.get(baseURL, httpOptions)
   }
 
+  
+
   getUserEvents() {
     let token = sessionStorage.getItem("token");
     const httpOptions = {
