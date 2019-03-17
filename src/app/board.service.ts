@@ -35,6 +35,19 @@ export class BoardService {
     const userEventURL = `https://board-meeting-sever.herokuapp.com/event/user`
     return this.http.get(userEventURL, httpOptions)
   }
+
+  getEventByType(type) {
+    let token = sessionStorage.getItem("token");
+    let eventTypeURL = `https://board-meeting-sever.herokuapp.com/event/${type}`
+    const httpOptions = {
+      headers: new HttpHeaders ({
+        "Content-Type": "application/json",
+        "Authorization": token
+      })
+    }
+    return this.http.get(eventTypeURL, httpOptions)
+  }
+
   editUserEvents(id) {
     let token = sessionStorage.getItem("token");
     const httpOptions = {

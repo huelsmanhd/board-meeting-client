@@ -15,7 +15,6 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   loginUser(user) {
-    console.log(user);
     const loginURL2 = 'http://localhost:3000/user/login'
     const loginURL = `https://board-meeting-sever.herokuapp.com/user/login`
     return this.http.post(loginURL, user, httpOptions)
