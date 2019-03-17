@@ -30,7 +30,7 @@ import {
 
 import { 
   FormsModule, 
-  ReactiveFormsModule 
+  ReactiveFormsModule
 } from '@angular/forms';
 
 import { MatFormFieldModule } from '@angular/material/form-field';

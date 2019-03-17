@@ -46,6 +46,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
 
 
   updateEvent(id) {
+    
     console.log(this.eventForm.value);
     this.boardService.updateUserEvent(this.eventForm.value, id).subscribe(event => {
       this.getSingleEvent();
@@ -78,6 +79,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   editToggle() {
     const _editView = !this.editView
     this.editView = _editView
+
 
   }
 
