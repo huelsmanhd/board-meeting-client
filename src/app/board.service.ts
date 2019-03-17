@@ -10,6 +10,7 @@ export class BoardService {
   constructor(private http: HttpClient) { }
 
   singleEvent: number;
+  location: string;
 
   getAllEvents(){
 
@@ -73,16 +74,23 @@ export class BoardService {
     return this.http.put(baseURL, eventString, httpOptions);
   }
 
-  deleteUserEvent(id: number) {
+  deleteUserEvent(id:number) {
     let token = sessionStorage.getItem("token");
-    const httpOptions = {
-      headers: new HttpHeaders({
+    // const httpOptions = {
+    //   headers: new HttpHeaders({
+    //     "Content-Type" : "application/json",
+    //     "Authorization": token
+    //   })
+    // }
+    let baseURL = `https://board-meeting-sever.herokuapp.com/event/delete/${id}`
+    // this.http.delete(baseURL, httpOptions);
+    fetch(baseURL, {
+      method: "DELETE",
+      headers: new Headers({
         "Content-Type" : "application/json",
         "Authorization": token
       })
-    }
-    let baseURL = `https://board-meeting-sever.herokuapp.com/event/delete/${id}`
-    return this.http.delete(baseURL, httpOptions);
+    }).then(res => {console.log("test")})
 
   }
 

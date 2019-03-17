@@ -54,13 +54,27 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     this.editToggle();
   }
 
-  deleteEvent(id) {
-    this.boardService.deleteUserEvent(id).subscribe(event => {
-      this.router.navigate(["/profile"]);
-      alert("You deleted an event!");
-    })
-  }
+  deleteEvent(id:number) {
+    let token = sessionStorage.getItem("token");
+    let baseURL = `https://board-meeting-sever.herokuapp.com/event/delete/${id}`
+    // this.http.delete(baseURL, httpOptions);
+    fetch(baseURL, {
+      method: "DELETE",
+      headers: new Headers({
+        "Content-Type" : "application/json",
+        "Authorization": token
+      })
+    }).then(() => {
+      console.log(this.boardService.location)
+      if(this.boardService.location === "http://localhost:4200/events") {
+        this.router.navigate(["/events"])
+      } else if(this.boardService.location === "http://localhost:4200/profile") {
+        this.router.navigate(["/profile"])
+      }
+      })
 
+  }
+      
   editToggle() {
     const _editView = !this.editView
     this.editView = _editView
