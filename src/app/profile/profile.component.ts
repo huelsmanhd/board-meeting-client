@@ -9,7 +9,7 @@ import { TokenService } from "../token.service";
   styleUrls: ['./profile.component.css'],
   encapsulation: ViewEncapsulation.None,
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent implements OnInit, AfterViewInit {
   @ViewChild('sideNav') sideNav: ElementRef;
 
   userEvents = <any>[];
