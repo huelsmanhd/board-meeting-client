@@ -46,10 +46,6 @@ export class BoardService {
     const baseURL = `https://board-meeting-sever.herokuapp.com/event/update/${id}`;
     return this.http.put(baseURL, httpOptions);
   }
-  
-  setSingleEventId(id: number) {
-    this.singleEvent = id;
-  }
 
   findSingleEvent() {
     let token = sessionStorage.getItem("token");
