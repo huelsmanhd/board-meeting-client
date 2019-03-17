@@ -40,12 +40,14 @@ export class CreateEventComponent implements OnInit, AfterViewInit {
     let eventDate = `${year}-${month}-${date}`;
     this.eventForm.value["date"] = eventDate;
 
-    console.log(this.eventForm.value);
+    // console.log(this.eventForm.value);
     let eventString = JSON.stringify(this.eventForm.value);
     this.createEventService.createEvent(eventString).subscribe(event => {
       console.log(event);
+      this.router.navigate(["/events"]);
+      
     })
-    
+   
   }
 
   ngAfterViewInit() {

@@ -3,8 +3,8 @@
     <app-create-event></app-create-event>
   </mat-sidenav>
   <mat-sidenav-content class="main-content">
-    <ul>
-      <li>Profile List</li>
-    </ul>
+    <div class="viewEvent" *ngFor="let userEvent of userEvents">
+      <button (click)="viewEvent(userEvent.id)">(view)</button>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
