@@ -31,7 +31,7 @@
 
                 <mat-form-field appearance="outline">
                   <mat-label>Title</mat-label>
-                  <input matInput placeholder={{event.title}} formControlName="title" type="title" class="form-control" name="title">
+                  <input matInput placeholder={{event.title}} formControlName="title" type="title" class="form-control" name="title" value={{event.title}} defaultValue={{event.title}}>
                 </mat-form-field>
               
                 <mat-form-field appearance="outline">
@@ -44,29 +44,29 @@
                 </mat-form-field>
               
                 <mat-form-field appearance="outline">
-                  <input matInput [matDatepicker]="picker" placeholder={{event.date}} formControlName="date" class="form-control" name="date">
+                  <input matInput [matDatepicker]="picker" placeholder={{event.date}} formControlName="date" class="form-control" name="date" value={{event.date}} defaultValue={{event.date}}>
                   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                   <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
               
                 <mat-form-field appearance="outline">
                   <mat-label>Latitude</mat-label>
-                  <input matInput placeholder={{event.lat}}  formControlName="lat" class="form-control" name="latitude">
+                  <input matInput placeholder={{event.lat}}  formControlName="lat" class="form-control" name="latitude" value={{event.lat}} defaultValue={{event.lat}}>
                 </mat-form-field>
               
                 <mat-form-field appearance="outline">
                   <mat-label>Longitude</mat-label>
-                  <input matInput placeholder={{event.long}} formControlName="long" class="form-control" name="longitude">
+                  <input matInput placeholder={{event.long}} formControlName="long" class="form-control" name="longitude" value={{event.long}} defaultValue={{event.long}}>
                 </mat-form-field>
               
                 <mat-form-field appearance="outline">
                   <mat-label>Address</mat-label>
-                  <input matInput placeholder={{event.location}} formControlName="location" class="form-control" name="location">
+                  <input matInput placeholder={{event.location}} formControlName="location" class="form-control" name="location" value={{event.location}} defaultValue={{event.location}}>
                 </mat-form-field>
               
                 <mat-form-field appearance="outline">
                   <mat-label>Description</mat-label>
-                  <textarea matInput placeholder={{event.description}}  formControlName="description" class="form-control" name="description"></textarea>
+                  <textarea matInput placeholder={{event.description}}  formControlName="description" class="form-control" name="description" value={{event.description}} defaultValue={{event.description}}></textarea>
                 </mat-form-field>
               
                 <div class="btnBox">
