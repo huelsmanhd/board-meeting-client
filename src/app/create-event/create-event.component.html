@@ -1,6 +1,6 @@
 <mat-card class="createCard">
 
-<form [formGroup]="eventForm" (ngSubmit)="createEvent()">
+<form [formGroup]="eventForm" (ngSubmit)="createEvent(); token.closeNav()">
 
   <h2>Create Event</h2>
 
