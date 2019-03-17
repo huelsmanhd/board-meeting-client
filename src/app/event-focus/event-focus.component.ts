@@ -16,6 +16,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   eventForm: FormGroup;
   event=<any>[];
   editView: boolean = false;
+  
 
   constructor(
     private boardService: BoardService,
@@ -50,7 +51,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     this.boardService.updateUserEvent(this.eventForm.value, id).subscribe(event => {
       this.getSingleEvent();
     })
-  
+    
     this.editToggle();
   }
 
@@ -77,8 +78,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
       
   editToggle() {
     const _editView = !this.editView
-    this.editView = _editView
-
+    this.editView = _editView;
   }
 
   ngAfterViewInit() {
