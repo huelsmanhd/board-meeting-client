@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, ViewEncapsulation } from '@angular/core';
-import { getToken } from '@angular/router/src/utils/preactivation';
 import { TokenService } from "../token.service";
 import { BoardService } from '../board.service';
+import { CreateEventService } from '../create-event.service'
 import { Router } from "@angular/router"
 
 @Component({
@@ -20,6 +20,7 @@ export class EventsComponent implements OnInit, AfterViewInit {
   constructor(
     private token: TokenService,
     private boardService: BoardService,
+    private createEventService: CreateEventService,
     private router: Router
     ) { }
 

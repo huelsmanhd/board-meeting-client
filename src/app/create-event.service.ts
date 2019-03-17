@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders } from '@angular/common/http';
+import { BoardService } from './board.service'
 import { tokenKey } from '@angular/core/src/view';
 
 
@@ -7,8 +8,13 @@ import { tokenKey } from '@angular/core/src/view';
   providedIn: 'root'
 })
 export class CreateEventService {
+
+  events = <any>[];
   
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private boardService: BoardService
+    ) { }
   
   createEvent(newEvent) {
     let token = sessionStorage.getItem("token");
@@ -23,4 +29,5 @@ export class CreateEventService {
     const createURL = `https://board-meeting-sever.herokuapp.com/event/create`
     return this.http.post(createURL, newEvent, httpOptions)
   }
+
 }
