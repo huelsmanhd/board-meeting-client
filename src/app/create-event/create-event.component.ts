@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CreateEventService } from '../create-event.service'
 import { TokenService } from '../token.service';
+import { EventsComponent } from "../events/events.component";
 
 @Component({
   selector: 'app-create-event',
@@ -18,7 +19,8 @@ export class CreateEventComponent implements OnInit, AfterViewInit {
     private createEventService: CreateEventService,
     private fb: FormBuilder,
     private router: Router,
-    private token: TokenService
+    private token: TokenService,
+    public events: EventsComponent
   ) { }
 
   ngOnInit() {
@@ -33,6 +35,10 @@ export class CreateEventComponent implements OnInit, AfterViewInit {
     })
   }
 
+  closeSideNav() {
+
+  }
+
   createEvent() {
     let date =  this.eventForm.value["date"].getDate()
     let month = this.eventForm.value["date"].getMonth() + 1;
@@ -44,7 +50,7 @@ export class CreateEventComponent implements OnInit, AfterViewInit {
     let eventString = JSON.stringify(this.eventForm.value);
     this.createEventService.createEvent(eventString).subscribe(event => {
       console.log(event);
-      this.router.navigate(["/events"]);
+      this.events.getAllEvents();
       
     })
    

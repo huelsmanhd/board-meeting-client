@@ -3,6 +3,12 @@ import { TokenService } from "../token.service";
 import { BoardService } from '../board.service';
 import { CreateEventService } from '../create-event.service'
 import { Router } from "@angular/router"
+import { Injectable } from "@angular/core"
+
+
+@Injectable({
+  providedIn: 'root'
+})
 
 @Component({
   selector: 'app-events',
@@ -34,13 +40,14 @@ export class EventsComponent implements OnInit, AfterViewInit {
 
   viewEvent(id) {
     this.boardService.location = window.location.href
-    this.boardService.setSingleEventId(id);
+    this.boardService.singleEvent = id;
     this.router.navigate(["/event-focus"]);
   }
 
   getAllEvents(){
     this.boardService.getAllEvents().subscribe(events => {
       this.events = events;
+      this.events.reverse();
       console.log(events)
     });
   }

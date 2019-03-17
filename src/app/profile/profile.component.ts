@@ -27,6 +27,7 @@ export class ProfileComponent implements OnInit, AfterViewInit {
   getUserEvents() {
     this.boardService.getUserEvents().subscribe(events => {
       this.userEvents = events;
+      this.userEvents.reverse();
       console.log(this.userEvents);
     })
   }
@@ -34,7 +35,7 @@ export class ProfileComponent implements OnInit, AfterViewInit {
   viewEvent(id) {
     this.boardService.location = window.location.href;
     console.log(window.location.href)
-    this.boardService.setSingleEventId(id);
+    this.boardService.singleEvent = id;
     this.router.navigate(["/event-focus"]);
   }
 
