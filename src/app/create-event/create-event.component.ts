@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CreateEventService } from '../create-event.service'
+import { CreateEventService } from '../create-event.service',
+
 
 @Component({
   selector: 'app-create-event',
@@ -15,7 +16,8 @@ export class CreateEventComponent implements OnInit {
   constructor(
     private createEventService: CreateEventService,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+     
   ) { }
 
   ngOnInit() {
@@ -28,6 +30,10 @@ export class CreateEventComponent implements OnInit {
       location: new FormControl(),
       description: new FormControl(),
     })
+  }
+
+  closeSideNav() {
+
   }
 
   createEvent() {
