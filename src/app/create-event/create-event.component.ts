@@ -48,7 +48,8 @@ export class CreateEventComponent implements OnInit, AfterViewInit {
     let eventString = JSON.stringify(this.eventForm.value);
     this.createEventService.createEvent(eventString).subscribe(event => {
       console.log(event);
-      this.router.navigate(["/events"]);
+      this.router.navigate(["/home"]);
+      this.router.navigate(["/events"])
       
     })
    
