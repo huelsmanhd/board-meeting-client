@@ -1,29 +1,29 @@
 <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #sideNav class="sidenav" mode="over" opened="false">
-      <app-create-event></app-create-event>
-    </mat-sidenav>
-    <mat-sidenav-content class="main-content">
-      <button mat-button>Create Event</button>
-      <div class="cardDisplay">
-        <mat-card class="eventCard" *ngFor="let events of events">
-            <mat-card-header >
-              <mat-card-title class="title">{{events.title}}</mat-card-title>
-            </mat-card-header>
-            <img mat-card-image class="img-article">
-            <mat-card-content>
-              <p>Activity: {{events.type}}</p>
-              <p>Address: {{events.location}}</p>
-              <p>Date: {{events.date}}</p>
-            </mat-card-content>
-            <mat-card-footer>
-            <mat-card-actions>
-              <a mat-button routerLink="/profile" class="card-btn">Add Event</a>
-              <button mat-button color="secondary" class="card-btn"><mat-icon>edit</mat-icon>Edit</button>
-              <button mat-button color="warn" class="card-btn"><mat-icon>delete</mat-icon>Delete</button>
-              <button mat-button color="secondary" class="card-btn" (click)="viewEvent(events.id)">View Full</button>
-            </mat-card-actions>
-          </mat-card-footer>
-        </mat-card>
-      </div>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+  <mat-sidenav #sideNav class="sidenav" mode="over" opened="false">
+    <app-create-event></app-create-event>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="main-content">
+    <button mat-button>Create Event</button>
+    <div class="cardDisplay">
+      <mat-card *ngFor="let events of events">
+          <mat-card-header >
+            <mat-card-title class="title">{{events.title}}</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image class="img-article">
+          <mat-card-content>
+            <p>Activity: {{events.type}}</p>
+            <p>Address: {{events.location}}</p>
+            <p>Date: {{events.date}}</p>
+          </mat-card-content>
+          <mat-card-footer>
+          <mat-card-actions>
+            <a mat-button routerLink="/profile" class="card-btn">Attending Event</a>
+            <button mat-button color="secondary" class="card-btn" (click)="viewEvent(events.id)">View Full</button>
+          </mat-card-actions>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+  </mat-sidenav-content>
+  
+</mat-sidenav-container>
