@@ -40,4 +40,8 @@ export class TokenService {
     this.sideNav.close();
   }
 
+  public toggleSideNav() {
+    this.sideNav.toggle();
+  }
+
 }
