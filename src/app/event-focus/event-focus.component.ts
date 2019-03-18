@@ -3,8 +3,6 @@ import { BoardService } from "../board.service";
 import { Router } from "@angular/router";
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { TokenService } from "../token.service";
-import { jsonpCallbackContext } from '@angular/common/http/src/module';
-
 
 @Component({
   selector: 'app-event-focus',
@@ -25,6 +23,9 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   addCommentView: boolean = false;
   commentForm: FormGroup;
 
+  commentEditForm: FormGroup;
+  editCommentView: boolean = false;
+
   constructor(
     private boardService: BoardService,
     private router: Router,
@@ -34,6 +35,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.getSingleEvent();
+
     this.eventForm = this.fb.group({
       type: new FormControl(),
       title: new FormControl(),
@@ -43,7 +45,12 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
       location: new FormControl(),
       description: new FormControl(),
     })
+
     this.commentForm = this.fb.group({
+      comment: new FormControl()
+    })
+
+    this.commentEditForm = this.fb.group({
       comment: new FormControl()
     })
 
@@ -120,12 +127,12 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   updateComment(id) {
     let token = sessionStorage.getItem("token");
     // let id = this.boardService.singleEvent;
+    let stringComment = JSON.stringify(this.commentEditForm.value)
+    console.log(stringComment)
     let baseURL = `https://board-meeting-sever.herokuapp.com/comments/update/${id}`;
     fetch(baseURL, {
       method: "PUT",
-      body: JSON.stringify({
-        comment: this.comment
-      }),
+      body: stringComment,
       headers: new Headers({
         "Content-Type" : "application/json",
         "Authorization": token
@@ -153,6 +160,11 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   addCommentToggle() {
     const _addCommentView =!this.addCommentView
     this.addCommentView = _addCommentView
+  }
+
+  editCommentToggle() {
+    const _editCommentView =!this.editCommentView
+    this.editCommentView = _editCommentView
   }
 
   
