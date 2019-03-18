@@ -55,6 +55,7 @@ export class CreateEventComponent implements OnInit, AfterViewInit {
     })
    
   }
+  
 
   ngAfterViewInit() {
     this.token.sideNav = this.sideNav;

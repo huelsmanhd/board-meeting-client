@@ -111,20 +111,9 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   //CREATES BY EVENT ID
   createComment() {
     let token = sessionStorage.getItem("token");
-    let id = this.boardService.singleEvent;
-    console.log(this.commentForm.value)
-    let baseURL = `https://board-meeting-sever.herokuapp.com/comments/create/${id}`;
-    fetch(baseURL, {
-      method: "POST",
-      body: JSON.stringify({ comment: this.commentForm.value }),
-      headers: new Headers({
-        "Content-Type" : "application/json",
-        "Authorization": token
-      })
-    })
-    .then(res => res.json())
-    .then(comments => this.getComments())
-    
+    let commentString = JSON.stringify(this.commentForm.value);
+    this.boardService.createComment(commentString).subscribe(comment => this.getComments())
+      
   }
 
   //UPDATES BY COMMENT ID

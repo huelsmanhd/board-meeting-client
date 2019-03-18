@@ -101,4 +101,18 @@ export class BoardService {
 
   }
 
+  createComment(commentString) {
+    let token = sessionStorage.getItem("token");
+    let id = this.singleEvent;
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type" : "application/json",
+        "Authorization": token
+      })
+    }
+    console.log(commentString);
+    let baseURL = `https://board-meeting-sever.herokuapp.com/comments/create/${id}`;
+    return this.http.post(baseURL, commentString, httpOptions)
+  }
+
 }
