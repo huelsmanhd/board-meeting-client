@@ -37,8 +37,6 @@ import {
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateEventComponent } from './create-event/create-event.component';
-import { CommentsComponent } from './comments/comments.component';
-
 
 
 @NgModule({
@@ -51,7 +49,6 @@ import { CommentsComponent } from './comments/comments.component';
     EventFocusComponent,
     HomeComponent,
     CreateEventComponent,
-    CommentsComponent
   ],
   imports: [
     BrowserModule,

@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
     .subscribe(res => {
       // console.log(res)
       this.tokenService.storeSession(res["user"].admin, res["sessionToken"], res["user"].username)
-      this.router.navigate(["/events"]);
+      this.router.navigate(["/home"]);
     }) 
   }
   signup() {
@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
     .subscribe(res => {
       
       this.tokenService.storeSession(res["user"].admin, res["sessionToken"], res["user"].username)
-      this.router.navigate(["/events"]);
+      this.router.navigate(["/home"]);
     })
   }
   newUser() {
