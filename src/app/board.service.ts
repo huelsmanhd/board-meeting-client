@@ -89,12 +89,6 @@ export class BoardService {
 
   deleteUserEvent(id:number) {
     let token = sessionStorage.getItem("token");
-    // const httpOptions = {
-    //   headers: new HttpHeaders({
-    //     "Content-Type" : "application/json",
-    //     "Authorization": token
-    //   })
-    // }
     let baseURL = `https://board-meeting-sever.herokuapp.com/event/delete/${id}`
     // this.http.delete(baseURL, httpOptions);
     fetch(baseURL, {
@@ -105,6 +99,20 @@ export class BoardService {
       })
     }).then(res => {console.log("test")})
 
+  }
+
+  createComment(commentString) {
+    let token = sessionStorage.getItem("token");
+    let id = this.singleEvent;
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type" : "application/json",
+        "Authorization": token
+      })
+    }
+    console.log(commentString);
+    let baseURL = `https://board-meeting-sever.herokuapp.com/comments/create/${id}`;
+    return this.http.post(baseURL, commentString, httpOptions)
   }
 
 }
