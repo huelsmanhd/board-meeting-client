@@ -89,12 +89,6 @@ export class BoardService {
 
   deleteUserEvent(id:number) {
     let token = sessionStorage.getItem("token");
-    // const httpOptions = {
-    //   headers: new HttpHeaders({
-    //     "Content-Type" : "application/json",
-    //     "Authorization": token
-    //   })
-    // }
     let baseURL = `https://board-meeting-sever.herokuapp.com/event/delete/${id}`
     // this.http.delete(baseURL, httpOptions);
     fetch(baseURL, {

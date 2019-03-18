@@ -107,6 +107,9 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     let baseURL = `https://board-meeting-sever.herokuapp.com/comments/create/${id}`;
     fetch(baseURL, {
       method: "POST",
+      body: JSON.stringify({
+        comment: this.comment
+      }),
       headers: new Headers({
         "Content-Type" : "application/json",
         "Authorization": token
