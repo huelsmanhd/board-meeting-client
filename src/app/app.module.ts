@@ -36,6 +36,7 @@ import {
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateEventComponent } from './create-event/create-event.component';
+import { CommentsComponent } from './comments/comments.component';
 
 
 
@@ -48,7 +49,8 @@ import { CreateEventComponent } from './create-event/create-event.component';
     ProfileComponent,
     EventFocusComponent,
     HomeComponent,
-    CreateEventComponent
+    CreateEventComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,
