@@ -24,7 +24,6 @@
         </div>
 
         <div *ngIf="editView !== false">
-
             <form [formGroup]="eventForm" (submit)="updateEvent(event.id)">
 
                 <h2>Edit Event</h2>
@@ -75,7 +74,29 @@
                 </div>
 
             </form>
+        </div>
 
+        <div>
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+
+                <mat-panel-title>
+                  View Comments
+                </mat-panel-title>
+
+                <mat-panel-description>
+                  HMMMmmmMMMMMMmmmm
+                </mat-panel-description>
+
+              </mat-expansion-panel-header>
+
+              <p>
+                Here's some test text doodly doodly doo
+              </p>
+
+            </mat-expansion-panel>
+          </mat-accordion>
         </div>
 
     </mat-sidenav-content>
