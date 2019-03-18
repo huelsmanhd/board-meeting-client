@@ -15,6 +15,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   @ViewChild('sideNav') sideNav: ElementRef;
   eventForm: FormGroup;
   event=<any>[];
+  comments=<any>[];
   editView: boolean = false;
 
   constructor(
@@ -35,6 +36,8 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
       location: new FormControl(),
       description: new FormControl(),
     })
+
+    this.getComments()
   }
 
   getSingleEvent() {
@@ -42,6 +45,22 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
       this.event = singleEvent
       console.log(singleEvent);
     })
+  }
+
+  getComments() {
+    let token = sessionStorage.getItem("token");
+    let id = this.boardService.singleEvent;
+    console.log(id);
+    let baseURL = `https://board-meeting-sever.herokuapp.com/comments/all/${id}`
+    fetch(baseURL, {
+      method: "GET",
+      headers: new Headers({
+        "Content-Type" : "application/json",
+        "Authorization": token
+      })
+    })
+    .then(res => res.json())
+    .then(json => this.comments = json);
   }
 
 
