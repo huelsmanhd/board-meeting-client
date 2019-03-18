@@ -11,8 +11,6 @@ import { EventsComponent } from './events/events.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EventFocusComponent } from './event-focus/event-focus.component';
 import { HomeComponent } from './home/home.component';
-import { CarouselModule } from "ngx-bootstrap/carousel";
-
 
 import { 
   MatToolbarModule, 
@@ -27,7 +25,8 @@ import {
   MatDatepickerModule,
   MatNativeDateModule,
   MatSidenavModule,
-  MatDialogModule
+  MatDialogModule,
+  MatExpansionModule
 } from '@angular/material';
 
 import { 
@@ -76,8 +75,7 @@ import { CommentsComponent } from './comments/comments.component';
     MatNativeDateModule,
     MatSidenavModule,
     MatDialogModule,
-    CarouselModule.forRoot()
-    
+    MatExpansionModule
     
   ],
   providers: [],
