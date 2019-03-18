@@ -25,7 +25,8 @@ export class ProfileComponent implements OnInit, AfterViewInit {
   }
 
   getUserEvents() {
-    this.boardService.getUserEvents().subscribe(events => {
+    this.boardService.getUserEvents()
+    .subscribe(events => {
       this.userEvents = events;
       this.userEvents.reverse();
       console.log(this.userEvents);

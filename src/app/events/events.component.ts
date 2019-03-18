@@ -20,7 +20,7 @@ export class EventsComponent implements OnInit, AfterViewInit {
   @ViewChild('sideNav') sideNav: ElementRef;
   sessionToken: string = "";
   admin: string = "";
-
+  type: "";
   events = <any>[];
 
   constructor(
@@ -46,12 +46,22 @@ export class EventsComponent implements OnInit, AfterViewInit {
 
   getAllEvents(){
     this.boardService.getAllEvents().subscribe(events => {
-      this.events = events;
+      this.events = events
       this.events.reverse();
-      console.log(events)
+      console.log(events);
     });
   }
   
+  getByType(type) {
+    console.log(type)
+    this.boardService.getEventByType(type)
+    .subscribe(events => {
+      console.log(events)
+      this.events = events;
+      this.events.reverse();
+    })
+  }
+
   ngAfterViewInit() {
     this.token.sideNav = this.sideNav;
   }
