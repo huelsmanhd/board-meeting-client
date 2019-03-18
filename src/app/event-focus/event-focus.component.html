@@ -91,21 +91,45 @@
 
               </mat-expansion-panel-header>
 
+              <button mat-button class="addCommentBtn" (click)="addCommentToggle()">Add Comment</button>
+              <br>
+
+              <div *ngIf="addCommentView === true">
+
+                <form [formGroup]="commentForm" (ngSubmit)="createComment()">
+                  <textarea matInput formControlName="comment" placeholder="Make a comment..." type="text" class="form-control" name="addComment" required></textarea>
+
+                  <button mat-button type="submit">Save Comment</button>
+                  
+                </form>
+
+
+
+              </div>
+
+
               <div *ngFor="let comments of comments">
+
                 {{comments.owner}}: {{comments.comment}}
+
+                    <button mat-button (click)="deleteComment(comments.id)">Delete Comment</button>
+              
               </div>
               
-              <!-- <table mat-table>
+              <!-- <table mat-table [dataSource]="comments">
 
-                <ng-container matColumnDef="owner">
+                <ng-container matColumnDef="user">
                   <th mat-header-cell *matHeaderCellDef> User </th>
-                  <td mat-cell>{{comments.owner}}</td>
+                  <td mat-cell *matCellDef="let comments">{{comments.owner}}</td>
                 </ng-container>
 
                 <ng-container matColumnDef="comment">
                   <th mat-header-cell *matHeaderCellDef> Comment </th>
-                  <td mat-cell>{{comments.comment}}</td>
+                  <td mat-cell *matCellDef="let comments">{{comments.comment}}</td>
                 </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="dispayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
               </table> -->
 
