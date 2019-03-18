@@ -12,7 +12,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { EventFocusComponent } from './event-focus/event-focus.component';
 import { HomeComponent } from './home/home.component';
 
-
 import { 
   MatToolbarModule, 
   MatButtonModule, 
@@ -26,7 +25,8 @@ import {
   MatDatepickerModule,
   MatNativeDateModule,
   MatSidenavModule,
-  MatDialogModule
+  MatDialogModule,
+  MatExpansionModule
 } from '@angular/material';
 
 import { 
@@ -39,7 +39,6 @@ import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateEventComponent } from './create-event/create-event.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +48,7 @@ import { CreateEventComponent } from './create-event/create-event.component';
     ProfileComponent,
     EventFocusComponent,
     HomeComponent,
-    CreateEventComponent
+    CreateEventComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,8 +72,8 @@ import { CreateEventComponent } from './create-event/create-event.component';
     MatNativeDateModule,
     MatSidenavModule,
     MatDialogModule,
-    
-    
+    MatExpansionModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
