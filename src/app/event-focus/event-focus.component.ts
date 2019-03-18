@@ -74,15 +74,26 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
       }
       })
 
-  }
-      
+  }   
   editToggle() {
     const _editView = !this.editView
     this.editView = _editView;
   }
-
   ngAfterViewInit() {
     this.token.sideNav = this.sideNav;
+  }
+
+  getComments() {
+    let token = sessionStorage.getItem("token");
+    let id = this.boardService.singleEvent;
+    let baseURL = `https://board-meeting-sever.herokuapp.com/comments/all/${id}`
+    fetch(baseURL, {
+      method: "GET",
+      headers: new Headers({
+        "Content-Type" : "application/json",
+        "Authorization": token
+      })
+    })
   }
 
 }
