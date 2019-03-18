@@ -3,12 +3,21 @@
    margin: 2em 2em;
 }
 .sidenav-container {
+    z-index: 0 !important;
     position: fixed;
-    top: 3.1em;
-    bottom: 0;
+    top: 3em;
+    bottom: 0em;
     left: 0;
     right: 0;
-    height: 100vh;
+    height: 100%;
+}
+.mat-sidenav-content {
+    overflow: visible;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 20px;
+
 }
 
 .sidenav {
