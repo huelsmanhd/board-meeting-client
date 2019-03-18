@@ -74,7 +74,7 @@ import { CreateEventComponent } from './create-event/create-event.component';
     MatSidenavModule,
     MatDialogModule,
     MatExpansionModule
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]
