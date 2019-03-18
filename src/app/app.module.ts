@@ -40,7 +40,6 @@ import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateEventComponent } from './create-event/create-event.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -17,7 +17,6 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   event=<any>[];
   comments=<any>[];
   editView: boolean = false;
-  
 
   constructor(
     private boardService: BoardService,
@@ -71,7 +70,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     this.boardService.updateUserEvent(this.eventForm.value, id).subscribe(event => {
       this.getSingleEvent();
     })
-    
+  
     this.editToggle();
   }
 
