@@ -46,9 +46,9 @@ export class EventsComponent implements OnInit, AfterViewInit {
 
   getAllEvents(){
     this.boardService.getAllEvents().subscribe(events => {
-      this.events = events;
+      this.events = events
       this.events.reverse();
-      console.log(events)
+      console.log(events);
     });
   }
   

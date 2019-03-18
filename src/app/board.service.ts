@@ -36,6 +36,7 @@ export class BoardService {
     }
     const userEventURL = `https://board-meeting-sever.herokuapp.com/event/user`
     return this.http.get(userEventURL, httpOptions)
+    
   }
 
   getEventByType(type) {
