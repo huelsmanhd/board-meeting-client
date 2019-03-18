@@ -24,6 +24,8 @@ export class BoardService {
     return this.http.get(baseURL, httpOptions)
   }
 
+  
+
   getUserEvents() {
     let token = sessionStorage.getItem("token");
     const httpOptions = {
@@ -34,6 +36,7 @@ export class BoardService {
     }
     const userEventURL = `https://board-meeting-sever.herokuapp.com/event/user`
     return this.http.get(userEventURL, httpOptions)
+    
   }
 
   getEventByType(type) {

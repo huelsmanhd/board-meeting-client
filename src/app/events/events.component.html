@@ -6,11 +6,17 @@
   <mat-sidenav-content class="main-content">
 
     <h2>Select Your Sport</h2>
+    <br>
+    <br>
+    
     <select [(ngModel)]="type" (change)="getByType(type)" >
       <option value="Skate">Skate</option>
       <option value="Surf">Surf</option>
       <option value="Snow">Snow</option>
     </select>
+
+    <br>
+    <br>
     
     <div class="cardDisplay">
       <mat-card *ngFor="let events of events">
