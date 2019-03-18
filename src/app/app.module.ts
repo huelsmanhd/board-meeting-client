@@ -26,7 +26,8 @@ import {
   MatNativeDateModule,
   MatSidenavModule,
   MatDialogModule,
-  MatExpansionModule
+  MatExpansionModule,
+  MatTableModule
 } from '@angular/material';
 
 import { 
@@ -72,8 +73,9 @@ import { CreateEventComponent } from './create-event/create-event.component';
     MatNativeDateModule,
     MatSidenavModule,
     MatDialogModule,
-    MatExpansionModule
-
+    MatExpansionModule,
+    MatTableModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
