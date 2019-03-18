@@ -3,6 +3,7 @@ import { BoardService } from "../board.service";
 import { Router } from "@angular/router";
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { TokenService } from "../token.service";
+import { jsonpCallbackContext } from '@angular/common/http/src/module';
 
 
 @Component({
@@ -19,6 +20,10 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
 
   comment: string = '';
   editView: boolean = false;
+
+  displayedColumns: string[] = ['user', 'comment']
+  addCommentView: boolean = false;
+  commentForm: FormGroup;
 
   constructor(
     private boardService: BoardService,
@@ -37,6 +42,9 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
       long: new FormControl(),
       location: new FormControl(),
       description: new FormControl(),
+    })
+    this.commentForm = this.fb.group({
+      comment: new FormControl()
     })
 
     this.getComments()
@@ -104,15 +112,19 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   createComment() {
     let token = sessionStorage.getItem("token");
     let id = this.boardService.singleEvent;
+    console.log(this.commentForm.value)
     let baseURL = `https://board-meeting-sever.herokuapp.com/comments/create/${id}`;
     fetch(baseURL, {
       method: "POST",
+      body: JSON.stringify({ comment: this.commentForm.value }),
       headers: new Headers({
         "Content-Type" : "application/json",
         "Authorization": token
       })
     })
-    .then(() => this.getComments())
+    .then(res => res.json())
+    .then(comments => this.getComments())
+    
   }
 
   //UPDATES BY COMMENT ID
@@ -147,6 +159,11 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
       })
     })
     .then(() => this.getComments())
+  }
+
+  addCommentToggle() {
+    const _addCommentView =!this.addCommentView
+    this.addCommentView = _addCommentView
   }
 
   
