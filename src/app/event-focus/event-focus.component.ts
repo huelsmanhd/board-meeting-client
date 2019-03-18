@@ -15,6 +15,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   @ViewChild('sideNav') sideNav: ElementRef;
   eventForm: FormGroup;
   event=<any>[];
+  comments=<any>[];
   editView: boolean = false;
 
   constructor(
@@ -93,6 +94,10 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
         "Content-Type" : "application/json",
         "Authorization": token
       })
+    })
+    .then(res => res.json())
+    .then(comments => {
+      this.comments = comments;
     })
   }
 
