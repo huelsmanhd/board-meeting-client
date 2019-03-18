@@ -91,9 +91,23 @@
 
               </mat-expansion-panel-header>
 
-              <p>
-                Here's some test text doodly doodly doo
-              </p>
+              <div *ngFor="let comments of comments">
+                {{comments.owner}}: {{comments.comment}}
+              </div>
+              
+              <!-- <table mat-table>
+
+                <ng-container matColumnDef="owner">
+                  <th mat-header-cell *matHeaderCellDef> User </th>
+                  <td mat-cell>{{comments.owner}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="comment">
+                  <th mat-header-cell *matHeaderCellDef> Comment </th>
+                  <td mat-cell>{{comments.comment}}</td>
+                </ng-container>
+
+              </table> -->
 
             </mat-expansion-panel>
           </mat-accordion>
