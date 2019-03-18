@@ -35,3 +35,12 @@
     float: left;
     /* float: left; */
 }
+
+.addCommentBtn {
+    position: relative;
+    float: right;
+}
+
+table {
+    width: 100%;
+  }

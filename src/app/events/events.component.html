@@ -9,7 +9,8 @@
     <br>
     <br>
     
-    <select [(ngModel)]="type" (change)="getByType(type)" >
+    <select [(ngModel)]="type" (change)="getByType(type)">
+      <option value="all">All</option>
       <option value="Skate">Skate</option>
       <option value="Surf">Surf</option>
       <option value="Snow">Snow</option>

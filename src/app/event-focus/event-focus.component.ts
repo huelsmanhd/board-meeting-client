@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { TokenService } from "../token.service";
 import { HttpClient } from '@angular/common/http';
+import { jsonpCallbackContext } from '@angular/common/http/src/module';
 
 
 @Component({
@@ -19,10 +20,14 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   comments=<any>[];
   comment: string = '';
   editView: boolean = false;
-  lat = event['lat'];
-  lon = event['long'];
+  lat = this.eventForm['lat'];
+  lon = this.eventForm['long'];
   key = '00726991e168c5c949d3066d0bc61089';
   baseWeatherURL = `http://api.openweathermap.org/data/2.5/forecast?`
+
+  displayedColumns: string[] = ['user', 'comment']
+  addCommentView: boolean = false;
+  commentForm: FormGroup;
 
   constructor(
     private boardService: BoardService,
@@ -42,6 +47,9 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
       long: new FormControl(),
       location: new FormControl(),
       description: new FormControl(),
+    })
+    this.commentForm = this.fb.group({
+      comment: new FormControl()
     })
 
     this.getComments()
@@ -95,12 +103,12 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
 
   }
 
-  showWeather(lat, lon, key, weatherURL) {
-    this.fetchWeather(lat, lon, key, weatherURL)
-    // .subscribe(res => {
-    //   this.
-    // })
-  }
+  // showWeather(weatherURL) {
+  //   this.fetchWeather(weatherURL)
+  //   .subscribe(res => {
+  //     this.
+  //   })
+  // }
 
   //ALL FUNCTIONALITY FOR COMMENTS
 
@@ -123,16 +131,9 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   //CREATES BY EVENT ID
   createComment() {
     let token = sessionStorage.getItem("token");
-    let id = this.boardService.singleEvent;
-    let baseURL = `https://board-meeting-sever.herokuapp.com/comments/create/${id}`;
-    fetch(baseURL, {
-      method: "POST",
-      headers: new Headers({
-        "Content-Type" : "application/json",
-        "Authorization": token
-      })
-    })
-    .then(() => this.getComments())
+    let commentString = JSON.stringify(this.commentForm.value);
+    this.boardService.createComment(commentString).subscribe(comment => this.getComments())
+      
   }
 
   //UPDATES BY COMMENT ID
@@ -167,6 +168,11 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
       })
     })
     .then(() => this.getComments())
+  }
+
+  addCommentToggle() {
+    const _addCommentView =!this.addCommentView
+    this.addCommentView = _addCommentView
   }
 
   

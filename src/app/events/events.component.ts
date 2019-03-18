@@ -53,13 +53,16 @@ export class EventsComponent implements OnInit, AfterViewInit {
   }
   
   getByType(type) {
-    console.log(type)
-    this.boardService.getEventByType(type)
-    .subscribe(events => {
-      console.log(events)
-      this.events = events;
-      this.events.reverse();
-    })
+    if(type === "all") {
+      this.getAllEvents();
+    } else {
+      this.boardService.getEventByType(type)
+      .subscribe(events => {
+        console.log(events)
+        this.events = events;
+        this.events.reverse();
+      })
+    }
   }
 
   ngAfterViewInit() {
