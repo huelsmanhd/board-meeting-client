@@ -25,7 +25,8 @@ import {
   MatDatepickerModule,
   MatNativeDateModule,
   MatSidenavModule,
-  MatDialogModule
+  MatDialogModule,
+  MatExpansionModule
 } from '@angular/material';
 
 import { 
@@ -48,7 +49,7 @@ import { CreateEventComponent } from './create-event/create-event.component';
     ProfileComponent,
     EventFocusComponent,
     HomeComponent,
-    CreateEventComponent
+    CreateEventComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,7 +72,8 @@ import { CreateEventComponent } from './create-event/create-event.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSidenavModule,
-    MatDialogModule
+    MatDialogModule,
+    MatExpansionModule
     
   ],
   providers: [],
