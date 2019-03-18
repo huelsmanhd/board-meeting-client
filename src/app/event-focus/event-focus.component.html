@@ -100,7 +100,7 @@
                   <textarea matInput formControlName="comment" placeholder="Make a comment..." type="text" class="form-control" name="addComment" required></textarea>
 
                   <button mat-button type="submit">Save Comment</button>
-                  
+
                 </form>
 
 
@@ -112,7 +112,18 @@
 
                 {{comments.owner}}: {{comments.comment}}
 
-                    <button mat-button (click)="deleteComment(comments.id)">Delete Comment</button>
+                <div *ngIf="editCommentView === true">
+                  <form [formGroup]="commentEditForm" (ngSubmit)="updateComment(comments.id)">
+                    <textarea matInput formControlName="comment" placeholder="Edit comment..." type="text" class="form-control" name="editComment" required></textarea>
+                    
+                    <button mat-button type="submit">Save Edits</button>
+
+                  </form>
+                </div>
+
+                <button mat-button (click)="editCommentToggle()">Edit Comment</button>
+
+                <button mat-button (click)="deleteComment(comments.id)">Delete Comment</button>
               
               </div>
               
