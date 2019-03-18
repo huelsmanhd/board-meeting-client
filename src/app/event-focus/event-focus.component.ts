@@ -16,6 +16,8 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   eventForm: FormGroup;
   event=<any>[];
   comments=<any>[];
+
+  comment: string = '';
   editView: boolean = false;
 
   constructor(
@@ -39,33 +41,13 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
 
     this.getComments()
   }
-
   getSingleEvent() {
     this.boardService.findSingleEvent().subscribe(singleEvent => {
       this.event = singleEvent
       console.log(singleEvent);
     })
   }
-
-  getComments() {
-    let token = sessionStorage.getItem("token");
-    let id = this.boardService.singleEvent;
-    console.log(id);
-    let baseURL = `https://board-meeting-sever.herokuapp.com/comments/all/${id}`
-    fetch(baseURL, {
-      method: "GET",
-      headers: new Headers({
-        "Content-Type" : "application/json",
-        "Authorization": token
-      })
-    })
-    .then(res => res.json())
-    .then(json => this.comments = json);
-  }
-
-
   updateEvent(id) {
-    
     console.log(this.eventForm.value);
     this.boardService.updateUserEvent(this.eventForm.value, id).subscribe(event => {
       this.getSingleEvent();
@@ -73,7 +55,6 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   
     this.editToggle();
   }
-
   deleteEvent(id:number) {
     let token = sessionStorage.getItem("token");
     let baseURL = `https://board-meeting-sever.herokuapp.com/event/delete/${id}`
@@ -92,7 +73,6 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
         this.router.navigate(["/profile"])
       }
       })
-
   }   
   editToggle() {
     const _editView = !this.editView
@@ -102,9 +82,13 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     this.token.sideNav = this.sideNav;
   }
 
+  //ALL FUNCTIONALITY FOR COMMENTS
+
+  //GETS ALL COMMENTS BY EVENT ID
   getComments() {
     let token = sessionStorage.getItem("token");
     let id = this.boardService.singleEvent;
+    console.log(id);
     let baseURL = `https://board-meeting-sever.herokuapp.com/comments/all/${id}`
     fetch(baseURL, {
       method: "GET",
@@ -114,9 +98,57 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
       })
     })
     .then(res => res.json())
-    .then(comments => {
-      this.comments = comments;
-    })
+    .then(json => this.comments = json);
   }
+  //CREATES BY EVENT ID
+  createComment() {
+    let token = sessionStorage.getItem("token");
+    let id = this.boardService.singleEvent;
+    let baseURL = `https://board-meeting-sever.herokuapp.com/comments/create/${id}`;
+    fetch(baseURL, {
+      method: "POST",
+      headers: new Headers({
+        "Content-Type" : "application/json",
+        "Authorization": token
+      })
+    })
+    .then(() => this.getComments())
+  }
+
+  //UPDATES BY COMMENT ID
+  updateComment(id) {
+    let token = sessionStorage.getItem("token");
+    // let id = this.boardService.singleEvent;
+    let baseURL = `https://board-meeting-sever.herokuapp.com/comments/update/${id}`;
+    fetch(baseURL, {
+      method: "PUT",
+      body: JSON.stringify({
+        comment: this.comment
+      }),
+      headers: new Headers({
+        "Content-Type" : "application/json",
+        "Authorization": token
+      })
+    })
+    .then(res => res.json())
+    .then(comment => this.getComments());
+  }
+
+  //DELETE COMMENT BY COMMENT ID
+  deleteComment(id) {
+    let token = sessionStorage.getItem("token");
+    // let id = this.boardService.singleEvent;
+    let baseURL = `https://board-meeting-sever.herokuapp.com/comments/delete/${id}`;
+    fetch(baseURL, {
+      method: "DELETE",
+      headers: new Headers({
+        "Content-Type" : "application/json",
+        "Authorization": token
+      })
+    })
+    .then(() => this.getComments())
+  }
+
+  
 
 }
