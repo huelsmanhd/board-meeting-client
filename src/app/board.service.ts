@@ -72,7 +72,7 @@ export class BoardService {
         "Authorization": token
       })
     }
-    const baseURL = `https://board-meeting-sever.herokuapp.com/event/event/${id}`
+    const baseURL = `https://board-meeting-sever.herokuapp.com/event/event/${this.singleEvent}`
     return this.http.get(baseURL, httpOptions);
   }
   
