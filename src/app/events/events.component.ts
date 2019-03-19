@@ -4,6 +4,7 @@ import { BoardService } from '../board.service';
 import { CreateEventService } from '../create-event.service'
 import { Router } from "@angular/router"
 import { Injectable } from "@angular/core"
+import { puts } from 'util';
 
 
 @Injectable({
@@ -68,4 +69,6 @@ export class EventsComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     this.token.sideNav = this.sideNav;
   }
+
+  
 }
