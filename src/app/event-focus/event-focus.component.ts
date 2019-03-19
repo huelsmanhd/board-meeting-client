@@ -19,12 +19,15 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   comment: string = '';
   editView: boolean = false;
 
-  displayedColumns: string[] = ['user', 'comment']
+ 
+
+  displayedColumns: string[] = ['user', 'comment', 'buttons']
   addCommentView: boolean = false;
   commentForm: FormGroup;
 
   commentEditForm: FormGroup;
   editCommentView: boolean = false;
+  editCommentViewArray = <any>[];
 
   constructor(
     private boardService: BoardService,
@@ -113,7 +116,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
       })
     })
     .then(res => res.json())
-    .then(json => this.comments = json);
+    .then(json => this.comments = json)
   }
   //CREATES BY EVENT ID
   createComment() {
@@ -160,11 +163,13 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   addCommentToggle() {
     const _addCommentView =!this.addCommentView
     this.addCommentView = _addCommentView
+    
   }
 
-  editCommentToggle() {
+  editCommentToggle(commentIndex) {
     const _editCommentView =!this.editCommentView
     this.editCommentView = _editCommentView
+    console.log(commentIndex)
   }
 
   

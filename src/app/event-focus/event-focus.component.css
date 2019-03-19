@@ -10,14 +10,24 @@
     left: 0;
     right: 0;
     height: 100%;
+    overflow: scroll;
 }
 .mat-sidenav-content {
-    overflow: visible;
+    overflow: scroll;
     width: 90%;
     margin: auto;
     margin-bottom: 20px;
     padding: 20px;
 
+}
+
+.eventBtn {
+    position: relative;
+    /* float: right; */
+}
+
+mat-accordian {
+    width: 100%;
 }
 
 .sidenav {
