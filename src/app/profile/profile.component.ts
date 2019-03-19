@@ -35,8 +35,9 @@ export class ProfileComponent implements OnInit, AfterViewInit {
 
   viewEvent(id) {
     this.boardService.location = window.location.href;
-    console.log(window.location.href)
-    this.boardService.singleEvent = id;
+    // console.log(window.location.href)
+    // this.boardService.singleEvent = id;
+    sessionStorage.setItem("id", id);
     this.router.navigate(["/event-focus"]);
   }
 

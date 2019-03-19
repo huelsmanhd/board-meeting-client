@@ -1,7 +1,7 @@
 <div *ngIf="editView === true">
     
 </div>
-<mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container class="sidenav-container" >
     <mat-sidenav #sideNav class="sidenav" mode="over" opened="false">
         <app-create-event></app-create-event>
     </mat-sidenav>
@@ -16,7 +16,7 @@
             <p>{{event.long}}</p>
             <p>{{event.description}}</p>
             
-            <button *ngIf="event.user.username === editButtonCheck()" mat-button (click)="editToggle()">Edit</button>
+            <button  *ngIf="event.user.username === editButtonCheck()" mat-button (click)="editToggle()">Edit</button>
             <button *ngIf="event.user.username === editButtonCheck() || deleteButtonCheck()" mat-button (click)="deleteEvent(event.id)">Delete Event</button>
         
         </div>

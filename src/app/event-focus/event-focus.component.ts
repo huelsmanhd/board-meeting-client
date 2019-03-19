@@ -68,15 +68,28 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   }
   getSingleEvent() {
     // let eventId = sessionStorage.getItem("singleEvent");
-    // if(eventId) {
-
-    // }
-    this.boardService.findSingleEvent().subscribe(singleEvent => {
+    let token = sessionStorage.getItem("token");
+    let id = sessionStorage.getItem("id");
+    console.log(id);
+    let baseURL = `https://board-meeting-sever.herokuapp.com/event/event/${id}`
+    fetch(baseURL, {
+      method: "GET",
+      headers: new Headers({
+        "Content-Type" : "application/json",
+        "Authorization": token
+      })
+    })
+    .then(res => res.json())
+    .then(singleEvent => {
       this.event = singleEvent
+    })
+    // let id = sessionStorage.getItem("id");
+    // this.boardService.findSingleEvent().subscribe(singleEvent => {
+    //   this.event = singleEvent
       // sessionStorage.setItem("count", singleEvent["count"])
       // sessionStorage.setItem("singleEvent", singleEvent);
-      console.log(singleEvent);
-    })
+      // console.log(singleEvent);
+    // })
   }
   updateEvent(id) {
     console.log(this.eventForm.value);
@@ -148,19 +161,10 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     .then(x => {
       x.forEach(test => {
         this.editCommentViewArray[`${test.id}`] = false;
-      }, () => console.log(this.comments))
-      
-    
+      })
     })
 
-    .then(log => console.log(this.editCommentViewArray))
-
   }
-
-  // this.editCommentViewArray[`${this.comments.id}`] = false
-
-  // this.editCommentViewArray[`${commentIndex.id}`] = "test";
-  // console.log(this.editCommentViewArray)
 
   //CREATES BY EVENT ID
   createComment() {
@@ -228,5 +232,8 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
       return true
     }
   }
+  // navigateAway() {
+  //   this.router.navigate[("/events")]
+  // }
 
 }
