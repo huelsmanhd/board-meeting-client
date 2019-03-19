@@ -3,10 +3,9 @@
    margin: 2em 2em;
 }
 .sidenav-container {
-    z-index: 0 !important;
     position: fixed;
-    top: 3em;
-    bottom: 0em;
+    top: 3.1em;
+    bottom: 0;
     left: 0;
     right: 0;
     height: 100%;
