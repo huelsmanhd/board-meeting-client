@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { Router, CanActivate } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +12,20 @@ export class TokenService {
   public sideNav: any;
   
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, public jwtHelper: JwtHelperService, public router: Router) { }
+
+  public isAuthenticated(): boolean {
+    const token = sessionStorage.getItem('token');
+    return !this.jwtHelper.isTokenExpired(token)
+  }
+
+  public canActivate(): boolean  {
+    if (!this.isAuthenticated()) {
+      this.router.navigate(['/login']);
+      return false;
+    }
+    return true;
+  }
 
   storeSession( admin, token, username ) {
     sessionStorage.setItem('admin', admin)
