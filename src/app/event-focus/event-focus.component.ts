@@ -25,12 +25,15 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   // key = '00726991e168c5c949d3066d0bc61089';
   // baseWeatherURL = `http://api.openweathermap.org/data/2.5/forecast?`
 
-  displayedColumns: string[] = ['user', 'comment']
+ 
+
+  displayedColumns: string[] = ['user', 'comment', 'buttons']
   addCommentView: boolean = false;
   commentForm: FormGroup;
 
   commentEditForm: FormGroup;
   editCommentView: boolean = false;
+  editCommentViewArray = <any>{};
 
   constructor(
     private boardService: BoardService,
@@ -141,11 +144,24 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
       })
     })
     .then(res => res.json())
-    .then(json => {
-      this.comments = json
-      console.log(this.comments)
+    .then(json => this.comments = json)
+    .then(x => {
+      x.forEach(test => {
+        this.editCommentViewArray[`${test.id}`] = false;
+      }, () => console.log(this.comments))
+      
+    
     })
+
+    .then(log => console.log(this.editCommentViewArray))
+
   }
+
+  // this.editCommentViewArray[`${this.comments.id}`] = false
+
+  // this.editCommentViewArray[`${commentIndex.id}`] = "test";
+  // console.log(this.editCommentViewArray)
+
   //CREATES BY EVENT ID
   createComment() {
     let token = sessionStorage.getItem("token");
@@ -191,13 +207,15 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   addCommentToggle() {
     const _addCommentView =!this.addCommentView
     this.addCommentView = _addCommentView
+    
   }
 
-  editCommentToggle() {
-    const _editCommentView =!this.editCommentView
-    this.editCommentView = _editCommentView
-  }
-
-  
+  editCommentToggle(commentIndex) {
+    const _editCommentView =!this.editCommentViewArray[`${commentIndex}`]
+    this.editCommentViewArray[`${commentIndex}`] = _editCommentView
+    console.log(commentIndex)
+    // this.editCommentViewArray[`${commentIndex.id}`] = false;
+    // console.log(this.editCommentViewArray)
+  } 
 
 }
