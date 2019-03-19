@@ -11,6 +11,7 @@ import { EventsComponent } from './events/events.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EventFocusComponent } from './event-focus/event-focus.component';
 import { HomeComponent } from './home/home.component';
+import { JwtModule, JwtHelperService } from '@auth0/angular-jwt';
 
 import { 
   MatToolbarModule, 
@@ -38,6 +39,7 @@ import {
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateEventComponent } from './create-event/create-event.component';
+import { getToken } from '@angular/router/src/utils/preactivation';
 
 
 @NgModule({
@@ -74,10 +76,11 @@ import { CreateEventComponent } from './create-event/create-event.component';
     MatSidenavModule,
     MatDialogModule,
     MatExpansionModule,
-    MatTableModule
-    
+    MatTableModule,
+    JwtModule
+
   ],
-  providers: [],
+  providers: [JwtHelperService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
