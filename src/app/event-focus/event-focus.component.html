@@ -7,14 +7,8 @@
     </mat-sidenav>
     
     <mat-sidenav-content class="main-content">
-      <mat-card>
-
         <div class="eventWrapper" *ngIf="editView === false">
-
-            <mat-card-header >
-              <mat-card-title class="title">{{event.title}}</mat-card-title>
-            </mat-card-header>
-
+            <h2>{{event.title}}</h2>
             <p>{{event.type}}</p>
             <p>{{event.date}}</p>
             <p>{{event.location}}</p>
@@ -22,16 +16,13 @@
             <p>{{event.long}}</p>
             <p>{{event.description}}</p>
             
-            <button class="eventBtn" mat-button (click)="editToggle()">Edit</button>
-            <button class="eventBtn" mat-button (click)="deleteEvent(event.id)">Delete Event</button>
+            <button mat-button (click)="editToggle()">Edit</button>
+            <button mat-button (click)="deleteEvent(event.id)">Delete Event</button>
         
         </div>
-
         <div *ngIf="editView !== false">
             <form [formGroup]="eventForm" (submit)="updateEvent(event.id)">
-
                 <h2>Edit Event</h2>
-
                 <mat-form-field appearance="outline">
                   <mat-label>Title</mat-label>
                   <input matInput placeholder={{event.title}} formControlName="title" type="title" class="form-control" name="title" value={{event.title}} defaultValue={{event.title}}>
@@ -76,92 +67,75 @@
                   <button mat-button type="submit" class="submit-btn">Submit Changes</button>
                   <button mat-button (click)="editToggle()">Cancel</button>
                 </div>
-
             </form>
         </div>
-
-        <div *ngIf="editView === false">
+        <!-- <div>
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Show Weather Forecast
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div> -->
+        <div>
           <mat-accordion>
             <mat-expansion-panel>
               <mat-expansion-panel-header>
-
                 <mat-panel-title>
                   View Comments
                 </mat-panel-title>
-
                 <mat-panel-description>
                   HMMMmmmMMMMMMmmmm
                 </mat-panel-description>
-
               </mat-expansion-panel-header>
-
               <button mat-button class="addCommentBtn" (click)="addCommentToggle()">Add Comment</button>
               <br>
-
               <div *ngIf="addCommentView === true">
-
                 <form [formGroup]="commentForm" (ngSubmit)="createComment()">
                   <textarea matInput formControlName="comment" placeholder="Make a comment..." type="text" class="form-control" name="addComment" required></textarea>
-
                   <button mat-button type="submit">Save Comment</button>
-
                 </form>
-
-
-
               </div>
-
-
               <div *ngFor="let comments of comments">
-
-                {{comments.user.username}}: {{comments.comment}}
-
-                <div *ngIf="editCommentView === true">
+                {{comments.owner}}: {{comments.comment}}
+                <div *ngIf="editCommentViewArray[comments.id] === true">
                   <form [formGroup]="commentEditForm" (ngSubmit)="updateComment(comments.id)">
                     <textarea matInput formControlName="comment" placeholder="Edit comment..." type="text" class="form-control" name="editComment" required></textarea>
                     
                     <button mat-button type="submit">Save Edits</button>
-
                   </form>
                 </div>
-
-                <button mat-button (click)="editCommentToggle(comments)">Edit Comment</button>
-
+                <button mat-button (click)="editCommentToggle(comments.id)">Edit Comment</button>
                 <button mat-button (click)="deleteComment(comments.id)">Delete Comment</button>
               
               </div>
               
               <!-- <table mat-table [dataSource]="comments">
-
                 <ng-container matColumnDef="user">
                   <th mat-header-cell *matHeaderCellDef> User </th>
                   <td mat-cell *matCellDef="let comments">{{comments.owner}}</td>
                 </ng-container>
-
                 <ng-container matColumnDef="comment">
                   <th mat-header-cell *matHeaderCellDef> Comment </th>
                   <td mat-cell *matCellDef="let comments">{{comments.comment}}</td>
                 </ng-container>
-
-                <ng-container matColumnDef="buttons">
-                  <th mat-header-cell *matHeaderCellDef>
-                    Buttons
-                  </th>
-                  <td mat-cell *matCellDef="let comments">
-                    <button mat-button (click)="editCommentToggle()">Edit Comment</button>
-
-                    <button mat-button (click)="deleteComment(comments.id)">Delete Comment</button>
-                  </td>
-                </ng-container>
-
                 <tr mat-header-row *matHeaderRowDef="dispayedColumns"></tr>
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
               </table> -->
-
             </mat-expansion-panel>
           </mat-accordion>
         </div>
-      </mat-card>
     </mat-sidenav-content>
 </mat-sidenav-container>

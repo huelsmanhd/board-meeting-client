@@ -3,6 +3,9 @@ import { BoardService } from "../board.service";
 import { Router } from "@angular/router";
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { TokenService } from "../token.service";
+import { HttpClient } from '@angular/common/http';
+import { jsonpCallbackContext } from '@angular/common/http/src/module';
+
 
 @Component({
   selector: 'app-event-focus',
@@ -15,9 +18,12 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   eventForm: FormGroup;
   event=<any>[];
   comments=<any>[];
-
   comment: string = '';
   editView: boolean = false;
+  // lat = this.eventForm['lat'];
+  // lon = this.eventForm['long'];
+  // key = '00726991e168c5c949d3066d0bc61089';
+  // baseWeatherURL = `http://api.openweathermap.org/data/2.5/forecast?`
 
  
 
@@ -27,13 +33,14 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
 
   commentEditForm: FormGroup;
   editCommentView: boolean = false;
-  editCommentViewArray = <any>[];
+  editCommentViewArray = <any>{};
 
   constructor(
     private boardService: BoardService,
     private router: Router,
     private fb: FormBuilder,
     private token: TokenService,
+    private http: HttpClient,
   ) { }
 
   ngOnInit() {
@@ -100,6 +107,21 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     this.token.sideNav = this.sideNav;
   }
 
+  //WEATHER API FUNCTIONALITY
+  fetchWeather(lat, lon, key, baseWeatherURL) {
+    let weatherURL = baseWeatherURL + 'lat=' + lat + '&lon=' + lon + '&APPID=' + key;
+    console.log(weatherURL)
+    return this.http.get(weatherURL)
+
+  }
+
+  // showWeather(weatherURL) {
+  //   this.fetchWeather(weatherURL)
+  //   .subscribe(res => {
+  //     this.
+  //   })
+  // }
+
   //ALL FUNCTIONALITY FOR COMMENTS
 
   //GETS ALL COMMENTS BY EVENT ID
@@ -117,7 +139,22 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     })
     .then(res => res.json())
     .then(json => this.comments = json)
+    .then(x => {
+      x.forEach(test => {
+        this.editCommentViewArray[`${test.id}`] = false;
+      }, () => console.log(this.comments))
+      
+    
+    })
+
+    .then(log => console.log(this.editCommentViewArray))
   }
+
+  // this.editCommentViewArray[`${this.comments.id}`] = false
+
+  // this.editCommentViewArray[`${commentIndex.id}`] = "test";
+  // console.log(this.editCommentViewArray)
+
   //CREATES BY EVENT ID
   createComment() {
     let token = sessionStorage.getItem("token");
@@ -167,11 +204,11 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   }
 
   editCommentToggle(commentIndex) {
-    const _editCommentView =!this.editCommentView
-    this.editCommentView = _editCommentView
+    const _editCommentView =!this.editCommentViewArray[`${commentIndex}`]
+    this.editCommentViewArray[`${commentIndex}`] = _editCommentView
     console.log(commentIndex)
-  }
-
-  
+    // this.editCommentViewArray[`${commentIndex.id}`] = false;
+    // console.log(this.editCommentViewArray)
+  } 
 
 }
