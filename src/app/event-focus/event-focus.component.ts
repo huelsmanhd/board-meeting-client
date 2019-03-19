@@ -57,8 +57,14 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     this.getComments()
   }
   getSingleEvent() {
+    // let eventId = sessionStorage.getItem("singleEvent");
+    // if(eventId) {
+
+    // }
     this.boardService.findSingleEvent().subscribe(singleEvent => {
       this.event = singleEvent
+      // sessionStorage.setItem("count", singleEvent["count"])
+      // sessionStorage.setItem("singleEvent", singleEvent);
       console.log(singleEvent);
     })
   }
@@ -113,7 +119,10 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
       })
     })
     .then(res => res.json())
-    .then(json => this.comments = json);
+    .then(json => {
+      this.comments = json
+      console.log(this.comments)
+    })
   }
   //CREATES BY EVENT ID
   createComment() {
