@@ -16,8 +16,8 @@
             <p>{{event.long}}</p>
             <p>{{event.description}}</p>
             
-            <button mat-button (click)="editToggle()">Edit</button>
-            <button mat-button (click)="deleteEvent(event.id)">Delete Event</button>
+            <button *ngIf="event.user.username === editButtonCheck()" mat-button (click)="editToggle()">Edit</button>
+            <button *ngIf="event.user.username === editButtonCheck() || deleteButtonCheck()" mat-button (click)="deleteEvent(event.id)">Delete Event</button>
         
         </div>
         <div *ngIf="editView !== false">
@@ -117,8 +117,8 @@
                     <button mat-button type="submit">Save Edits</button>
                   </form>
                 </div>
-                <button mat-button (click)="editCommentToggle(comments.id)">Edit Comment</button>
-                <button mat-button (click)="deleteComment(comments.id)">Delete Comment</button>
+                <button *ngIf="comments.user.username === editButtonCheck()" mat-button (click)="editCommentToggle(comments.id)">Edit Comment</button>
+                <button *ngIf="comments.user.username === editButtonCheck() || deleteButtonCheck()" mat-button (click)="deleteComment(comments.id)">Delete Comment</button>
               
               </div>
               
