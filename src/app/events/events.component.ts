@@ -40,6 +40,8 @@ export class EventsComponent implements OnInit, AfterViewInit {
   }
 
   viewEvent(id) {
+    sessionStorage.setItem("id", id);
+    console.log(id);
     this.boardService.location = window.location.href
     this.boardService.singleEvent = id;
     this.router.navigate(["/event-focus"]);
