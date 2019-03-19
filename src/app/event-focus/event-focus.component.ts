@@ -217,4 +217,15 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     // console.log(this.editCommentViewArray)
   } 
 
+  editButtonCheck() {
+    let username = sessionStorage.getItem("username");
+    return username;
+  }
+  deleteButtonCheck() {
+    let admin = sessionStorage.getItem("admin");
+    if(admin === "true") {
+      return true
+    }
+  }
+
 }
