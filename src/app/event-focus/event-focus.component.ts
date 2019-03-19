@@ -67,29 +67,10 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     this.getComments()
   }
   getSingleEvent() {
-    // let eventId = sessionStorage.getItem("singleEvent");
-    let token = sessionStorage.getItem("token");
-    let id = sessionStorage.getItem("id");
-    console.log(id);
-    let baseURL = `https://board-meeting-sever.herokuapp.com/event/event/${id}`
-    fetch(baseURL, {
-      method: "GET",
-      headers: new Headers({
-        "Content-Type" : "application/json",
-        "Authorization": token
-      })
-    })
-    .then(res => res.json())
-    .then(singleEvent => {
+    this.boardService.findSingleEvent().subscribe(singleEvent => {
       this.event = singleEvent
+      
     })
-    // let id = sessionStorage.getItem("id");
-    // this.boardService.findSingleEvent().subscribe(singleEvent => {
-    //   this.event = singleEvent
-      // sessionStorage.setItem("count", singleEvent["count"])
-      // sessionStorage.setItem("singleEvent", singleEvent);
-      // console.log(singleEvent);
-    // })
   }
   updateEvent(id) {
     console.log(this.eventForm.value);
