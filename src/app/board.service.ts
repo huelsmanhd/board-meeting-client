@@ -65,13 +65,14 @@ export class BoardService {
 
   findSingleEvent() {
     let token = sessionStorage.getItem("token");
+    let id = sessionStorage.getItem("id")
     const httpOptions = {
       headers: new HttpHeaders({
         "Content-Type" : "application/json",
         "Authorization": token
       })
     }
-    const baseURL = `https://board-meeting-sever.herokuapp.com/event/event/${this.singleEvent}`
+    const baseURL = `https://board-meeting-sever.herokuapp.com/event/event/${id}`
     return this.http.get(baseURL, httpOptions);
   }
   
