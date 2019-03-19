@@ -20,6 +20,15 @@
 
 }
 
+.eventBtn {
+    position: relative;
+    /* float: right; */
+}
+
+mat-accordian {
+    width: 100%;
+}
+
 .sidenav {
     width: 35%;
 }
