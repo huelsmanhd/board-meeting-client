@@ -77,7 +77,7 @@ import { getToken } from '@angular/router/src/utils/preactivation';
     MatDialogModule,
     MatExpansionModule,
     MatTableModule,
-    JwtModule
+    JwtModule,
 
   ],
   providers: [JwtHelperService],

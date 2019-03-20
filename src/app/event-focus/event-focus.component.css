@@ -32,3 +32,15 @@ mat-accordian {
 .sidenav {
     width: 35%;
 }
+
+#optionsFlex{
+    flex: 1 1 auto;
+    /* display: inline-block; */
+}
+
+mat-card{
+    position: relative;
+
+    width: 60%;
+    margin: auto;
+}
