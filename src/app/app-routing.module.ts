@@ -20,7 +20,7 @@ const routes: Routes = [
   {path: 'event-focus', component: EventFocusComponent, canActivate: [tokenservice]}
 ];
 
-function getToken(): string {
+export function getToken(): string {
   return sessionStorage.getItem('token');
 }
 
