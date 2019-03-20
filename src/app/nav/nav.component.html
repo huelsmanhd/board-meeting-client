@@ -10,12 +10,12 @@
     <button mat-button routerLink='/home'>
       Home
     </button>
+    <button mat-button *ngIf="logoutView() && viewCreateEvent()" (click)="token.toggleSideNav()">
+      Create Event
+    </button>
   </span>
   <span  *ngIf="logoutView()" class='links'>
 
-      <button mat-button (click)="token.toggleSideNav()">
-        Create Event
-      </button>
       <button mat-button routerLink='/events'>
         Events
       </button>
