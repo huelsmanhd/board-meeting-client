@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TokenService } from "../token.service";
-import { Router } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
+import { routerNgProbeToken } from '@angular/router/src/router_module';
 
 
 @Component({
@@ -23,7 +24,7 @@ export class NavComponent implements OnInit {
     this.sessionToken = this.token.getToken();
     // this.admin = this.token.getAdmin();
     this.admin = this.token.getAdmin();
-
+    this.viewCreateEvent();
   }
 
   logoutView() {
@@ -41,4 +42,12 @@ export class NavComponent implements OnInit {
      
   }
 
+  viewCreateEvent() {
+    if (window.location.href === 'http://localhost:4200/home') {
+    return false;
+  } else {
+    return true;
+  }
+  }
+  
 }
