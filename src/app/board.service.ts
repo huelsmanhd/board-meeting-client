@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { APIURL } from '../environments/environment.prod';
 
 
 @Injectable({
@@ -14,7 +15,7 @@ export class BoardService {
 
   getAllEvents(){
 
-    let baseURL = 'https://board-meeting-sever.herokuapp.com/event/all';
+    let baseURL = `${APIURL}/event/all`;
     const httpOptions = {
       headers: new HttpHeaders({
         "Content-Type" : "application/json"
@@ -34,14 +35,14 @@ export class BoardService {
         "Authorization": token
       })
     }
-    const userEventURL = `https://board-meeting-sever.herokuapp.com/event/user`
+    const userEventURL = `${APIURL}/event/user`
     return this.http.get(userEventURL, httpOptions)
     
   }
 
   getEventByType(type) {
     let token = sessionStorage.getItem("token");
-    let eventTypeURL = `https://board-meeting-sever.herokuapp.com/event/${type}`
+    let eventTypeURL = `${APIURL}/event/${type}`
     const httpOptions = {
       headers: new HttpHeaders ({
         "Content-Type": "application/json",
@@ -59,7 +60,7 @@ export class BoardService {
         "Authorization": token
       })
     }
-    const baseURL = `https://board-meeting-sever.herokuapp.com/event/update/${id}`;
+    const baseURL = `${APIURL}/event/update/${id}`;
     return this.http.put(baseURL, httpOptions);
   }
 
@@ -72,7 +73,7 @@ export class BoardService {
         "Authorization": token
       })
     }
-    const baseURL = `https://board-meeting-sever.herokuapp.com/event/event/${this.singleEvent}`
+    const baseURL = `${APIURL}/event/event/${this.singleEvent}`
     return this.http.get(baseURL, httpOptions);
   }
   
@@ -84,13 +85,13 @@ export class BoardService {
         "Authorization": token
       })
     }
-    let baseURL = `https://board-meeting-sever.herokuapp.com/event/update/${id}`
+    let baseURL = `${APIURL}/event/update/${id}`
     return this.http.put(baseURL, eventString, httpOptions);
   }
 
   deleteUserEvent(id:number) {
     let token = sessionStorage.getItem("token");
-    let baseURL = `https://board-meeting-sever.herokuapp.com/event/delete/${id}`
+    let baseURL = `${APIURL}/event/delete/${id}`
     // this.http.delete(baseURL, httpOptions);
     fetch(baseURL, {
       method: "DELETE",
@@ -112,7 +113,7 @@ export class BoardService {
       })
     }
     console.log(commentString);
-    let baseURL = `https://board-meeting-sever.herokuapp.com/comments/create/${id}`;
+    let baseURL = `${APIURL}/comments/create/${id}`;
     return this.http.post(baseURL, commentString, httpOptions)
   }
 

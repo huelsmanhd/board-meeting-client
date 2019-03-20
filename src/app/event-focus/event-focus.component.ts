@@ -5,6 +5,7 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { TokenService } from "../token.service";
 import { HttpClient } from '@angular/common/http';
 import { jsonpCallbackContext } from '@angular/common/http/src/module';
+import { APIURL } from '../../environments/environment.prod';
 
 
 @Component({
@@ -82,7 +83,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   }
   deleteEvent(id:number) {
     let token = sessionStorage.getItem("token");
-    let baseURL = `https://board-meeting-sever.herokuapp.com/event/delete/${id}`
+    let baseURL = `${APIURL}/event/delete/${id}`
     // this.http.delete(baseURL, httpOptions);
     fetch(baseURL, {
       method: "DELETE",
@@ -92,9 +93,9 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
       })
     }).then(() => {
       console.log(this.boardService.location)
-      if(this.boardService.location === "http://localhost:4200/events") {
+      if(this.boardService.location === "https://board-meeting-client.herokuapp.com/events") {
         this.router.navigate(["/events"])
-      } else if(this.boardService.location === "http://localhost:4200/profile") {
+      } else if(this.boardService.location === "https://board-meeting-client.herokuapp.com/profile") {
         this.router.navigate(["/profile"])
       }
       })
@@ -108,12 +109,12 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   }
 
   //WEATHER API FUNCTIONALITY
-  fetchWeather(lat, lon, key, baseWeatherURL) {
-    let weatherURL = baseWeatherURL + 'lat=' + lat + '&lon=' + lon + '&APPID=' + key;
-    console.log(weatherURL)
-    return this.http.get(weatherURL)
+  // fetchWeather(lat, lon, key, baseWeatherURL) {
+  //   let weatherURL = baseWeatherURL + 'lat=' + lat + '&lon=' + lon + '&APPID=' + key;
+  //   console.log(weatherURL)
+  //   return this.http.get(weatherURL)
 
-  }
+  // }
 
   // showWeather(weatherURL) {
   //   this.fetchWeather(weatherURL)
@@ -129,7 +130,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     let token = sessionStorage.getItem("token");
     let id = this.boardService.singleEvent;
     console.log(id);
-    let baseURL = `https://board-meeting-sever.herokuapp.com/comments/all/${id}`
+    let baseURL = `${APIURL}/comments/all/${id}`
     fetch(baseURL, {
       method: "GET",
       headers: new Headers({
@@ -161,7 +162,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     // let id = this.boardService.singleEvent;
     let stringComment = JSON.stringify(this.commentEditForm.value)
     console.log(stringComment)
-    let baseURL = `https://board-meeting-sever.herokuapp.com/comments/update/${id}`;
+    let baseURL = `${APIURL}/comments/update/${id}`;
     fetch(baseURL, {
       method: "PUT",
       body: stringComment,
@@ -178,7 +179,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   deleteComment(id) {
     let token = sessionStorage.getItem("token");
     // let id = this.boardService.singleEvent;
-    let baseURL = `https://board-meeting-sever.herokuapp.com/comments/delete/${id}`;
+    let baseURL = `${APIURL}/comments/delete/${id}`;
     fetch(baseURL, {
       method: "DELETE",
       headers: new Headers({

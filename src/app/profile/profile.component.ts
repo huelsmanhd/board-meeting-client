@@ -2,6 +2,13 @@ import { Component, OnInit, ViewChild, ElementRef, ViewEncapsulation, AfterViewI
 import { BoardService } from "../board.service"
 import { Router } from "@angular/router";
 import { TokenService } from "../token.service";
+import { APIURL } from '../../environments/environment.prod';
+import {Injectable} from "@angular/core"
+
+
+@Injectable({
+  providedIn: 'root'
+})
 
 @Component({
   selector: 'app-profile',
@@ -36,7 +43,6 @@ export class ProfileComponent implements OnInit, AfterViewInit {
   viewEvent(id) {
     sessionStorage.setItem("id", id);
     this.boardService.location = window.location.href;
-    // console.log(window.location.href)
     this.boardService.singleEvent = id;
     this.router.navigate(["/event-focus"]);
   }
