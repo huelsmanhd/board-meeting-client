@@ -20,7 +20,7 @@ export class CreateEventComponent implements OnInit, AfterViewInit {
     private createEventService: CreateEventService,
     private fb: FormBuilder,
     private router: Router,
-    private token: TokenService,
+    public token: TokenService,
     public events: EventsComponent,
     public profile: ProfileComponent
   ) { }
