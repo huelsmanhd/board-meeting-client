@@ -1,0 +1,33 @@
+.parallax1 {
+    background-image: url("../../assets/images/img3.jpg");
+    height: 90vh;
+    position: relative;
+    /* padding-top: 200px; 
+    padding-bottom: 200px; */
+    overflow: hidden;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content {
+    text-align: center;
+    box-shadow: 4px 0px 0px 0px rgba(62, 62, 62, 0.653)
+
+
+}
+
+
+
+
+.home-title {
+    text-align: center;
+
+}
+
+.home-info {
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+}

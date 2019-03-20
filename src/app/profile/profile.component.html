@@ -1,3 +1,30 @@
-<ul>
-  <li>Profile List</li>
-</ul>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sideNav class="sidenav" mode="over" opened="false">
+    <app-create-event></app-create-event>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="main-content">
+
+    <div class="cardDisplay">
+        <mat-card *ngFor="let userEvents of userEvents">
+            <mat-card-header >
+              <mat-card-title class="title">{{userEvents.title}}</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image class="img-article">
+            <mat-card-content>
+              <p>Activity: {{userEvents.type}}</p>
+              <p>Address: {{userEvents.location}}</p>
+              <p>Date: {{userEvents.date}}</p>
+            </mat-card-content>
+            <mat-card-footer>
+            <mat-card-actions>
+              <a mat-button routerLink="/profile" class="card-btn">Attending Event</a>
+              <button mat-button color="secondary" class="card-btn" (click)="viewEvent(userEvents.id)">View Full</button>
+            </mat-card-actions>
+          </mat-card-footer>
+        </mat-card>
+      </div>
+
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
