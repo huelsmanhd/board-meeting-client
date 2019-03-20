@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router, CanActivate } from '@angular/router';
+import { APIURL } from '../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
