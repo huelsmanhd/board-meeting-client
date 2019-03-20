@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { CreateEventService } from '../create-event.service'
 import { TokenService } from '../token.service';
 import { EventsComponent } from "../events/events.component";
+import { ProfileComponent } from "../profile/profile.component"
 
 @Component({
   selector: 'app-create-event',
@@ -20,7 +21,8 @@ export class CreateEventComponent implements OnInit, AfterViewInit {
     private fb: FormBuilder,
     private router: Router,
     private token: TokenService,
-    public events: EventsComponent
+    public events: EventsComponent,
+    public profile: ProfileComponent
   ) { }
 
   ngOnInit() {
@@ -51,6 +53,7 @@ export class CreateEventComponent implements OnInit, AfterViewInit {
     this.createEventService.createEvent(eventString).subscribe(event => {
       console.log(event);
       this.events.getAllEvents();
+      this.profile.getUserEvents();
       
     })
    

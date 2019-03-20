@@ -2,6 +2,13 @@ import { Component, OnInit, ViewChild, ElementRef, ViewEncapsulation, AfterViewI
 import { BoardService } from "../board.service"
 import { Router } from "@angular/router";
 import { TokenService } from "../token.service";
+import { APIURL } from '../../environments/environment.prod';
+import {Injectable} from "@angular/core"
+
+
+@Injectable({
+  providedIn: 'root'
+})
 
 @Component({
   selector: 'app-profile',
