@@ -10,6 +10,10 @@
     "postinstall": "ng build --prod",
     "start": "serve -s dist/Board-Meeting"
   },
+  "engines": {
+    "node": "10.14.2",
+    "npm": "6.4.1"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~7.2.0",
