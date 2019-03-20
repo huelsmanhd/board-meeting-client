@@ -8,7 +8,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build --prod",
-    "start": "serve -s dist/Board-Meeting"
+    "start": "serve -s dist/board-meeting"
   },
   "private": true,
   "dependencies": {
