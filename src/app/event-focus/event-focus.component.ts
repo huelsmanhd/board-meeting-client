@@ -153,6 +153,9 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     let token = sessionStorage.getItem("token");
     let commentString = JSON.stringify(this.commentForm.value);
     this.boardService.createComment(commentString).subscribe(comment => this.getComments())
+
+    this.addCommentToggle()
+    this.commentForm.reset();
       
   }
 
