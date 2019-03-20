@@ -1,11 +1,35 @@
-<mat-toolbar>
+<mat-toolbar class="navbar">
+
   <span>
     <img class='logo' alt='boards' src='../../assets/03f8734b-26d7-4d22-80f1-21e101ddc8bb.png' />
   </span>
-  <span  class='links'>
-    <a class='nav-btn' style="flex: 1 1 auto" routerLink='/home'>Home</a>
-    <a class='nav-btn' style="flex: 1 1 auto" routerLink='/events'>Events</a>
-    <a class='nav-btn' style="flex: 1 1 auto" routerLink='/profile'>My Events</a>
-    <a class='nav-btn' style="flex: 1 1 auto" routerLink='/login'>Login</a>
+
+  <div class='nav-spacing'></div>
+
+  <span>
+    <button mat-button routerLink='/home'>
+      Home
+    </button>
   </span>
+  <span  *ngIf="logoutView()" class='links'>
+
+      <button mat-button (click)="token.toggleSideNav()">
+        Create Event
+      </button>
+      <button mat-button routerLink='/events'>
+        Events
+      </button>
+      <button mat-button routerLink='/profile'>
+        Profile
+      </button>
+      <button (click)="logOut()" mat-button routerLink='/login'>
+        Logout
+      </button>
+
+    
+    </span>
+    <button  *ngIf="!logoutView()" mat-button routerLink='/login'>
+      Login
+    </button>
+
 </mat-toolbar>

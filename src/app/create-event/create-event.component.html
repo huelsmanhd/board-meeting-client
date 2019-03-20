@@ -1,0 +1,54 @@
+<mat-card class="createCard">
+
+<form [formGroup]="eventForm" (ngSubmit)="createEvent(); token.closeNav()">
+
+  <h2>Create Event</h2>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Title</mat-label>
+    <input matInput placeholder="Placeholder" formControlName="title" type="title" class="form-control" name="title" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Activity</mat-label>
+    <mat-select placeholder="Placeholder" formControlName="type" type="select" class="form-control" name="type" required>
+      <mat-option value="Skate">Skate</mat-option>
+      <mat-option value="Surf">Surf</mat-option>
+      <mat-option value="Snow">Snow</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="date" class="form-control" name="date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Latitude</mat-label>
+    <input matInput placeholder="Placeholder" formControlName="lat" class="form-control" name="latitude" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Longitude</mat-label>
+    <input matInput placeholder="Placeholder" formControlName="long" class="form-control" name="longitude" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Address</mat-label>
+    <input matInput placeholder="Placeholder" formControlName="location" class="form-control" name="location" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Description</mat-label>
+    <textarea matInput placeholder="Placeholder" formControlName="description" class="form-control" name="description" required></textarea>
+  </mat-form-field>
+
+  <div class="btnBox">
+    <button mat-button type="submit" class="submit-btn">Create Event</button>
+  </div>
+  
+</form>
+<button mat-button (click)="token.closeNav()">Cancel</button>
+
+</mat-card>
