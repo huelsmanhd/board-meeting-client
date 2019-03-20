@@ -1,6 +1,10 @@
 # BoardMeeting
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.4. Board Meeting is the board sports social app for all your meet-ups and events. Create events, connect with friends, and build a community of boarding enthusiasts here. Create an account to view others' events and let them know you're attending.
+
+## Prerequisites
+
+Run `npm install` for: `angular/material` `auth0/angular-jwt`
 
 ## Development server
 
