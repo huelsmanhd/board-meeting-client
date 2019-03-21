@@ -73,6 +73,7 @@ export class LoginComponent implements OnInit {
       this.tokenService.storeSession(res["user"].admin, res["sessionToken"], res["user"].username)
       this.router.navigate(["/home"]);
     })
+
   }
 }
   newUser() {
