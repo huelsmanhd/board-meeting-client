@@ -75,6 +75,34 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   }
   updateEvent(id) {
     console.log(this.eventForm.value);
+    if (this.eventForm.value.title === null) {
+      delete this.eventForm.value.title
+    }
+
+    if (this.eventForm.value.date === null) {
+      delete this.eventForm.value.date
+    }
+
+    if (this.eventForm.value.description === null) {
+      delete this.eventForm.value.description
+    }
+    
+    if (this.eventForm.value.lat === null) {
+      delete this.eventForm.value.lat
+    }
+
+    if (this.eventForm.value.long === null) {
+      delete this.eventForm.value.long
+    }
+
+    if (this.eventForm.value.location === null) {
+      delete this.eventForm.value.location
+    }
+
+    if (this.eventForm.value.type === null) {
+      delete this.eventForm.value.type
+    }
+
     this.boardService.updateUserEvent(this.eventForm.value, id).subscribe(event => {
       this.getSingleEvent();
     })
