@@ -41,9 +41,15 @@ export class LoginComponent implements OnInit {
     // console.log(this.loginForm.value, this.loginForm.value.email, this.loginForm.value.password);
     this.userService.loginUser(loginString)
     .subscribe(res => {
-      // console.log(res)
+      console.log(res)
+      if(res["status"] === 502) {
+        alert("Please check password") 
+      } else if (res["status"] === 500) {
+        alert("Not valid user. Please sign up")
+      } else {
       this.tokenService.storeSession(res["user"].admin, res["sessionToken"], res["user"].username)
       this.router.navigate(["/home"]);
+      }
     }) 
   }
   signup() {

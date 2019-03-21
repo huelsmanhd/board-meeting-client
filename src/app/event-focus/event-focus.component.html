@@ -97,10 +97,6 @@
               View Comments
             </mat-panel-title>
 
-            <mat-panel-description>
-              HMMMmmmMMMMMMmmmm
-            </mat-panel-description>
-
           </mat-expansion-panel-header>
 
           <button mat-button class="addCommentBtn" (click)="addCommentToggle()">Add Comment</button>
@@ -117,9 +113,11 @@
           </div>
 
           <div *ngFor="let comments of comments">
-            <div class="comments">
+            <div class="commentsWrapper">
+            <div class="commentBox">
             {{comments.user.username}}: {{comments.comment}}
             <!-- <div id="optionsFlex"></div> -->
+            </div>
             
             <div class="btnBox">
               <button *ngIf="comments.user.username === editButtonCheck()" mat-icon-button (click)="editCommentToggle(comments.id)"><mat-icon>create</mat-icon></button>
@@ -137,10 +135,9 @@
               </form>
             </div>
           </div>
-          
-            </div>
-          </mat-expansion-panel>
-        </mat-accordion>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
       </div>
     </mat-card>
   </mat-sidenav-content>

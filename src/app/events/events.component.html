@@ -8,13 +8,18 @@
     <h2>Select Your Sport</h2>
     <br>
     <br>
-    
-    <select [(ngModel)]="type" (change)="getByType(type)">
-      <option value="all">All</option>
-      <option value="Skate">Skate</option>
-      <option value="Surf">Surf</option>
-      <option value="Snow">Snow</option>
-    </select>
+
+    <form [formGroup]="filter" class="filter">
+      <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <mat-select formControlName="filter" type="select">
+          <mat-option value="all" (click)="getByType()">All</mat-option>
+          <mat-option value="Skate" (click)="getByType()">Skate</mat-option>
+          <mat-option value="Surf" (click)="getByType()">Surf</mat-option>
+          <mat-option value="Snow" (click)="getByType()">Snow</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
 
     <br>
     <br>

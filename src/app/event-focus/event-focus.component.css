@@ -44,10 +44,21 @@ mat-card{
     margin: auto;
 }
 
-.btnBox {
-    float: right;
+.commentBox {
+    /* position: relative; */
+    width: 70%;
+    float: left;
+    padding:1em;
+    border-top: 1px solid black;
 }
 
-.comments {
-    display: inline;
+.btnBox {
+    position: relative;
+    width: 15%;
+    text-align:right;
+
+}
+
+.commentsWrapper {
+    border:1px solid black
 }
