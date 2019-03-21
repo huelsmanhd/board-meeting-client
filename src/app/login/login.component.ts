@@ -5,12 +5,6 @@ import { Router } from '@angular/router';
 import { TokenService } from '../token.service';
 import { ErrorStateMatcher } from '@angular/material/core';
 
-export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    const isSubmitted = form && form.submitted;
-    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
-  }
-}
 
 @Component({
   selector: 'app-login',
@@ -18,11 +12,10 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  emailFormControl = new FormControl('', [
-    Validators.required,
-    Validators.email,
-  ]);
-  matcher = new MyErrorStateMatcher();
+  
+  error: boolean = false;
+  message: string = "";
+
   loginForm: FormGroup
   signupForm: FormGroup
 
@@ -55,15 +48,19 @@ export class LoginComponent implements OnInit {
     .subscribe(res => {
       console.log(res)
       if(res["status"] === 502) {
-        alert("Please check password") 
+        this.error = true;
+        this.message = "Your password doesn't seem to match our records. Please re-enter your password"
       } else if (res["status"] === 500) {
-        alert("Not valid user. Please sign up")
+        this.error = true;
+        this.message = "Not valid user. Please sign Up!"
       } else {
-      this.tokenService.storeSession(res["user"].admin, res["sessionToken"], res["user"].username)
-      this.router.navigate(["/home"]);
+        this.error = false;
+        this.tokenService.storeSession(res["user"].admin, res["sessionToken"], res["user"].username)
+        this.router.navigate(["/home"]);
       }
     }) 
   }
+  
   signup() {
     this.userService.signupUser(this.signupForm.value)
     .subscribe(res => {
