@@ -20,6 +20,7 @@ export class ProfileComponent implements OnInit, AfterViewInit {
   @ViewChild('sideNav') sideNav: ElementRef;
 
   userEvents = <any>[];
+  username: string = "";
   
   constructor(
     private boardService: BoardService,
@@ -29,6 +30,7 @@ export class ProfileComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.getUserEvents();
+    this.profileName();
   }
 
   getUserEvents() {
@@ -54,6 +56,11 @@ export class ProfileComponent implements OnInit, AfterViewInit {
     this.boardService.editUserEvents(id).subscribe(event => {
       console.log(event)
     })
+  }
+
+  profileName() {
+    this.username = sessionStorage.getItem("username")
+    console.log(this.username);
   }
 
   ngAfterViewInit() {

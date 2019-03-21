@@ -6,6 +6,7 @@ import { Router } from "@angular/router"
 import { Injectable } from "@angular/core"
 // import { puts } from 'util';
 import { APIURL } from '../../environments/environment.prod';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -24,11 +25,14 @@ export class EventsComponent implements OnInit, AfterViewInit {
   type: "";
   events = <any>[];
 
+  filter: FormGroup;
+
   constructor(
     private token: TokenService,
     private boardService: BoardService,
     private createEventService: CreateEventService,
-    private router: Router
+    private router: Router,
+    private fb: FormBuilder,
     ) { }
 
   ngOnInit() {
@@ -36,6 +40,10 @@ export class EventsComponent implements OnInit, AfterViewInit {
     this.admin = this.token.getAdmin();
 
     this.getAllEvents();
+
+    this.filter = this.fb.group({
+      filter: new FormControl()
+    })
 
   }
 
@@ -56,10 +64,11 @@ export class EventsComponent implements OnInit, AfterViewInit {
   }
   
   getByType(type) {
-    if(type === "all") {
+    console.log(this.filter.value.filter)
+    if(this.filter.value.filter === "all") {
       this.getAllEvents();
     } else {
-      this.boardService.getEventByType(type)
+      this.boardService.getEventByType(this.filter.value.filter)
       .subscribe(events => {
         console.log(events)
         this.events = events;

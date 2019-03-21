@@ -29,7 +29,8 @@ import {
   MatSidenavModule,
   MatDialogModule,
   MatExpansionModule,
-  MatTableModule
+  MatTableModule,
+  MatGridListModule
 } from '@angular/material';
 
 import { 
@@ -79,8 +80,8 @@ import { SlideshowModule } from "ng-simple-slideshow"
     MatExpansionModule,
     MatTableModule,
     JwtModule,
+    MatGridListModule,
     SlideshowModule
-    
 
   ],
   providers: [JwtHelperService],
