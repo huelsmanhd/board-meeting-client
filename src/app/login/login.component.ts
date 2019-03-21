@@ -1,8 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { TokenService } from '../token.service';
+import { ErrorStateMatcher } from '@angular/material/core';
+
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
 
 @Component({
   selector: 'app-login',
@@ -10,6 +18,12 @@ import { TokenService } from '../token.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+  ]);
+  matcher = new MyErrorStateMatcher();
   
   error: boolean = false;
   message: string = "";
@@ -60,12 +74,14 @@ export class LoginComponent implements OnInit {
   }
   
   signup() {
+    console.log(this.signupForm.value)
     this.userService.signupUser(this.signupForm.value)
     .subscribe(res => {
       
       this.tokenService.storeSession(res["user"].admin, res["sessionToken"], res["user"].username)
       this.router.navigate(["/home"]);
     })
+
   }
   newUser() {
     const _loginView = !this.loginView

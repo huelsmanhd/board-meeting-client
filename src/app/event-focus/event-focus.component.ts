@@ -230,7 +230,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   editCommentToggle(commentIndex) {
     const _editCommentView =!this.editCommentViewArray[`${commentIndex}`]
     this.editCommentViewArray[`${commentIndex}`] = _editCommentView
-    console.log(commentIndex)
+    // console.log(commentIndex)
     // this.editCommentViewArray[`${commentIndex.id}`] = false;
     // console.log(this.editCommentViewArray)
   } 
