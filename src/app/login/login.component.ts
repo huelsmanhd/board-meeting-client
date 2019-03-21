@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { TokenService } from '../token.service';
+import { ErrorStateMatcher } from '@angular/material/core';
+
 
 @Component({
   selector: 'app-login',
@@ -11,6 +13,9 @@ import { TokenService } from '../token.service';
 })
 export class LoginComponent implements OnInit {
   
+  error: boolean = false;
+  message: string = "";
+
   loginForm: FormGroup
   signupForm: FormGroup
 
@@ -41,20 +46,37 @@ export class LoginComponent implements OnInit {
     // console.log(this.loginForm.value, this.loginForm.value.email, this.loginForm.value.password);
     this.userService.loginUser(loginString)
     .subscribe(res => {
-      // console.log(res)
-      this.tokenService.storeSession(res["user"].admin, res["sessionToken"], res["user"].username)
-      this.router.navigate(["/home"]);
+      console.log(res)
+      if(res["status"] === 502) {
+        this.error = true;
+        this.message = "Your password doesn't seem to match our records. Please re-enter your password"
+      } else if (res["status"] === 500) {
+        this.error = true;
+        this.message = "Not valid user. Please sign Up!"
+      } else {
+        this.error = false;
+        this.tokenService.storeSession(res["user"].admin, res["sessionToken"], res["user"].username)
+        this.router.navigate(["/home"]);
+      }
     }) 
   }
+  
   signup() {
+    // console.log(this.signupForm.value.email.indexOf("@") === -1)
+    if(this.signupForm.value.email.indexOf("@") === -1) {
+      this.error = true;
+      this.message = "Need valid email address!"
+    } else {
     this.userService.signupUser(this.signupForm.value)
     .subscribe(res => {
-      
+      this.error = false;
       this.tokenService.storeSession(res["user"].admin, res["sessionToken"], res["user"].username)
       this.router.navigate(["/home"]);
     })
   }
+}
   newUser() {
+    this.error = false;
     const _loginView = !this.loginView
     this.loginView = _loginView
   }
