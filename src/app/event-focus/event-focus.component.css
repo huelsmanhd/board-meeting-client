@@ -40,7 +40,14 @@ mat-accordian {
 
 mat-card{
     position: relative;
-
     width: 60%;
     margin: auto;
+}
+
+.btnBox {
+    float: right;
+}
+
+.comments {
+    display: inline;
 }

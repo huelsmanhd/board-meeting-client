@@ -117,9 +117,16 @@
           </div>
 
           <div *ngFor="let comments of comments">
-              <button *ngIf="comments.user.username === editButtonCheck()" mat-icon-button (click)="editCommentToggle(comments.id)"><mat-icon>create</mat-icon></button>
-              <button *ngIf="comments.user.username === editButtonCheck() || deleteButtonCheck()" mat-icon-button (click)="deleteComment(comments.id)"><mat-icon>delete</mat-icon></button>
+            <div class="comments">
             {{comments.user.username}}: {{comments.comment}}
+            <!-- <div id="optionsFlex"></div> -->
+            
+            <div class="btnBox">
+              <button *ngIf="comments.user.username === editButtonCheck()" mat-icon-button (click)="editCommentToggle(comments.id)"><mat-icon>create</mat-icon></button>
+
+              <button *ngIf="comments.user.username === editButtonCheck() || deleteButtonCheck()" mat-icon-button (click)="deleteComment(comments.id)"><mat-icon>delete</mat-icon></button>
+            </div>
+
             <div *ngIf="editCommentViewArray[comments.id] === true">
               <form [formGroup]="commentEditForm" (ngSubmit)="updateComment(comments.id)">
 
@@ -128,10 +135,8 @@
                 <button mat-button type="submit">Save Edits</button>
 
               </form>
+            </div>
           </div>
-
-            <!-- <button *ngIf="comments.user.username === editButtonCheck()" mat-button (click)="editCommentToggle(comments.id)">Edit Comment</button>
-            <button *ngIf="comments.user.username === editButtonCheck() || deleteButtonCheck()" mat-button (click)="deleteComment(comments.id)">Delete Comment</button> -->
           
             </div>
           </mat-expansion-panel>

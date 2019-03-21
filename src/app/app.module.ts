@@ -28,7 +28,8 @@ import {
   MatSidenavModule,
   MatDialogModule,
   MatExpansionModule,
-  MatTableModule
+  MatTableModule,
+  MatGridListModule
 } from '@angular/material';
 
 import { 
@@ -78,6 +79,7 @@ import { getToken } from '@angular/router/src/utils/preactivation';
     MatExpansionModule,
     MatTableModule,
     JwtModule,
+    MatGridListModule
 
   ],
   providers: [JwtHelperService],
