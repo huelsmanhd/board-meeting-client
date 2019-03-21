@@ -60,14 +60,21 @@ export class LoginComponent implements OnInit {
   }
   
   signup() {
+    // console.log(this.signupForm.value.email.indexOf("@") === -1)
+    if(this.signupForm.value.email.indexOf("@") === -1) {
+      this.error = true;
+      this.message = "Need valid email address including"
+    } else {
     this.userService.signupUser(this.signupForm.value)
     .subscribe(res => {
-      
+      this.error = false;
       this.tokenService.storeSession(res["user"].admin, res["sessionToken"], res["user"].username)
       this.router.navigate(["/home"]);
     })
   }
+}
   newUser() {
+    this.error = false;
     const _loginView = !this.loginView
     this.loginView = _loginView
   }
