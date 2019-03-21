@@ -44,8 +44,8 @@ mat-card{
     margin: auto;
 }
 
-.commentBox {
-    /* position: relative; */
+/* .commentBox {
+    position: relative;
     width: 70%;
     float: left;
     padding:1em;
@@ -61,4 +61,4 @@ mat-card{
 
 .commentsWrapper {
     border:1px solid black
-}
+} */

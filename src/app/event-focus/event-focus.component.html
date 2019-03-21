@@ -114,16 +114,21 @@
 
           <div *ngFor="let comments of comments">
             <div class="commentsWrapper">
-            <div class="commentBox">
+            <!-- <div class="btnBox"> -->
+                <button *ngIf="comments.user.username === editButtonCheck()" mat-icon-button (click)="editCommentToggle(comments.id)"><mat-icon>create</mat-icon></button>
+  
+                <button *ngIf="comments.user.username === editButtonCheck() || deleteButtonCheck()" mat-icon-button (click)="deleteComment(comments.id)"><mat-icon>delete</mat-icon></button>
+            <!-- </div> -->
+            <!-- <div class="commentBox"> -->
             {{comments.user.username}}: {{comments.comment}}
             <!-- <div id="optionsFlex"></div> -->
-            </div>
+            <!-- </div> -->
             
-            <div class="btnBox">
+            <!-- <div class="btnBox">
               <button *ngIf="comments.user.username === editButtonCheck()" mat-icon-button (click)="editCommentToggle(comments.id)"><mat-icon>create</mat-icon></button>
 
               <button *ngIf="comments.user.username === editButtonCheck() || deleteButtonCheck()" mat-icon-button (click)="deleteComment(comments.id)"><mat-icon>delete</mat-icon></button>
-            </div>
+            </div> -->
 
             <div *ngIf="editCommentViewArray[comments.id] === true">
               <form [formGroup]="commentEditForm" (ngSubmit)="updateComment(comments.id)">
