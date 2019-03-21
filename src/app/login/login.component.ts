@@ -65,7 +65,7 @@ export class LoginComponent implements OnInit {
     // console.log(this.signupForm.value.email.indexOf("@") === -1)
     if(this.signupForm.value.email.indexOf("@") === -1) {
       this.error = true;
-      this.message = "Need valid email address including"
+      this.message = "Need valid email address!"
     } else {
     this.userService.signupUser(this.signupForm.value)
     .subscribe(res => {
