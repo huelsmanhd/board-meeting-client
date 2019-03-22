@@ -44,6 +44,24 @@ mat-card{
     margin: auto;
 }
 
+.commentsWrapper button {
+    float: right;
+}
+
+.commentsWrapper .comments {
+    color: blue;
+}
+
+.commentsWrapper {
+    margin: 1em;
+    
+}
+
+
+.commentBtn {
+    width: 100%;
+    text-align: right;
+}
 
 
 
