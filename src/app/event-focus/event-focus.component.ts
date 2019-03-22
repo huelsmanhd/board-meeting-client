@@ -6,6 +6,7 @@ import { TokenService } from "../token.service";
 import { HttpClient } from '@angular/common/http';
 import { jsonpCallbackContext } from '@angular/common/http/src/module';
 import { APIURL } from '../../environments/environment.prod';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -21,13 +22,9 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   comments=<any>[];
   comment: string = '';
   editView: boolean = false;
-  // lat = this.eventForm['lat'];
-  // lon = this.eventForm['long'];
-  // key = '00726991e168c5c949d3066d0bc61089';
-  // baseWeatherURL = `http://api.openweathermap.org/data/2.5/forecast?`
 
   lat: number = 5;
-  lng: number = 5;
+  lon: number = 5;
 
 
   displayedColumns: string[] = ['user', 'comment', 'buttons']
@@ -69,9 +66,9 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
 
     this.getComments()
   }
-  setLatLng(lat, lng) {
+  setLatLng(lat, lon) {
     this.lat = lat
-    this.lng = lng
+    this.lon = lon
   }
   getSingleEvent() {
     this.boardService.findSingleEvent().subscribe(singleEvent => {
@@ -81,6 +78,13 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
       
     })
   }
+
+  getWeatherData() {
+    let apikey = '00726991e168c5c949d3066d0bc61089'
+    return this.http.get(`api.openweathermap.org/data/2.5/forecast?lat=${this.lat}&lon=${this.lon}&APPID=${apikey}&units=imperial`)
+      console.log(this.lat, this.lon)
+  }
+
   updateEvent(id) {
     console.log(this.eventForm.value);
     if (this.eventForm.value.title === null) {
