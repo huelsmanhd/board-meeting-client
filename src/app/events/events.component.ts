@@ -63,7 +63,7 @@ export class EventsComponent implements OnInit, AfterViewInit {
     });
   }
   
-  getByType(type) {
+  getByType() {
     console.log(this.filter.value.filter)
     if(this.filter.value.filter === "all") {
       this.getAllEvents();
