@@ -23,14 +23,23 @@
           </mat-menu>
 
         </mat-card-header>
-
-        <p>Hosted by {{event.user.username}}</p>
-        <p>{{event.type}}</p>
-        <p>{{event.date}}</p>
-        <p>{{event.location}}</p>
-        <p>{{event.lat}}</p>
-        <p>{{event.long}}</p>
-        <p>{{event.description}}</p>
+        <div class="conatainer1">
+          <div class="info">
+            <p>Hosted by {{event.user.username}}</p>
+            <p>{{event.type}}</p>
+            <p>{{event.date}}</p>
+            <p>{{event.location}}</p>
+            <p>{{event.lat}}</p>
+            <p>{{event.long}}</p>
+            <p>{{event.description}}</p>
+          </div>
+          <div class="map">
+            <agm-map [latitude]="lat" [longitude]="lng" [usePanning]="true">
+              <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+            </agm-map>
+          </div>
+        </div>
+        
 
       </div>
 
@@ -145,5 +154,6 @@
       </mat-accordion>
       </div>
     </mat-card>
+        
   </mat-sidenav-content>
 </mat-sidenav-container>

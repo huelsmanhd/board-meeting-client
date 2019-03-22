@@ -44,6 +44,21 @@ mat-card{
     margin: auto;
 }
 
+
+
+
+
+agm-map {
+    width: 300px;
+    height: 300px;
+
+   
+}
+
+
+
+
+
 /* .commentBox {
     position: relative;
     width: 70%;
