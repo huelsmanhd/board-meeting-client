@@ -203,7 +203,8 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
       })
     })
     .then(res => res.json())
-    .then(comment => this.getComments());
+    .then(comment => this.getComments())
+    .then(reset => this.commentEditForm.reset());
   }
 
   //DELETE COMMENT BY COMMENT ID

@@ -41,7 +41,7 @@ export class CreateEventComponent implements OnInit, AfterViewInit {
 
   }
 
-  createEvent() {
+  createEvent($scope) {
     let date =  this.eventForm.value["date"].getDate()
     let month = this.eventForm.value["date"].getMonth() + 1;
     let year = this.eventForm.value["date"].getFullYear()
@@ -54,6 +54,7 @@ export class CreateEventComponent implements OnInit, AfterViewInit {
       console.log(event);
       this.events.getAllEvents();
       this.profile.getUserEvents();
+      $scope.formName.$setUntouched()
       
     })
    
