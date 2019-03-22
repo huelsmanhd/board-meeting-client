@@ -42,7 +42,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateEventComponent } from './create-event/create-event.component';
 import { getToken } from '@angular/router/src/utils/preactivation';
-import { SlideshowModule } from "ng-simple-slideshow"
+import { SlideshowModule } from "ng-simple-slideshow";
+import { AgmCoreModule } from "@agm/core";
 
 @NgModule({
   declarations: [
@@ -81,7 +82,11 @@ import { SlideshowModule } from "ng-simple-slideshow"
     MatTableModule,
     JwtModule,
     MatGridListModule,
-    SlideshowModule
+    SlideshowModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAvqX9e8QwArzR7MSUStK9GaJKio6EoQCo'
+
+    })
 
   ],
   providers: [JwtHelperService],

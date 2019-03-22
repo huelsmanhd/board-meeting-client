@@ -26,7 +26,12 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   // key = '00726991e168c5c949d3066d0bc61089';
   // baseWeatherURL = `http://api.openweathermap.org/data/2.5/forecast?`
 
- 
+  lat: number = 5;
+  lng: number = 5;
+  latitude: number;
+  longitude: number;
+  href: string;
+
 
   displayedColumns: string[] = ['user', 'comment', 'buttons']
   addCommentView: boolean = false;
@@ -46,6 +51,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.getSingleEvent();
+    this.getDirections();
 
     this.eventForm = this.fb.group({
       type: new FormControl(),
@@ -67,9 +73,24 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
 
     this.getComments()
   }
+  setLatLng(lat, lng) {
+    this.lat = lat
+    this.lng = lng
+  }
+  getDirections() {
+    navigator.geolocation.getCurrentPosition((location) => {
+      this.latitude = location.coords.latitude;
+      this.longitude = location.coords.longitude;
+      console.log(this.latitude, this.longitude);
+      
+      
+    });
+  }
   getSingleEvent() {
     this.boardService.findSingleEvent().subscribe(singleEvent => {
       this.event = singleEvent
+      console.log(singleEvent["lat"], singleEvent["long"])
+      this.setLatLng(parseInt(singleEvent["lat"]), parseInt(singleEvent["long"]))
       
     })
   }
