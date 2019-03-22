@@ -25,6 +25,10 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
 
   lat: number = 5;
   lon: number = 5;
+  lng: number = 5;
+  latitude: number;
+  longitude: number;
+  href: string;
 
 
   displayedColumns: string[] = ['user', 'comment', 'buttons']
@@ -45,6 +49,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.getSingleEvent();
+    this.getDirections();
 
     this.eventForm = this.fb.group({
       type: new FormControl(),
@@ -69,6 +74,15 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   setLatLng(lat, lon) {
     this.lat = lat
     this.lon = lon
+  }
+  getDirections() {
+    navigator.geolocation.getCurrentPosition((location) => {
+      console.log(location.coords.latitude);
+      console.log(location.coords.longitude);
+      this.latitude = location.coords.latitude;
+      this.longitude = location.coords.longitude;
+      
+    });
   }
   getSingleEvent() {
     this.boardService.findSingleEvent().subscribe(singleEvent => {

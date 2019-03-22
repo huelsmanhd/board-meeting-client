@@ -38,6 +38,10 @@
               <agm-marker [latitude]="lat" [longitude]="lon"></agm-marker>
             </agm-map>
           </div>
+          <div class="directions" >
+            <a href="https://www.google.com/maps/dir/{{latitude}},{{longitude}}/{{lat}},{{lng}}" target="_blank"><button (click)="getDirections()">Get Directions</button></a>
+          </div>
+
         </div>
         
 
@@ -107,8 +111,9 @@
             </mat-panel-title>
 
           </mat-expansion-panel-header>
-
+          <div class="commentBtn">
           <button mat-button class="addCommentBtn" (click)="addCommentToggle()">Add Comment</button>
+        </div>
           <br>
 
           <div *ngIf="addCommentView === true">
@@ -121,15 +126,20 @@
             </form>
           </div>
 
+          
+
           <div *ngFor="let comments of comments">
             <div class="commentsWrapper">
             <!-- <div class="btnBox"> -->
+              
+              <!-- </div> -->
+              <!-- <div class="commentBox"> -->
+                
+                <span class="comments">{{comments.user.username}}</span> : {{comments.comment}}
+              
+                
                 <button *ngIf="comments.user.username === editButtonCheck()" mat-icon-button (click)="editCommentToggle(comments.id)"><mat-icon>create</mat-icon></button>
-  
                 <button *ngIf="comments.user.username === editButtonCheck() || deleteButtonCheck()" mat-icon-button (click)="deleteComment(comments.id)"><mat-icon>delete</mat-icon></button>
-            <!-- </div> -->
-            <!-- <div class="commentBox"> -->
-            {{comments.user.username}}: {{comments.comment}}
             <!-- <div id="optionsFlex"></div> -->
             <!-- </div> -->
             
