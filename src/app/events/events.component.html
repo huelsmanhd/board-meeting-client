@@ -5,8 +5,6 @@
 
   <mat-sidenav-content class="main-content">
 
-    <h2>Select Your Sport</h2>
-    <br>
     <br>
 
     <form [formGroup]="filter" class="filter">
@@ -27,18 +25,18 @@
     <div class="cardDisplay">
       <mat-card *ngFor="let events of events">
           <mat-card-header>
-            <mat-card-title class="title">{{events.title}}</mat-card-title>
+            <mat-card-title class="title"><h2>{{events.title}}</h2></mat-card-title>
           </mat-card-header>
           <img mat-card-image class="img-article">
           <mat-card-content>
-            <p>Activity: {{events.type}}</p>
-            <p>Address: {{events.location}}</p>
-            <p>Date: {{events.date}}</p>
+            <p><b>Activity:</b> {{events.type}}</p>
+            <p><b>Address:</b> {{events.location}}</p>
+            <p><b>Date:</b> {{events.date}}</p>
           </mat-card-content>
           <mat-card-footer>
           <mat-card-actions>
-            <a mat-button routerLink="/profile" class="card-btn">Attending Event</a>
-            <button mat-button color="secondary" class="card-btn" (click)="viewEvent(events.id)">View Full</button>
+            <a mat-button routerLink="/profile" class="card-btn"><b>Attending Event</b></a>
+            <button mat-button color="secondary" class="card-btn" (click)="viewEvent(events.id)"><b>View Full</b></button>
           </mat-card-actions>
         </mat-card-footer>
       </mat-card>
