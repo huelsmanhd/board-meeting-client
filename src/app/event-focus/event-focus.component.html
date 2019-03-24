@@ -5,7 +5,7 @@
   </mat-sidenav>
     
   <mat-sidenav-content class="main-content">
-    <mat-card>
+    <mat-card class="{{event.type}} mat-card">
 
       <div class="eventWrapper" *ngIf="editView === false">
 
@@ -15,7 +15,7 @@
           </mat-card-title>
 
           <div id="optionsFlex"></div>
-          <button mat-button [matMenuTriggerFor]="menu" *ngIf="event.user.username === editButtonCheck() || deleteButtonCheck()"><mat-icon>launch</mat-icon></button>
+          <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="event.user.username === editButtonCheck() || deleteButtonCheck()"><mat-icon>settings</mat-icon></button>
           <mat-menu #menu="matMenu">
 
             <button mat-menu-item *ngIf="event.user.username === editButtonCheck()" (click)="editToggle()">Edit</button>
