@@ -88,6 +88,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     this.boardService.findSingleEvent().subscribe(singleEvent => {
       this.event = singleEvent
       this.setLatLng(parseInt(singleEvent["lat"]), parseInt(singleEvent["long"]))
+      console.log(this.lat, this.lon)
       this.getWeatherData()
       
     })

@@ -1,7 +1,9 @@
 .eventWrapper{
    position: relative;
    margin: 2em 2em;
+  
 }
+
 .sidenav-container {
     position: fixed;
     top: 3.1em;
@@ -11,13 +13,13 @@
     height: 100%;
     overflow: scroll;
 }
+
 .mat-sidenav-content {
     overflow: scroll;
     width: 90%;
     margin: auto;
     margin-bottom: 20px;
     padding: 20px;
-
 }
 
 .eventBtn {
@@ -53,26 +55,54 @@ mat-card{
 }
 
 .commentsWrapper {
-    margin: 2em;
+    margin: 1em;
+    padding: 1em;
     
 }
-
 
 .commentBtn {
     width: 100%;
     text-align: right;
 }
 
-
-
-
-agm-map {
-    width: 300px;
-    height: 300px;
-
-   
+.wrapper {
+    display: grid;
 }
 
+.container1 {
+    
+    width: 100%;
+}
+
+.directions button {
+    width: 300px;
+    margin-top: 1em;
+    background-color: rgb(141, 155, 144);
+    color: beige;
+}
+    
+.mat-card {
+    color: #E8DFCD;
+    font-family: 'Raleway', sans-serif;
+}
+
+.Snow{
+    background-color: #CC6A72;
+}
+
+.Skate{
+    /* background-color: #6B818C; */
+    background-color: #509799;
+}
+
+.Surf{
+    background-color: #DE8A74;
+}
+
+agm-map {
+    height: 300px;
+    width: 300px;
+}
 
 
 
