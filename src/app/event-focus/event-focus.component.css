@@ -1,6 +1,7 @@
 .eventWrapper{
    position: relative;
    margin: 2em 2em;
+  
 }
 
 .sidenav-container {
@@ -54,7 +55,8 @@ mat-card{
 }
 
 .commentsWrapper {
-    margin: 1em;
+    margin: 2em;
+    padding: 1em;
     
 }
 
@@ -63,6 +65,25 @@ mat-card{
     text-align: right;
 }
 
+.wrapper {
+    display: grid;
+}
+
+.container1 {
+    
+    width: 100%;
+}
+.info {
+    float: left;
+    width: 40%;
+}
+.directions button {
+    width: 20%;
+    margin-top: 1em;
+    background-color: rgb(141, 155, 144);
+    color: beige;
+}
+    
 .mat-card {
     color: #E8DFCD;
     font-family: 'Raleway', sans-serif;
@@ -82,10 +103,10 @@ mat-card{
 }
 
 agm-map {
-    width: 300px;
+    float: right;
     height: 300px;
+    width: 300px;
 }
-
 
 
 
