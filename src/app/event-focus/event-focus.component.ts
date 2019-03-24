@@ -12,7 +12,7 @@ import { APIURL } from '../../environments/environment.prod';
   selector: 'app-event-focus',
   templateUrl: './event-focus.component.html',
   styleUrls: ['./event-focus.component.css'],
-  encapsulation: ViewEncapsulation.Emulated,
+  encapsulation: ViewEncapsulation.None,
 })
 export class EventFocusComponent implements OnInit, AfterViewInit {
   @ViewChild('sideNav') sideNav: ElementRef;
