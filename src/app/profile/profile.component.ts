@@ -14,7 +14,7 @@ import {Injectable} from "@angular/core"
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css'],
-  encapsulation: ViewEncapsulation.Emulated,
+  encapsulation: ViewEncapsulation.None,
 })
 export class ProfileComponent implements OnInit, AfterViewInit {
   @ViewChild('sideNav') sideNav: ElementRef;

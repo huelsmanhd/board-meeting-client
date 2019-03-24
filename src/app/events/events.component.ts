@@ -16,7 +16,7 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
   selector: 'app-events',
   templateUrl: './events.component.html',
   styleUrls: ['./events.component.css'],
-  encapsulation: ViewEncapsulation.Emulated
+  encapsulation: ViewEncapsulation.None
 })
 export class EventsComponent implements OnInit, AfterViewInit {
   @ViewChild('sideNav') sideNav: ElementRef;
