@@ -73,12 +73,9 @@ mat-card{
     
     width: 100%;
 }
-.info {
-    float: left;
-    width: 40%;
-}
+
 .directions button {
-    width: 20%;
+    width: 300px;
     margin-top: 1em;
     background-color: rgb(141, 155, 144);
     color: beige;
@@ -103,7 +100,7 @@ mat-card{
 }
 
 agm-map {
-    float: right;
+    
     height: 300px;
     width: 300px;
 }
