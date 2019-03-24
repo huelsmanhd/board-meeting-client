@@ -11,6 +11,23 @@
     width: 35%;
 }
 
+.mat-card {
+    color: #E8DFCD;
+    font-family: 'Raleway', sans-serif;
+}
+
+.Snow{
+    background-color: #CC6A72;
+}
+
+.Skate{
+    background-color: #6B818C;
+}
+
+.Surf{
+    background-color: #DE8A74;
+}
+
 .main-content {
     margin-top: 3%;
 }

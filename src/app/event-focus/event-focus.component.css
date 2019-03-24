@@ -2,6 +2,7 @@
    position: relative;
    margin: 2em 2em;
 }
+
 .sidenav-container {
     position: fixed;
     top: 3.1em;
@@ -11,13 +12,13 @@
     height: 100%;
     overflow: scroll;
 }
+
 .mat-sidenav-content {
     overflow: scroll;
     width: 90%;
     margin: auto;
     margin-bottom: 20px;
     padding: 20px;
-
 }
 
 .eventBtn {
@@ -57,20 +58,32 @@ mat-card{
     
 }
 
-
 .commentBtn {
     width: 100%;
     text-align: right;
 }
 
+.mat-card {
+    color: #E8DFCD;
+    font-family: 'Raleway', sans-serif;
+}
 
+.Snow{
+    background-color: #CC6A72;
+}
 
+.Skate{
+    /* background-color: #6B818C; */
+    background-color: #509799;
+}
+
+.Surf{
+    background-color: #DE8A74;
+}
 
 agm-map {
     width: 300px;
     height: 300px;
-
-   
 }
 
 
