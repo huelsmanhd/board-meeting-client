@@ -38,12 +38,11 @@
               <agm-marker [latitude]="lat" [longitude]="lon"></agm-marker>
             </agm-map>
           </div>
-          <div class="directions" >
+          <div class="directions">
             <a href="https://www.google.com/maps/dir/{{latitude}},{{longitude}}/{{lat}},{{lon}}" target="_blank"><button>Get Directions</button></a>
           </div>
 
         </div>
-        
 
       </div>
 
@@ -162,6 +161,22 @@
           </div>
         </mat-expansion-panel>
       </mat-accordion>
+      </div>
+    </mat-card>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          {{list[5].dt_txt}}
+        </mat-card-title>
+        <div>
+        </div>
+      </mat-card-header>
+      <div>
+        <p>{{list[5].main.temp}}F</p>
+        <p>{{list[5].weather[0].description}}</p>
+        <p>{{list[5].main.humidity}}%</p>
+        <p>{{list[5].wind.speed}} mph</p>
+        <p>{{list[5].main.pressure}} hPa</p>
       </div>
     </mat-card>
         
