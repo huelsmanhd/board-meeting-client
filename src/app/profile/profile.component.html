@@ -7,7 +7,7 @@
 
     <div class="cardDisplay">
       <h2>Welcome, {{username}}!</h2>
-        <mat-card *ngFor="let userEvents of userEvents">
+        <mat-card *ngFor="let userEvents of userEvents" class="{{userEvents.type}} mat-card">
             <mat-card-header >
               <mat-card-title class="title">{{userEvents.title}}</mat-card-title>
             </mat-card-header>
