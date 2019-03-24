@@ -28,10 +28,21 @@ mat-sidenav-content{
     background-color: #AEB2AF;
 }
 
-.mat-card{
-    background-color: #6B818C;
+.mat-card {
     color: #E8DFCD;
     font-family: 'Raleway', sans-serif;
+}
+
+.Snow{
+    background-color: #CC6A72;
+}
+
+.Skate{
+    background-color: #6B818C;
+}
+
+.Surf{
+    background-color: #DE8A74;
 }
 
 .mat-card-header{

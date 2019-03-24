@@ -10,7 +10,7 @@ import { ProfileComponent } from "../profile/profile.component"
   selector: 'app-create-event',
   templateUrl: './create-event.component.html',
   styleUrls: ['./create-event.component.css'],
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.Emulated,
 })
 export class CreateEventComponent implements OnInit, AfterViewInit {
   @ViewChild('sideNav') sideNav: ElementRef;
