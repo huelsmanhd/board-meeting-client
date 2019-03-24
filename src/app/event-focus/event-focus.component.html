@@ -5,14 +5,15 @@
   </mat-sidenav>
     
   <mat-sidenav-content class="main-content">
-    <mat-card>
+
+  <!--TRY GRID HERE-->
+  <mat-card>
+  
 
       <div class="eventWrapper" *ngIf="editView === false">
 
         <mat-card-header>
-          <mat-card-title>
-            {{event.title}}
-          </mat-card-title>
+          
 
           <div id="optionsFlex"></div>
           <button mat-button [matMenuTriggerFor]="menu" *ngIf="event.user.username === editButtonCheck() || deleteButtonCheck()"><mat-icon>launch</mat-icon></button>
@@ -23,8 +24,9 @@
           </mat-menu>
 
         </mat-card-header>
-        <div class="conatainer1">
+        <div class="container1">
           <div class="info">
+            <h2>{{event.title}}</h2>
             <p>Hosted by {{event.user.username}}</p>
             <p>{{event.type}}</p>
             <p>{{event.date}}</p>
@@ -37,12 +39,14 @@
             <agm-map [latitude]="lat" [longitude]="lon" [usePanning]="true">
               <agm-marker [latitude]="lat" [longitude]="lon"></agm-marker>
             </agm-map>
+          
+            <div class="directions" >
+              <a href="https://www.google.com/maps/dir/{{latitude}},{{longitude}}/{{lat}},{{lon}}" target="_blank"><button mat-button>Get Directions</button></a>
+            </div>
           </div>
-          <div class="directions" >
-            <a href="https://www.google.com/maps/dir/{{latitude}},{{longitude}}/{{lat}},{{lon}}" target="_blank"><button>Get Directions</button></a>
           </div>
 
-        </div>
+        
         
 
       </div>
@@ -164,6 +168,7 @@
       </mat-accordion>
       </div>
     </mat-card>
+ 
         
   </mat-sidenav-content>
 </mat-sidenav-container>

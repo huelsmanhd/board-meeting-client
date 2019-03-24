@@ -1,7 +1,9 @@
 .eventWrapper{
    position: relative;
    margin: 2em 2em;
+  
 }
+
 .sidenav-container {
     position: fixed;
     top: 3.1em;
@@ -53,7 +55,8 @@ mat-card{
 }
 
 .commentsWrapper {
-    margin: 1em;
+    margin: 2em;
+    padding: 1em;
     
 }
 
@@ -63,16 +66,31 @@ mat-card{
     text-align: right;
 }
 
-
-
-
-agm-map {
-    width: 300px;
-    height: 300px;
-
-   
+.wrapper {
+    display: grid;
 }
 
+.container1 {
+    
+    width: 100%;
+}
+.info {
+    float: left;
+    width: 40%;
+}
+.directions button {
+    width: 20%;
+    margin-top: 1em;
+    background-color: rgb(141, 155, 144);
+    color: beige;
+    
+}
+
+agm-map {
+    float: right;
+    height: 300px;
+    width: 300px;
+}
 
 
 
