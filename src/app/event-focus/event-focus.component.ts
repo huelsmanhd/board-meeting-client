@@ -6,6 +6,8 @@ import { TokenService } from "../token.service";
 import { HttpClient } from '@angular/common/http';
 import { jsonpCallbackContext } from '@angular/common/http/src/module';
 import { APIURL } from '../../environments/environment.prod';
+import { Observable } from 'rxjs';
+import { SinglePropOffsetValuesIndex } from '@angular/core/src/render3/interfaces/styling';
 
 
 @Component({
@@ -21,13 +23,9 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   comments=<any>[];
   comment: string = '';
   editView: boolean = false;
-  // lat = this.eventForm['lat'];
-  // lon = this.eventForm['long'];
-  // key = '00726991e168c5c949d3066d0bc61089';
-  // baseWeatherURL = `http://api.openweathermap.org/data/2.5/forecast?`
 
   lat: number = 5;
-  lng: number = 5;
+  lon: number = 5;
   latitude: number;
   longitude: number;
   href: string;
@@ -73,9 +71,9 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
 
     this.getComments()
   }
-  setLatLng(lat, lng) {
+  setLatLng(lat, lon) {
     this.lat = lat
-    this.lng = lng
+    this.lon = lon
   }
   getDirections() {
     navigator.geolocation.getCurrentPosition((location) => {
@@ -89,11 +87,23 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   getSingleEvent() {
     this.boardService.findSingleEvent().subscribe(singleEvent => {
       this.event = singleEvent
-      console.log(singleEvent["lat"], singleEvent["long"])
       this.setLatLng(parseInt(singleEvent["lat"]), parseInt(singleEvent["long"]))
+      this.getWeatherData()
       
     })
   }
+
+  getWeatherData() {
+    let apikey = '00726991e168c5c949d3066d0bc61089';
+    return this.http.get(`http://api.openweathermap.org/data/2.5/forecast?lat=${this.lat}&lon=${this.lon}&APPID=${apikey}&units=imperial`)
+    .subscribe(res => console.log(res))
+    
+  }
+
+  // showWeatherData() {
+  //   this.getWeatherData().subscribe()
+  // }
+
   updateEvent(id) {
     console.log(this.eventForm.value);
     if (this.eventForm.value.title === null) {
@@ -224,7 +234,8 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
       })
     })
     .then(res => res.json())
-    .then(comment => this.getComments());
+    .then(comment => this.getComments())
+    .then(reset => this.commentEditForm.reset());
   }
 
   //DELETE COMMENT BY COMMENT ID

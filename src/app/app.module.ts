@@ -86,7 +86,7 @@ import { AgmCoreModule } from "@agm/core";
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAvqX9e8QwArzR7MSUStK9GaJKio6EoQCo'
 
-    })
+    }),
 
   ],
   providers: [JwtHelperService],
