@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { APIURL } from '../environments/environment.prod';
+import { EventFocusComponent } from '../app/event-focus/event-focus.component';
 
 
 @Injectable({
@@ -116,5 +117,4 @@ export class BoardService {
     let baseURL = `${APIURL}/comments/create/${id}`;
     return this.http.post(baseURL, commentString, httpOptions)
   }
-
 }

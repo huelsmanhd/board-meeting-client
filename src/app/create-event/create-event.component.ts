@@ -54,6 +54,7 @@ export class CreateEventComponent implements OnInit, AfterViewInit {
       console.log(event);
       this.events.getAllEvents();
       this.profile.getUserEvents();
+      this.eventForm.reset();
       
     })
    

@@ -34,12 +34,12 @@
             <p>{{event.description}}</p>
           </div>
           <div class="map">
-            <agm-map [latitude]="lat" [longitude]="lng" [usePanning]="true">
-              <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+            <agm-map [latitude]="lat" [longitude]="lon" [usePanning]="true">
+              <agm-marker [latitude]="lat" [longitude]="lon"></agm-marker>
             </agm-map>
           </div>
           <div class="directions" >
-            <a href="https://www.google.com/maps/dir/{{latitude}},{{longitude}}/{{lat}},{{lng}}" target="_blank"><button>Get Directions</button></a>
+            <a href="https://www.google.com/maps/dir/{{latitude}},{{longitude}}/{{lat}},{{lon}}" target="_blank"><button>Get Directions</button></a>
           </div>
 
         </div>
