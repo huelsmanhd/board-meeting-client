@@ -10,6 +10,24 @@
     padding-left: 2em;
     padding-right: 2em;
     padding-bottom: 2em;
+    background-color: #C5C7C6
+}
+
+.authFormField {
+    position: relative;
+    width: 80%;
+    float: center;
+    margin: auto;
+    left: 10%;
+    color: #566F7C !important;
+}
+
+.contentForCard {
+    width: 95%;
+    margin: auto;
+    padding: 1em;
+    border-radius: 3px;
+    background-color: rgba(77, 77, 77, 0.605)
 }
 
 .btnBox {

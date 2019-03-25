@@ -1,10 +1,12 @@
 <mat-card class="authCard">
   
 
-  <div *ngIf="loginView !== false" class="authDiv">
+  <div *ngIf="loginView !== false" class="authDiv" >
     <form [formGroup]="loginForm" (ngSubmit)="login()">
 
-      <h2>Sign In</h2>
+      <mat-card-header >
+        <mat-card-title class="title"><h2>Sign In</h2></mat-card-title>
+      </mat-card-header>
       
       <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
@@ -32,7 +34,9 @@
   <div *ngIf="loginView === false">
     <form [formGroup]="signupForm" (ngSubmit)="signup()">
 
-      <h2>Sign Up</h2>
+      <mat-card-header >
+        <mat-card-title class="title"><h2>Sign Up</h2></mat-card-title>
+      </mat-card-header>
       
       <mat-form-field appearance="outline">
         <mat-label>Username</mat-label>
