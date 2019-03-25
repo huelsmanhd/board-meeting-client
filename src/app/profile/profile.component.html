@@ -7,7 +7,8 @@
 
     <div class="cardDisplay">
       <h2>Welcome, {{username}}!</h2>
-        <mat-card *ngFor="let userEvents of userEvents" class="{{userEvents.type}} mat-card">
+        <mat-card *ngFor="let userEvents of userEvents" class="{{userEvents.type}}card mat-card">
+          <div class="contentForCard">
             <mat-card-header >
               <mat-card-title class="title">{{userEvents.title}}</mat-card-title>
             </mat-card-header>
@@ -23,6 +24,7 @@
               <button mat-button color="secondary" class="card-btn" (click)="viewEvent(userEvents.id)">View Full</button>
             </mat-card-actions>
           </mat-card-footer>
+        </div>
         </mat-card>
       </div>
 

@@ -3,7 +3,7 @@ body {
 }
 
 mat-sidenav-content{
-    background-color: #AEB2AF;
+    background-color: rgb(255, 255, 255);
 }
 
 .mat-select-placeholder{
@@ -33,17 +33,38 @@ mat-sidenav-content{
     font-family: 'Raleway', sans-serif;
 }
 
-.SnowCard{
-    background-color: #CC6A72;
+.Snowcard{
+    /* background-color: #CC6A72; */
+    background-image: url("../../assets/images/pamela-saunders-384317-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    background-color: #DBE3E6;
 }
 
-.SkateCard{
+.Skatecard{
     /* background-color: #6B818C; */
+    background-image: url("../../assets/images/matteo-paganelli-39971-unsplash.jpg");
+    background-repeat: no-repeat;
+    /* background-position: right; */
+    background-size: cover;
     background-color: #509799;
 }
+.contentForCard {
+    width: 95%;
+    padding: 1em;
+    border-radius: 3px;
+    background-color: rgba(77, 77, 77, 0.605)
+}
 
-.SurfCard{
-    background-color: #DE8A74;
+
+.Surfcard{
+    /* background-color: #DE8A74; */
+    background-image: url("../../assets/images/img3.jpg");
+    background-repeat: no-repeat;
+    /* background-position: right; */
+    background-size: cover;
+    background-color: #509799;
 }
 
 .mat-card-header{
@@ -63,7 +84,7 @@ mat-sidenav-content{
 .sidenav-container {
     z-index: 0 !important;
     position: fixed;
-    top: 3em;
+    /* top: 3em; */
     bottom: 0em;
     left: 0;
     right: 0;
@@ -102,6 +123,10 @@ mat-sidenav-content{
     margin-bottom: 1%;
     float: left;
     /* float: left; */
+}
+mat-card:hover {
+    box-shadow: 3px 3px 4px rgb(62, 62, 62)!important;
+    /* filter: drop-shadow(2px 2px 4px black) !important */
 }
 
 .filter {

@@ -23,7 +23,8 @@
     <br>
     
     <div class="cardDisplay">
-      <mat-card *ngFor="let events of events" class="{{events.type}}Card mat-card">
+      <mat-card *ngFor="let events of events" class="{{events.type}}card mat-card">
+        <div class="contentForCard">
           <mat-card-header>
             <mat-card-title class="title"><h2>{{events.title}}</h2></mat-card-title>
           </mat-card-header>
@@ -33,12 +34,14 @@
             <p><b>Address:</b> {{events.location}}</p>
             <p><b>Date:</b> {{events.date}}</p>
           </mat-card-content>
+       
           <mat-card-footer>
           <mat-card-actions>
             <a mat-button routerLink="/profile" class="card-btn"><b>Attending Event</b></a>
             <button mat-button color="secondary" class="card-btn" (click)="viewEvent(events.id)"><b>View Full</b></button>
           </mat-card-actions>
         </mat-card-footer>
+      </div>
       </mat-card>
     </div>
   </mat-sidenav-content>
