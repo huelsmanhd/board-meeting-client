@@ -42,11 +42,11 @@
           </div>
 
         
-        
+        </div>
 
-      </div>
+      
 
-      <div *ngIf="editView !== false">
+      <div class="eventWrapper" *ngIf="editView !== false">
         <form [formGroup]="eventForm" (submit)="updateEvent(event.id)">
 
           <h2>Edit Event</h2>
@@ -98,6 +98,7 @@
           
         </form>
     </div>
+      
 
     <div>
       <mat-accordion>
