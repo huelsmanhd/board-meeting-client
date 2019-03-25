@@ -15,13 +15,20 @@
     color: #E8DFCD;
     font-family: 'Raleway', sans-serif;
 }
-mat-card:hover {
+
+.Skatecard:hover{
     box-shadow: 3px 3px 4px rgb(62, 62, 62)!important;
-    /* filter: drop-shadow(5px 5px 5px black) !important */
     
 }
-
-.Snow{
+.Snowcard:hover{
+    box-shadow: 3px 3px 4px rgb(62, 62, 62)!important;
+    
+}
+.Surfcard:hover{
+    box-shadow: 3px 3px 4px rgb(62, 62, 62)!important;
+    
+}
+.Snowcard{
     background-image: url("../../assets/images/pamela-saunders-384317-unsplash.jpg");
     background-repeat: no-repeat;
     background-position: right;
@@ -29,7 +36,7 @@ mat-card:hover {
     background-color: #509799;
 }
 
-.Skate{
+.Skatecard{
     background-image: url("../../assets/images/matteo-paganelli-39971-unsplash.jpg");
     background-repeat: no-repeat;
     /* background-position: right; */
@@ -37,7 +44,7 @@ mat-card:hover {
     background-color: #509799;
 }
 
-.Surf{
+.Surfcard{
     background-image: url("../../assets/images/img3.jpg");
     background-repeat: no-repeat;
     /* background-position: right; */
@@ -62,4 +69,8 @@ mat-card:hover {
     margin-bottom: 1%;
     float: left;
     /* float: left; */
+}
+.cardDisplay h2 {
+    font-family: 'Roboto', sans-serif;
+    
 }

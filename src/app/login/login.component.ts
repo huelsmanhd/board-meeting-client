@@ -69,10 +69,14 @@ export class LoginComponent implements OnInit {
     } else {
     this.userService.signupUser(this.signupForm.value)
     .subscribe(res => {
+      if (res["status"] === 500) {
+        this.error = true;
+        this.message = "Email already exists in our system"
+      } else {
       this.error = false;
       this.tokenService.storeSession(res["user"].admin, res["sessionToken"], res["user"].username)
       this.router.navigate(["/home"]);
-    })
+    }})
 
   }
 }
