@@ -2,11 +2,11 @@
 
 <form [formGroup]="eventForm" (ngSubmit)="createEvent(); token.closeNav()" class="createEventForm">
 
-  <h2>Create Event</h2>
+  <h2 class="createEventHeader">Create Event</h2>
 
   <mat-form-field appearance="outline" class="createEventFormField">
-    <mat-label>Title</mat-label>
-    <input matInput placeholder="Placeholder" formControlName="title" type="title" class="form-control" name="title" required>
+    <mat-label class="createEventLabel">Title</mat-label>
+    <input matInput placeholder="Title" formControlName="title" type="title" class="form-control" name="title" required>
   </mat-form-field>
 
   <mat-form-field appearance="outline" class="createEventFormField">
@@ -44,11 +44,11 @@
     <textarea matInput placeholder="Placeholder" formControlName="description" class="form-control" name="description" required></textarea>
   </mat-form-field>
 
-  <!-- <div class="btnBox"> -->
+  <div class="btnBox">
     <button mat-button type="submit" class="submit-btn">Create Event</button>
-  <!-- </div> -->
+    <button mat-button (click)="token.closeNav()">Cancel</button>
+  </div>
   
 </form>
-<button mat-button (click)="token.closeNav()">Cancel</button>
 
 <!-- </mat-card> -->

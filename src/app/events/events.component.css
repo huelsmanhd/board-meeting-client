@@ -33,16 +33,16 @@ mat-sidenav-content{
     font-family: 'Raleway', sans-serif;
 }
 
-.Snow{
+.SnowCard{
     background-color: #CC6A72;
 }
 
-.Skate{
+.SkateCard{
     /* background-color: #6B818C; */
     background-color: #509799;
 }
 
-.Surf{
+.SurfCard{
     background-color: #DE8A74;
 }
 
