@@ -46,7 +46,7 @@
 
       
 
-      <div class="eventWrapper" *ngIf="editView !== false">
+      <div *ngIf="editView !== false" class="eventWrapper">
         <form [formGroup]="eventForm" (submit)="updateEvent(event.id)">
 
           <h2>Edit Event</h2>

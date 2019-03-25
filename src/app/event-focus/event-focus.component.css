@@ -1,6 +1,6 @@
 .eventWrapper{
-   position: relative;
-   width: 95%;
+position: relative;
+width: 95%;
     padding: 1em;
     border-radius: 3px;
     background-color: rgba(77, 77, 77, 0.605);
@@ -85,7 +85,7 @@ mat-card{
 }
     
 .mat-card {
-    color: #E8DFCD;
+    /* color: #E8DFCD; */
     font-family: 'Raleway', sans-serif;
 }
 
