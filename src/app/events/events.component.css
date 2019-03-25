@@ -38,7 +38,8 @@ mat-sidenav-content{
 }
 
 .Skate{
-    background-color: #6B818C;
+    /* background-color: #6B818C; */
+    background-color: #509799;
 }
 
 .Surf{
@@ -76,7 +77,8 @@ mat-sidenav-content{
     width: 90%;
     margin: auto;
     margin-bottom: 20px;
-    padding: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     background-color: #C5C8C6 !important;
 
 }
@@ -103,8 +105,14 @@ mat-sidenav-content{
     /* float: left; */
 }
 
-
-
 .filter {
     width: 20%
+}
+
+mat-sidenav-container{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }

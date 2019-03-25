@@ -2,6 +2,7 @@
    position: relative;
    margin: 2em 2em;
 }
+
 .sidenav-container {
     position: fixed;
     top: 3.1em;
@@ -11,13 +12,21 @@
     height: 100%;
     overflow: scroll;
 }
+
 .mat-sidenav-content {
     overflow: scroll;
-    width: 90%;
-    margin: auto;
-    margin-bottom: 20px;
-    padding: 20px;
+    width: 100%;
+    margin: 0px 0px 20px 0px;
+}
 
+.mat-card {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 20px;
 }
 
 .eventBtn {
@@ -30,7 +39,7 @@ mat-accordian {
 }
 
 .sidenav {
-    width: 35%;
+    width: 40%;
 }
 
 #optionsFlex{
@@ -38,41 +47,97 @@ mat-accordian {
     /* display: inline-block; */
 }
 
-mat-card{
+.container1 {
     position: relative;
-    width: 60%;
-    margin: auto;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    grid-column: 1;
+    grid-row: 1;
+    color: #E8DFCD;
+    font-family: 'Raleway', sans-serif;
 }
 
-.commentsWrapper button {
-    float: right;
+.container2 {
+    position: relative;
+    width: 30%;
+    grid-column: 2;
+    grid-row: 1;
 }
+
+.container3 {
+    position: relative;
+    width: 90%;
+    grid-column: 1 / 3;
+    grid-row: 2;
+    color: #E8DFCD;
+    font-family: 'Raleway', sans-serif;
+}
+
+.container4 {
+    position: relative;
+    width: 100%;
+    grid-column: 1 / 3;
+    grid-row: 3;
+    grid-row-end: 3;
+}
+
+/* .commentsWrapper button {
+    float: right;
+} */
 
 .commentsWrapper .comments {
     color: blue;
 }
 
 .commentsWrapper {
-    margin: 2em;
+    margin: 1em;
+    padding: 1em;
     
 }
-
 
 .commentBtn {
     width: 100%;
     text-align: right;
 }
 
-
-
-
-agm-map {
-    width: 300px;
-    height: 300px;
-
-   
+.wrapper {
+    display: grid;
 }
 
+.info {
+    float: left;
+    width: 50%;
+}
+.directions button {
+    width: 40%;
+    margin-top: 1em;
+    background-color: rgb(141, 155, 144);
+    color: beige;
+    text-align: center;
+}
+
+.Snow{
+    background-color: #CC6A72;
+}
+
+.Skate{
+    /* background-color: #6B818C; */
+    background-color: #509799;
+}
+
+.Surf{
+    background-color: #DE8A74;
+}
+
+agm-map {
+    position: relative;
+    grid-column: 2;
+    grid-row: 1;
+    margin: auto;
+    height: 300px;
+    width: 300px;
+}
 
 
 
