@@ -1,6 +1,6 @@
 .parallax1 {
    
-    height: 95vh;
+    height: 100vh;
     position: relative;
     /* padding-top: 200px; 
     padding-bottom: 200px; */
@@ -11,8 +11,6 @@
     background-size: cover;
     z-index:0
 }
-
-
 
 .parallax2 {
     background-image: url("../../assets/images/img5.jpg");
@@ -38,13 +36,12 @@
     margin-top: 4em;
 }
 
-
 .home-info {
     text-align: center;
     vertical-align: middle;
     /* display: table-cell; */
     font-size: 28px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
     margin-left: 15%;
     margin-right: 15%;
     padding: 1em;
@@ -54,7 +51,7 @@
     z-index: 1;
     margin: 2em;
     font-size: 15px;
-    font-family: 'Monsterrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 
 

@@ -28,8 +28,6 @@
             <p>{{event.type}}</p>
             <p>{{event.date}}</p>
             <p>{{event.location}}</p>
-            <p>{{event.lat}}</p>
-            <p>{{event.long}}</p>
             <p>{{event.description}}</p>
           </div>
           <div class="map">
@@ -44,11 +42,11 @@
           </div>
 
         
-        
+        </div>
 
-      </div>
+      
 
-      <div *ngIf="editView !== false">
+      <div *ngIf="editView !== false" class="eventWrapper">
         <form [formGroup]="eventForm" (submit)="updateEvent(event.id)">
 
           <h2>Edit Event</h2>
@@ -100,6 +98,7 @@
           
         </form>
     </div>
+      
 
     <div>
       <mat-accordion>

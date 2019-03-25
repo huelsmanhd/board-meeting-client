@@ -3,7 +3,7 @@ body {
 }
 
 mat-sidenav-content{
-    background-color: #AEB2AF;
+    background-color: rgb(255, 255, 255);
 }
 
 .mat-select-placeholder{
@@ -16,7 +16,7 @@ mat-sidenav-content{
 
 .mat-form-field{
     font-family: 'Raleway', sans-serif;
-    color: #E8DFCD !important;
+    /* color: #E8DFCD !important; */
 }
 
 .mat-form-field-label{
@@ -28,22 +28,56 @@ mat-sidenav-content{
     background-color: #AEB2AF;
 }
 
-.mat-card {
+/* .mat-card {
     color: #E8DFCD;
     font-family: 'Raleway', sans-serif;
+} */
+
+.Snowcard{
+    /* background-color: #CC6A72; */
+    background-image: url("../../assets/images/pamela-saunders-384317-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    background-color: #DBE3E6;
+}
+.Skatecard:hover{
+    box-shadow: 3px 3px 4px rgb(62, 62, 62)!important;
+    
+}
+.Snowcard:hover{
+    box-shadow: 3px 3px 4px rgb(62, 62, 62)!important;
+    
+}
+.Surfcard:hover{
+    box-shadow: 3px 3px 4px rgb(62, 62, 62)!important;
+    
 }
 
-.Snow{
-    background-color: #CC6A72;
-}
-
-.Skate{
+.Skatecard{
     /* background-color: #6B818C; */
+    background-image: url("../../assets/images/matteo-paganelli-39971-unsplash.jpg");
+    background-repeat: no-repeat;
+    /* background-position: right; */
+    background-size: cover;
     background-color: #509799;
 }
+.contentForCard {
+    width: 95%;
+    margin: auto;
+    padding: 1em;
+    border-radius: 3px;
+    background-color: rgba(77, 77, 77, 0.605)
+}
 
-.Surf{
-    background-color: #DE8A74;
+
+.Surfcard{
+    /* background-color: #DE8A74; */
+    background-image: url("../../assets/images/img3.jpg");
+    background-repeat: no-repeat;
+    /* background-position: right; */
+    background-size: cover;
+    background-color: #509799;
 }
 
 .mat-card-header{
@@ -63,7 +97,7 @@ mat-sidenav-content{
 .sidenav-container {
     z-index: 0 !important;
     position: fixed;
-    top: 3em;
+    /* top: 3em; */
     bottom: 0em;
     left: 0;
     right: 0;
@@ -85,12 +119,15 @@ mat-sidenav-content{
 .sidenav {
     width: 35%;
 }
+
 .main-content {
     margin-top: 3%;
 }
+
 .card-btn {
     float: right;
 }
+
 .mat-card-actions {
     margin: 2.5em !important;
     padding: 1em;
@@ -103,6 +140,8 @@ mat-sidenav-content{
     float: left;
     /* float: left; */
 }
+
+
 
 .filter {
     width: 20%
