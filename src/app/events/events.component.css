@@ -41,6 +41,18 @@ mat-sidenav-content{
     background-size: cover;
     background-color: #DBE3E6;
 }
+.Skatecard:hover{
+    box-shadow: 3px 3px 4px rgb(62, 62, 62)!important;
+    
+}
+.Snowcard:hover{
+    box-shadow: 3px 3px 4px rgb(62, 62, 62)!important;
+    
+}
+.Surfcard:hover{
+    box-shadow: 3px 3px 4px rgb(62, 62, 62)!important;
+    
+}
 
 .Skatecard{
     /* background-color: #6B818C; */
@@ -129,10 +141,7 @@ mat-sidenav-content{
     /* float: left; */
 }
 
-mat-card:hover {
-    box-shadow: 3px 3px 4px rgb(62, 62, 62)!important;
-    /* filter: drop-shadow(2px 2px 4px black) !important */
-}
+
 
 .filter {
     width: 20%
