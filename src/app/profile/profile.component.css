@@ -1,10 +1,24 @@
 .sidenav-container {
+    z-index: 0 !important;
     position: fixed;
-    top: 3.1em;
-    bottom: 0;
+    /* top: 3em; */
+    bottom: 0em;
     left: 0;
     right: 0;
-    height: 100vh;
+    height: 100%;
+    background-color: #C5C8C6 !important;
+    overflow: scroll;
+}
+
+.mat-sidenav-content {
+    overflow: visible;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #C5C8C6 !important;
+
 }
 
 .sidenav {
@@ -15,17 +29,34 @@
     color: #E8DFCD;
     font-family: 'Raleway', sans-serif;
 }
-
-.Snow{
-    background-color: #CC6A72;
+mat-card:hover {
+    box-shadow: 3px 3px 4px rgb(62, 62, 62)!important;
+    /* filter: drop-shadow(5px 5px 5px black) !important */
+    
 }
 
-.Skate{
-    background-color: #6B818C;
+.Snowcard{
+    background-image: url("../../assets/images/pamela-saunders-384317-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    background-color: #509799;
 }
 
-.Surf{
-    background-color: #DE8A74;
+.Skatecard{
+    background-image: url("../../assets/images/matteo-paganelli-39971-unsplash.jpg");
+    background-repeat: no-repeat;
+    /* background-position: right; */
+    background-size: cover;
+    background-color: #509799;
+}
+
+.Surfcard{
+    background-image: url("../../assets/images/img3.jpg");
+    background-repeat: no-repeat;
+    /* background-position: right; */
+    background-size: cover;
+    background-color: #509799;
 }
 
 .main-content {

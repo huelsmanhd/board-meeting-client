@@ -2,19 +2,19 @@
 
 <form [formGroup]="eventForm" (ngSubmit)="createEvent(); token.closeNav()" class="createEventForm">
 
-  <h2>Create Event</h2>
+  <h2 class="createEventHeader">Create Event</h2>
 
   <mat-form-field appearance="outline" class="createEventFormField">
-    <mat-label>Title</mat-label>
-    <input matInput placeholder="Placeholder" formControlName="title" type="title" class="form-control" name="title" required>
+    <mat-label class="createEventLabel">Title</mat-label>
+    <input matInput placeholder="Title" formControlName="title" type="title" class="form-control" name="title" required>
   </mat-form-field>
 
   <mat-form-field appearance="outline" class="createEventFormField">
     <mat-label>Activity</mat-label>
-    <mat-select placeholder="Placeholder" formControlName="type" type="select" class="form-control" name="type" required>
-      <mat-option value="Skate">Skate</mat-option>
-      <mat-option value="Surf">Surf</mat-option>
-      <mat-option value="Snow">Snow</mat-option>
+    <mat-select placeholder="Activity" formControlName="type" type="select" class="form-control" name="type" class="createEventSelect" required>
+      <mat-option value="Skate" class="createEventSelectOption">Skate</mat-option>
+      <mat-option value="Surf" class="createEventSelectOption">Surf</mat-option>
+      <mat-option value="Snow" class="createEventSelectOption">Snow</mat-option>
     </mat-select>
   </mat-form-field>
 
@@ -26,29 +26,29 @@
 
   <mat-form-field appearance="outline" class="createEventFormField">
     <mat-label>Latitude</mat-label>
-    <input matInput placeholder="Placeholder" formControlName="lat" class="form-control" name="latitude" required>
+    <input matInput placeholder="Latitude" formControlName="lat" class="form-control" name="latitude" required>
   </mat-form-field>
 
   <mat-form-field appearance="outline" class="createEventFormField">
     <mat-label>Longitude</mat-label>
-    <input matInput placeholder="Placeholder" formControlName="long" class="form-control" name="longitude" required>
+    <input matInput placeholder="Longitude" formControlName="long" class="form-control" name="longitude" required>
   </mat-form-field>
 
   <mat-form-field appearance="outline" class="createEventFormField">
     <mat-label>Address</mat-label>
-    <input matInput placeholder="Placeholder" formControlName="location" class="form-control" name="location" required>
+    <input matInput placeholder="Address" formControlName="location" class="form-control" name="location" required>
   </mat-form-field>
 
   <mat-form-field appearance="outline" class="createEventFormField">
     <mat-label>Description</mat-label>
-    <textarea matInput placeholder="Placeholder" formControlName="description" class="form-control" name="description" required></textarea>
+    <textarea matInput placeholder="Description" formControlName="description" class="form-control" name="description" required></textarea>
   </mat-form-field>
 
-  <!-- <div class="btnBox"> -->
+  <div class="btnBox">
     <button mat-button type="submit" class="submit-btn">Create Event</button>
-  <!-- </div> -->
+    <button mat-button (click)="token.closeNav()">Cancel</button>
+  </div>
   
 </form>
-<button mat-button (click)="token.closeNav()">Cancel</button>
 
 <!-- </mat-card> -->

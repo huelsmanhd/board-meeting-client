@@ -14,7 +14,7 @@ import {Injectable} from "@angular/core"
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css'],
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.Emulated,
 })
 export class ProfileComponent implements OnInit, AfterViewInit {
   @ViewChild('sideNav') sideNav: ElementRef;
@@ -31,6 +31,7 @@ export class ProfileComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.getUserEvents();
     this.profileName();
+    this.boardService.navbarSwitch();
   }
 
   getUserEvents() {

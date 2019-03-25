@@ -16,7 +16,7 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
   selector: 'app-events',
   templateUrl: './events.component.html',
   styleUrls: ['./events.component.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class EventsComponent implements OnInit, AfterViewInit {
   @ViewChild('sideNav') sideNav: ElementRef;
@@ -44,6 +44,8 @@ export class EventsComponent implements OnInit, AfterViewInit {
     this.filter = this.fb.group({
       filter: new FormControl()
     })
+
+    this.boardService.navbarSwitch();
 
   }
 

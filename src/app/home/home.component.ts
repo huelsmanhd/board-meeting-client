@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BoardService } from '../board.service';
 
 
 @Component({
@@ -23,11 +24,15 @@ imageSources = [
   
 ]
 
-  constructor() {
+  constructor(
+    private boardService: BoardService,
+  ) {
   
    }
 
   ngOnInit() {
+
+    this.boardService.navbarSwitch();
     
   }
   

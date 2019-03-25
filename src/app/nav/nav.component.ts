@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TokenService } from "../token.service";
 import { Router, RouterLink } from "@angular/router";
 import { routerNgProbeToken } from '@angular/router/src/router_module';
+import { BoardService } from '../board.service';
 
 
 @Component({
@@ -13,10 +14,10 @@ export class NavComponent implements OnInit {
   sessionToken: string = "";
   admin: string = "";
   
-
   logoutButton = false;
   constructor(
     private token: TokenService,
+    private boardService: BoardService,
     private router: Router) { }
 
   ngOnInit() {
@@ -25,6 +26,7 @@ export class NavComponent implements OnInit {
     // this.admin = this.token.getAdmin();
     this.admin = this.token.getAdmin();
     this.viewCreateEvent();
+    
   }
 
   logoutView() {

@@ -7,8 +7,9 @@
   <mat-sidenav-content class="main-content">
     <mat-card class="{{event.type}} mat-card">
 
+      <div class="eventWrapper" *ngIf="editView === false">
 
-        <mat-card-header class="container1" *ngIf="editView === false">          
+        <mat-card-header >          
 
           <div id="optionsFlex"></div>
           <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="event.user.username === editButtonCheck() || deleteButtonCheck()"><mat-icon>settings</mat-icon></button>
@@ -26,8 +27,6 @@
             <p>{{event.type}}</p>
             <p>{{event.date}}</p>
             <p>{{event.location}}</p>
-            <p>{{event.lat}}</p>
-            <p>{{event.long}}</p>
             <p>{{event.description}}</p>
           </div>
         </div>
@@ -104,7 +103,8 @@
                   </div>
                   </mat-grid-tile>
             </mat-grid-list>
-          </div>   
+          </div>
+        </div>   
 
       <div class="eventWrapper" *ngIf="editView !== false">
         <form [formGroup]="eventForm" (submit)="updateEvent(event.id)">
