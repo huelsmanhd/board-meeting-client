@@ -1,18 +1,19 @@
-h2 {
-    position: relative;
-    top: 5%;
-    left: 10%;
-}
-
 .createEventFormField {
     position: relative;
     width: 80%;
     float: center;
     margin: auto;
     left: 10%;
+    color: #566F7C !important;
 }
 
-  
+.createEventSelect{
+    color: #566F7C !important;
+}
+
+.createEventSelectOption{
+    color: #566F7C !important;
+}
 
 .submit-btn{
     display: inline;
@@ -34,5 +35,9 @@ mat-sidenav{
 }
 
 .createEventHeader{
+    position: relative;
+    top: 5%;
+    left: 10%;
     font-family: 'Roboto', sans-serif;
+    color: #566F7C !important;
 }

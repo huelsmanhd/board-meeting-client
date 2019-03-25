@@ -16,7 +16,7 @@ mat-sidenav-content{
 
 .mat-form-field{
     font-family: 'Raleway', sans-serif;
-    color: #E8DFCD !important;
+    /* color: #E8DFCD !important; */
 }
 
 .mat-form-field-label{
@@ -28,10 +28,10 @@ mat-sidenav-content{
     background-color: #AEB2AF;
 }
 
-.mat-card {
+/* .mat-card {
     color: #E8DFCD;
     font-family: 'Raleway', sans-serif;
-}
+} */
 
 .Snowcard{
     /* background-color: #CC6A72; */
@@ -106,12 +106,15 @@ mat-sidenav-content{
 .sidenav {
     width: 35%;
 }
+
 .main-content {
     margin-top: 3%;
 }
+
 .card-btn {
     float: right;
 }
+
 .mat-card-actions {
     margin: 2.5em !important;
     padding: 1em;
@@ -124,6 +127,7 @@ mat-sidenav-content{
     float: left;
     /* float: left; */
 }
+
 mat-card:hover {
     box-shadow: 3px 3px 4px rgb(62, 62, 62)!important;
     /* filter: drop-shadow(2px 2px 4px black) !important */

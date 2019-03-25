@@ -29,7 +29,6 @@
     background-size: contain;
 }
 
-
 .nav-btn {
     text-decoration: none;
     float: right;
@@ -48,13 +47,11 @@
     height: inherit;
 }
 
-.btn-wrapper:hover {
-    background-color: pink;
-}
-
-
-
 mat-toolbar img {
     width: 5em;
     height: 3em;
+}
+
+.navBtn{
+    font-family: 'Roboto:300', sans-serif !important;
 }
