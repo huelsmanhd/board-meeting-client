@@ -17,7 +17,7 @@ export class NavComponent implements OnInit {
   logoutButton = false;
   constructor(
     private token: TokenService,
-    private boardService: BoardService,
+    public boardService: BoardService,
     private router: Router) { }
 
   ngOnInit() {
