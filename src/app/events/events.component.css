@@ -52,6 +52,7 @@ mat-sidenav-content{
 }
 .contentForCard {
     width: 95%;
+    margin: auto;
     padding: 1em;
     border-radius: 3px;
     background-color: rgba(77, 77, 77, 0.605)
