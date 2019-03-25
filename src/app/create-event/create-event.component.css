@@ -1,6 +1,7 @@
 h2 {
     position: relative;
     top: 5%;
+    left: 10%;
 }
 
 .createEventFormField {
@@ -11,6 +12,8 @@ h2 {
     left: 10%;
 }
 
+  
+
 .submit-btn{
     display: inline;
 }
@@ -18,4 +21,18 @@ h2 {
 .mat-drawer-inner-container{
     height: 100vh;
     overflow: hidden;
+}
+
+mat-sidenav{
+    background-color: #C5C7C6 !important;
+}
+
+.btnBox{
+    position: relative;
+    float: right;
+    right: 10%;
+}
+
+.createEventHeader{
+    font-family: 'Roboto', sans-serif;
 }

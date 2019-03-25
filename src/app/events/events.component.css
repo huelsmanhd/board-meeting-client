@@ -39,7 +39,7 @@ mat-sidenav-content{
     background-repeat: no-repeat;
     background-position: right;
     background-size: cover;
-    background-color: #509799;
+    background-color: #DBE3E6;
 }
 
 .Skatecard{
@@ -84,7 +84,7 @@ mat-sidenav-content{
 .sidenav-container {
     z-index: 0 !important;
     position: fixed;
-    top: 3em;
+    /* top: 3em; */
     bottom: 0em;
     left: 0;
     right: 0;
