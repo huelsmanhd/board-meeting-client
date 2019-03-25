@@ -46,7 +46,7 @@ export class BoardService {
 
   navbarSwitch(){
     this.urlForClass = window.location.href;
-    this.urlForClass === 'http://localhost:4200/home' ? this.navbarClass = 'navbarHome' : this.navbarClass =  'navbarOther' 
+    this.urlForClass === 'https://board-meeting-sever.herokuapp.com/home' ? this.navbarClass = 'navbarHome' : this.navbarClass =  'navbarOther' 
     console.log(this.navbarClass)
   }
 
