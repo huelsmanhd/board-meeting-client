@@ -45,6 +45,8 @@ export class EventsComponent implements OnInit, AfterViewInit {
       filter: new FormControl()
     })
 
+    this.boardService.navbarSwitch();
+
   }
 
   viewEvent(id) {

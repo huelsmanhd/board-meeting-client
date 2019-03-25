@@ -14,6 +14,9 @@ export class BoardService {
   singleEvent: number;
   location: string;
 
+  urlForClass: string = "";
+  navbarClass: string = ""
+
   getAllEvents(){
 
     let baseURL = `${APIURL}/event/all`;
@@ -39,6 +42,12 @@ export class BoardService {
     const userEventURL = `${APIURL}/event/user`
     return this.http.get(userEventURL, httpOptions)
     
+  }
+
+  navbarSwitch(){
+    this.urlForClass = window.location.href;
+    this.urlForClass === 'http://localhost:4200/home' ? this.navbarClass = 'navbarHome' : this.navbarClass =  'navbarOther' 
+    console.log(this.navbarClass)
   }
 
   getEventByType(type) {

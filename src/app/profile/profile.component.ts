@@ -31,6 +31,7 @@ export class ProfileComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.getUserEvents();
     this.profileName();
+    this.boardService.navbarSwitch();
   }
 
   getUserEvents() {
