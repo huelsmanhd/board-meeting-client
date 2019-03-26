@@ -124,12 +124,14 @@ mat-sidenav{
 }
 
 .commentsWrapper {
-    margin: 2em;
+    margin: 1.5em;
+    padding: 1em;
 }
 
 .text-area {
     background-color: whitesmoke;
     border-radius: 5px;
+    margin: 12px;
     padding-top: 1em;
     padding-left: .5em;
 }
@@ -137,7 +139,6 @@ mat-sidenav{
 .mat-icon-button {
     height: 24px;
     width: 24px;
-    vertical-align: none !important;
 }
 
 .commentBtn {
