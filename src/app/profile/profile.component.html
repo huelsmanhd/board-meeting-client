@@ -5,8 +5,14 @@
 
   <mat-sidenav-content class="main-content">
 
+    <br>
+
+    <h2 class="welcome">Welcome, {{username}}!</h2>
+
+    <br>
+    <br>
+
     <div class="cardDisplay">
-      <h2>Welcome, {{username}}!</h2>
         <mat-card *ngFor="let userEvents of userEvents" class="{{userEvents.type}}card mat-card">
           <div class="contentForCard">
             <mat-card-header >
@@ -14,10 +20,11 @@
             </mat-card-header>
             <img mat-card-image class="img-article">
             <mat-card-content>
-              <p>Activity: {{userEvents.type}}</p>
-              <p>Address: {{userEvents.location}}</p>
-              <p>Date: {{userEvents.date}}</p>
+              <p><b>Activity:</b> {{userEvents.type}}</p>
+              <p><b>Address:</b> {{userEvents.location}}</p>
+              <p><b>Date:</b> {{userEvents.date}}</p>
             </mat-card-content>
+
             <mat-card-footer>
             <mat-card-actions>
               <a mat-button routerLink="/profile" class="card-btn">Attending Event</a>
@@ -27,7 +34,6 @@
         </div>
         </mat-card>
       </div>
-
-
   </mat-sidenav-content>
+  
 </mat-sidenav-container>

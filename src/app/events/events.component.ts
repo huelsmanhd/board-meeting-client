@@ -16,7 +16,7 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
   selector: 'app-events',
   templateUrl: './events.component.html',
   styleUrls: ['./events.component.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class EventsComponent implements OnInit, AfterViewInit {
   @ViewChild('sideNav') sideNav: ElementRef;
@@ -51,7 +51,7 @@ export class EventsComponent implements OnInit, AfterViewInit {
 
   viewEvent(id) {
     sessionStorage.setItem("id", id);
-    console.log(id);
+    // console.log(id);
     this.boardService.location = window.location.href
     this.boardService.singleEvent = id;
     this.router.navigate(["/event-focus"]);
@@ -61,18 +61,18 @@ export class EventsComponent implements OnInit, AfterViewInit {
     this.boardService.getAllEvents().subscribe(events => {
       this.events = events
       this.events.reverse();
-      console.log(events);
+      // console.log(events);
     });
   }
   
   getByType() {
-    console.log(this.filter.value.filter)
+    // console.log(this.filter.value.filter)
     if(this.filter.value.filter === "all") {
       this.getAllEvents();
     } else {
       this.boardService.getEventByType(this.filter.value.filter)
       .subscribe(events => {
-        console.log(events)
+        // console.log(events)
         this.events = events;
         this.events.reverse();
       })

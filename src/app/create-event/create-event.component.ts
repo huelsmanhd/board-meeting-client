@@ -10,7 +10,7 @@ import { ProfileComponent } from "../profile/profile.component"
   selector: 'app-create-event',
   templateUrl: './create-event.component.html',
   styleUrls: ['./create-event.component.css'],
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.Emulated,
 })
 export class CreateEventComponent implements OnInit, AfterViewInit {
   @ViewChild('sideNav') sideNav: ElementRef;
@@ -51,7 +51,7 @@ export class CreateEventComponent implements OnInit, AfterViewInit {
     // console.log(this.eventForm.value);
     let eventString = JSON.stringify(this.eventForm.value);
     this.createEventService.createEvent(eventString).subscribe(event => {
-      console.log(event);
+      // console.log(event);
       this.events.getAllEvents();
       this.profile.getUserEvents();
       this.eventForm.reset();

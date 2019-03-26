@@ -55,3 +55,8 @@ mat-toolbar img {
 .navBtn{
     font-family: 'Roboto:300', sans-serif !important;
 }
+.salad {
+    font-weight: bold;
+    font-family: 'Permanent Marker', cursive;
+    /* font-family: 'Monoton', cursive; */
+}

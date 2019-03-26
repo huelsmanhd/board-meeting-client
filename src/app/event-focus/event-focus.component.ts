@@ -14,13 +14,14 @@ import { SinglePropOffsetValuesIndex } from '@angular/core/src/render3/interface
   selector: 'app-event-focus',
   templateUrl: './event-focus.component.html',
   styleUrls: ['./event-focus.component.css'],
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.Emulated,
 })
 export class EventFocusComponent implements OnInit, AfterViewInit {
   @ViewChild('sideNav') sideNav: ElementRef;
   eventForm: FormGroup;
   event=<any>[];
   comments=<any>[];
+  list=<any>[];
   comment: string = '';
   editView: boolean = false;
 
@@ -48,8 +49,12 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   ) { }
 
   ngOnInit() {
+    navigator.geolocation.getCurrentPosition((location) => {
+      this.latitude = location.coords.latitude;
+      this.longitude = location.coords.longitude;
+    })
     this.getSingleEvent();
-    this.getDirections();
+    // this.getDirections();
 
     this.eventForm = this.fb.group({
       type: new FormControl(),
@@ -79,7 +84,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     navigator.geolocation.getCurrentPosition((location) => {
       this.latitude = location.coords.latitude;
       this.longitude = location.coords.longitude;
-      console.log(this.latitude, this.longitude);
+      // console.log(this.latitude, this.longitude);
       
       
     });
@@ -88,16 +93,18 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     this.boardService.findSingleEvent().subscribe(singleEvent => {
       this.event = singleEvent
       this.setLatLng(parseInt(singleEvent["lat"]), parseInt(singleEvent["long"]))
-      console.log(this.lat, this.lon)
+      // console.log(this.lat, this.lon)
       this.getWeatherData()
-      
     })
   }
 
   getWeatherData() {
     let apikey = '00726991e168c5c949d3066d0bc61089';
     return this.http.get(`http://api.openweathermap.org/data/2.5/forecast?lat=${this.lat}&lon=${this.lon}&APPID=${apikey}&units=imperial`)
-    .subscribe(res => console.log(res))
+    .subscribe(res => {
+      this.list = res["list"]
+      // console.log(this.list)
+    })
     
   }
 
@@ -106,7 +113,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   // }
 
   updateEvent(id) {
-    console.log(this.eventForm.value);
+    // console.log(this.eventForm.value);
     if (this.eventForm.value.title === null) {
       delete this.eventForm.value.title
     }
@@ -152,7 +159,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
         "Authorization": token
       })
     }).then(() => {
-      console.log(this.boardService.location)
+      // console.log(this.boardService.location)
       if(this.boardService.location === "https://board-meeting-client.herokuapp.com/events") {
         this.router.navigate(["/events"])
       } else if(this.boardService.location === "https://board-meeting-client.herokuapp.com/profile") {
@@ -189,7 +196,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   getComments() {
     let token = sessionStorage.getItem("token");
     let id = this.boardService.singleEvent;
-    console.log(id);
+    // console.log(id);
     let baseURL = `${APIURL}/comments/all/${id}`
     fetch(baseURL, {
       method: "GET",
@@ -224,7 +231,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     let token = sessionStorage.getItem("token");
     // let id = this.boardService.singleEvent;
     let stringComment = JSON.stringify(this.commentEditForm.value)
-    console.log(stringComment)
+    // console.log(stringComment)
     let baseURL = `${APIURL}/comments/update/${id}`;
     fetch(baseURL, {
       method: "PUT",

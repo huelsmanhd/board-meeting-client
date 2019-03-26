@@ -47,7 +47,7 @@ export class BoardService {
   navbarSwitch(){
     this.urlForClass = window.location.href;
     this.urlForClass === 'https://board-meeting-client.herokuapp.com/home' ? this.navbarClass = 'navbarHome' : this.navbarClass =  'navbarOther' 
-    console.log(this.navbarClass)
+    // console.log(this.navbarClass)
   }
 
   getEventByType(type) {
@@ -109,7 +109,7 @@ export class BoardService {
         "Content-Type" : "application/json",
         "Authorization": token
       })
-    }).then(res => {console.log("test")})
+    })
 
   }
 
@@ -122,7 +122,7 @@ export class BoardService {
         "Authorization": token
       })
     }
-    console.log(commentString);
+    // console.log(commentString);
     let baseURL = `${APIURL}/comments/create/${id}`;
     return this.http.post(baseURL, commentString, httpOptions)
   }

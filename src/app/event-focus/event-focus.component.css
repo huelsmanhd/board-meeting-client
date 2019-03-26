@@ -1,11 +1,15 @@
 .eventWrapper{
-position: relative;
-    width: 95%;
+    position: relative;
+    width: 94%;
     margin: auto;
     padding: 1em;
     border-radius: 3px;
     background-color: rgba(77, 77, 77, 0.605);
     margin-bottom: 1em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-gap: 20px;
   
 }
 
@@ -21,10 +25,21 @@ position: relative;
 
 .mat-sidenav-content {
     overflow: scroll;
-    width: 90%;
-    margin: auto;
-    margin-bottom: 20px;
-    padding: 20px;
+    width: 100%;
+    margin: 0px 0px 20px 0px;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.mat-card {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 20px; */
+    font-family: 'Raleway', sans-serif;
 }
 
 .eventBtn {
@@ -32,12 +47,19 @@ position: relative;
     /* float: right; */
 }
 
-mat-accordian {
+mat-sidenav{
+    background-color: #E8DFCD !important;
+}
+
+.mat-expansion-panel {
     width: 100%;
+    background-color: #c6c6c6 !important;
+
+    color: #566F7C !important;
 }
 
 .sidenav {
-    width: 35%;
+    width: 40%;
 }
 
 #optionsFlex{
@@ -45,38 +67,86 @@ mat-accordian {
     /* display: inline-block; */
 }
 
-mat-card{
-    position: relative;
-    width: 60%;
-    margin: auto;
-}
-
-.commentsWrapper button {
-    float: right;
-}
-
-.commentsWrapper .comments {
-    color: blue;
-}
-
-.commentsWrapper {
-    margin: 1em;
-    padding: 1em;
-    
-}
-
-.commentBtn {
-    width: 100%;
-    text-align: right;
-}
-
-.wrapper {
-    display: grid;
+.info {
+    font-size: 20px;
+    font-weight: bold; 
 }
 
 .container1 {
-    width: 100%;
+    position: relative;
+    width: 85%;
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+    grid-column: 1;
+    grid-row: 1;
+    color: #E8DFCD;
+    font-family: 'Raleway', sans-serif;
 }
+
+.container2 {
+    position: relative;
+    width: 70%;
+    margin-left: 15% !important;
+    margin-right: 15% !important;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.container3 {
+    position: relative;
+    width: 100%;
+    grid-column: 1 / 3;
+    color: #E8DFCD;
+    font-family: 'Raleway', sans-serif;
+}
+
+.container4 {
+    position: relative;
+    width: 100%;
+    grid-column: 1 / 3;
+}
+
+/* .commentsWrapper button {
+    float: right;
+} */
+
+.commentsWrapper .comments {
+    color: #566F7C !important;
+}
+
+.commentsWrapper button {
+    text-align: right;
+    float: right;
+}
+
+.commentsWrapper span {
+    font-weight: bold;
+}
+
+.commentsWrapper {
+    margin: 1.5em;
+    padding: 1em;
+}
+
+.text-area {
+    background-color: whitesmoke;
+    border-radius: 5px;
+    margin: 12px;
+    padding-top: 1em;
+    padding-left: .5em;
+}
+
+.mat-icon-button {
+    height: 24px;
+    width: 24px;
+}
+
+.commentBtn {
+    /* width: 100%; */
+    text-align: right;
+    float: right;
+}
+
 
 .directions button {
     width: 300px;
@@ -86,7 +156,7 @@ mat-card{
 }
     
 .mat-card {
-    /* color: #E8DFCD; */
+    color: #E8DFCD;
     font-family: 'Raleway', sans-serif;
 }
 
@@ -119,29 +189,81 @@ mat-card{
 }
 
 agm-map {
+    z-index: 0 !important;
+    position: relative;
+    grid-column: 2;
+    grid-row: 1;
+    margin: auto;
     height: 300px;
     width: 300px;
 }
 
-
-
-
-
-/* .commentBox {
-    position: relative;
-    width: 70%;
-    float: left;
-    padding:1em;
-    border-top: 1px solid black;
+mat-card-header {
+    z-index: 1 !important;
 }
 
-.btnBox {
-    position: relative;
-    width: 15%;
-    text-align:right;
+.weather-mat-card {
+    overflow: visible;
+    height: 14vh;
 
 }
 
-.commentsWrapper {
-    border:1px solid black
-} */
+.mat-expansion-panel-content {
+    font-family: 'Raleway', sans-serif;
+}
+
+.grid-tile {
+    background-color: rgba(172, 228, 253, .6);
+    border-radius: 10%;
+    border: .5px black solid;
+    height: 100px !important;
+    width: 230px !important;
+    color: rgb(95, 95, 95);
+    font-family: 'Raleway', sans-serif;
+}
+
+mat-grid-tile:hover {
+    box-shadow: 3px 3px 4px rgb(62, 62, 62)!important;
+}
+
+mat-grid-tile .mat-figure {
+    margin-left: .5em;
+    margin-right: .5em;
+}
+
+.weather-title {
+    z-index: 1 !important;
+    font-family: "Raleway", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #E8DFCD;
+}
+
+.weather-content {
+    z-index: 1 !important;
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.icon {
+    margin-top: 2em;
+    margin-bottom: -4em;
+    width: 100px;
+    height: 100px;
+}
+
+.temp {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+
+.h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 40px;
+    text-shadow: 2px 2px rgb(24, 24, 24);
+
+}
