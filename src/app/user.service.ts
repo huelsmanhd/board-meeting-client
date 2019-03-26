@@ -18,7 +18,7 @@ export class UserService {
   loginUser(user) {
     const loginURL2 = 'http://localhost:3000/user/login'
     const loginURL = `${APIURL}/user/login`
-    console.log(window.location.hostname)
+    // console.log(window.location.hostname)
     return this.http.post(loginURL, user, httpOptions)
 
   }

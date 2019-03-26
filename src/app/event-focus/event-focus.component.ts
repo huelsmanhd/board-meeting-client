@@ -49,8 +49,12 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   ) { }
 
   ngOnInit() {
+    navigator.geolocation.getCurrentPosition((location) => {
+      this.latitude = location.coords.latitude;
+      this.longitude = location.coords.longitude;
+    })
     this.getSingleEvent();
-    this.getDirections();
+    // this.getDirections();
 
     this.eventForm = this.fb.group({
       type: new FormControl(),
@@ -80,7 +84,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     navigator.geolocation.getCurrentPosition((location) => {
       this.latitude = location.coords.latitude;
       this.longitude = location.coords.longitude;
-      console.log(this.latitude, this.longitude);
+      // console.log(this.latitude, this.longitude);
       
       
     });
@@ -89,7 +93,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     this.boardService.findSingleEvent().subscribe(singleEvent => {
       this.event = singleEvent
       this.setLatLng(parseInt(singleEvent["lat"]), parseInt(singleEvent["long"]))
-      console.log(this.lat, this.lon)
+      // console.log(this.lat, this.lon)
       this.getWeatherData()
     })
   }
@@ -99,8 +103,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     return this.http.get(`http://api.openweathermap.org/data/2.5/forecast?lat=${this.lat}&lon=${this.lon}&APPID=${apikey}&units=imperial`)
     .subscribe(res => {
       this.list = res["list"]
-      console.log(this.list)
-      console.log(this.list[0].dt_txt.slice(0, 11))
+      // console.log(this.list)
     })
     
   }
@@ -110,7 +113,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   // }
 
   updateEvent(id) {
-    console.log(this.eventForm.value);
+    // console.log(this.eventForm.value);
     if (this.eventForm.value.title === null) {
       delete this.eventForm.value.title
     }
@@ -156,7 +159,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
         "Authorization": token
       })
     }).then(() => {
-      console.log(this.boardService.location)
+      // console.log(this.boardService.location)
       if(this.boardService.location === "https://board-meeting-client.herokuapp.com/events") {
         this.router.navigate(["/events"])
       } else if(this.boardService.location === "https://board-meeting-client.herokuapp.com/profile") {
@@ -193,7 +196,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   getComments() {
     let token = sessionStorage.getItem("token");
     let id = this.boardService.singleEvent;
-    console.log(id);
+    // console.log(id);
     let baseURL = `${APIURL}/comments/all/${id}`
     fetch(baseURL, {
       method: "GET",
@@ -228,7 +231,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     let token = sessionStorage.getItem("token");
     // let id = this.boardService.singleEvent;
     let stringComment = JSON.stringify(this.commentEditForm.value)
-    console.log(stringComment)
+    // console.log(stringComment)
     let baseURL = `${APIURL}/comments/update/${id}`;
     fetch(baseURL, {
       method: "PUT",

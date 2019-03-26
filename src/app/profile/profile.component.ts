@@ -39,7 +39,7 @@ export class ProfileComponent implements OnInit, AfterViewInit {
     .subscribe(events => {
       this.userEvents = events;
       this.userEvents.reverse();
-      console.log(this.userEvents);
+      // console.log(this.userEvents);
     })
   }
 
@@ -55,13 +55,13 @@ export class ProfileComponent implements OnInit, AfterViewInit {
 
   editEvent(id) {
     this.boardService.editUserEvents(id).subscribe(event => {
-      console.log(event)
+      // console.log(event)
     })
   }
 
   profileName() {
     this.username = sessionStorage.getItem("username")
-    console.log(this.username);
+    // console.log(this.username);
   }
 
   ngAfterViewInit() {

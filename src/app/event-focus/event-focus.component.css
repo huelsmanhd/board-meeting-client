@@ -1,6 +1,6 @@
 .eventWrapper{
     position: relative;
-    width: 95%;
+    width: 94%;
     margin: auto;
     padding: 1em;
     border-radius: 3px;
@@ -47,8 +47,15 @@
     /* float: right; */
 }
 
-mat-accordian {
+mat-sidenav{
+    background-color: #E8DFCD !important;
+}
+
+.mat-expansion-panel {
     width: 100%;
+    background-color: #c6c6c6 !important;
+
+    color: #566F7C !important;
 }
 
 .sidenav {
@@ -58,6 +65,11 @@ mat-accordian {
 #optionsFlex{
     flex: 1 1 auto;
     /* display: inline-block; */
+}
+
+.info {
+    font-size: 20px;
+    font-weight: bold; 
 }
 
 .container1 {
@@ -99,18 +111,39 @@ mat-accordian {
 } */
 
 .commentsWrapper .comments {
-    color: blue;
+    color: #566F7C !important;
+}
+
+.commentsWrapper button {
+    text-align: right;
+    float: right;
+}
+
+.commentsWrapper span {
+    font-weight: bold;
 }
 
 .commentsWrapper {
-    margin: 1em;
-    padding: 1em;
-    
+    margin: 2em;
+}
+
+.text-area {
+    background-color: whitesmoke;
+    border-radius: 5px;
+    padding-top: 1em;
+    padding-left: .5em;
+}
+
+.mat-icon-button {
+    height: 24px;
+    width: 24px;
+    vertical-align: none !important;
 }
 
 .commentBtn {
-    width: 100%;
+    /* width: 100%; */
     text-align: right;
+    float: right;
 }
 
 
@@ -121,6 +154,10 @@ mat-accordian {
     color: beige;
 }
     
+.mat-card {
+    color: #E8DFCD;
+    font-family: 'Raleway', sans-serif;
+}
 
 .Snow{
     /* background-color: #CC6A72; */
@@ -175,7 +212,7 @@ mat-card-header {
 }
 
 .grid-tile {
-    background-color: #ACE4FD;
+    background-color: rgba(172, 228, 253, .6);
     border-radius: 10%;
     border: .5px black solid;
     height: 100px !important;
@@ -197,12 +234,16 @@ mat-grid-tile .mat-figure {
     z-index: 1 !important;
     font-family: "Raleway", sans-serif;
     font-size: 20px;
+    font-weight: bold;
     color: #E8DFCD;
 }
 
 .weather-content {
     z-index: 1 !important;
     text-align: center;
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
 }
 
 .icon {
@@ -214,14 +255,14 @@ mat-grid-tile .mat-figure {
 
 .temp {
     font-size: 40px;
-    font-size-adjust: bold;
+    font-weight: bold;
     font-family: 'Raleway', sans-serif;
     text-align: center;
 }
 
 .h2 {
-    color: #E8DFCD;
-    font-size: 2em;
-    font-family: 'Permanent Marker', cursive;
-    text-shadow: 2px 2px rgb(24, 24, 24);  
+    font-family: 'Raleway', sans-serif;
+    font-size: 40px;
+    text-shadow: 2px 2px rgb(24, 24, 24);
+
 }
