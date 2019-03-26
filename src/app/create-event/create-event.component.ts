@@ -51,7 +51,7 @@ export class CreateEventComponent implements OnInit, AfterViewInit {
     // console.log(this.eventForm.value);
     let eventString = JSON.stringify(this.eventForm.value);
     this.createEventService.createEvent(eventString).subscribe(event => {
-      console.log(event);
+      // console.log(event);
       this.events.getAllEvents();
       this.profile.getUserEvents();
       this.eventForm.reset();
