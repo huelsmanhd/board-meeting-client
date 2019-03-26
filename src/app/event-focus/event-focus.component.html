@@ -51,7 +51,7 @@
             <mat-grid-list cols="5" rowHeight="1:1" class="weather-mat-card">
               <mat-grid-tile class="grid-tile">
                 <mat-grid-tile-header class="weather-title">
-                  {{list[0].dt_txt}}
+                  {{list[0].dt_txt.slice(0,11)}}
                 </mat-grid-tile-header>
                 <div class="weather-content">
                   <p class="temp">{{list[0].main.temp}}°F</p>
@@ -62,7 +62,7 @@
               </mat-grid-tile>
               <mat-grid-tile class="grid-tile">
                 <mat-grid-tile-header class="weather-title">
-                  {{list[8].dt_txt}}
+                  {{list[8].dt_txt.slice(0,11)}}
                 </mat-grid-tile-header> 
                 <div class="weather-content">
                   <p class="temp">{{list[8].main.temp}}°F</p>
@@ -73,7 +73,7 @@
               </mat-grid-tile>
               <mat-grid-tile class="grid-tile">
                 <mat-grid-tile-header class="weather-title">
-                  {{list[16].dt_txt}}
+                  {{list[16].dt_txt.slice(0,11)}}
                 </mat-grid-tile-header> 
                 <div class="weather-content">
                   <p class="temp">{{list[16].main.temp}}°F</p>
@@ -84,7 +84,7 @@
               </mat-grid-tile>
               <mat-grid-tile class="grid-tile">
                 <mat-grid-tile-header class="weather-title">
-                  {{list[24].dt_txt}}
+                  {{list[24].dt_txt.slice(0,11)}}
                 </mat-grid-tile-header> 
                 <div class="weather-content">
                   <p class="temp">{{list[24].main.temp}}°F</p>
@@ -95,7 +95,7 @@
                 </mat-grid-tile>
                 <mat-grid-tile class="grid-tile">
                   <mat-grid-tile-header class="weather-title">
-                    {{list[32].dt_txt}}
+                    {{list[32].dt_txt.slice(0,11)}}
                   </mat-grid-tile-header> 
                   <div class="weather-content">
                     <p class="temp">{{list[32].main.temp}}°F</p>
