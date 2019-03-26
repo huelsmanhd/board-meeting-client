@@ -9,7 +9,7 @@
 
       <div class="eventWrapper" *ngIf="editView === false">
 
-        <mat-card-header >          
+        <mat-card-header class="container1">          
 
           <div id="optionsFlex"></div>
           <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="event.user.username === editButtonCheck() || deleteButtonCheck()"><mat-icon>settings</mat-icon></button>
@@ -41,68 +41,72 @@
         </div>
 
         <div class="container3" *ngIf="editView === false">
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  View Weather
+                </mat-panel-title>
+              </mat-expansion-panel-header>
             <mat-grid-list cols="5" rowHeight="1:1" class="weather-mat-card">
-              <mat-grid-tile>
+              <mat-grid-tile class="grid-tile">
                 <mat-grid-tile-header class="weather-title">
                   {{list[0].dt_txt}}
-                </mat-grid-tile-header>> 
+                </mat-grid-tile-header>
                 <div class="weather-content">
-                  <p>{{list[0].main.temp}}°F</p>
-                  <p>{{list[0].weather[0].description}}</p>
-                  <p>{{list[0].main.humidity}}% Humidity</p>
-                  <p>{{list[0].wind.speed}} mph winds</p>
-                  <p>{{list[0].main.pressure}} hPa</p>
+                  <p class="temp">{{list[0].main.temp}}°F</p>
+                  <p class="weather-description">{{list[0].weather[0].description}}</p>
+                  <p class="humidity">{{list[0].main.humidity}}% Humidity</p>
+                  <p class="wind">{{list[0].wind.speed}} mph</p>
                 </div>
               </mat-grid-tile>
-              <mat-grid-tile>
+              <mat-grid-tile class="grid-tile">
                 <mat-grid-tile-header class="weather-title">
                   {{list[8].dt_txt}}
-                </mat-grid-tile-header>> 
+                </mat-grid-tile-header> 
                 <div class="weather-content">
-                  <p>{{list[8].main.temp}}°F</p>
-                  <p>{{list[8].weather[0].description}}</p>
-                  <p>{{list[8].main.humidity}}% Humidity</p>
-                  <p>{{list[8].wind.speed}} mph winds</p>
-                  <p>{{list[8].main.pressure}} hPa</p>
+                  <p class="temp">{{list[8].main.temp}}°F</p>
+                  <p class="weather-description">{{list[8].weather[0].description}}</p>
+                  <p class="humidity">{{list[8].main.humidity}}% Humidity</p>
+                  <p class="wind">{{list[8].wind.speed}} mph winds</p>
                 </div>
               </mat-grid-tile>
-              <mat-grid-tile>
+              <mat-grid-tile class="grid-tile">
                 <mat-grid-tile-header class="weather-title">
                   {{list[16].dt_txt}}
-                </mat-grid-tile-header>> 
+                </mat-grid-tile-header> 
                 <div class="weather-content">
-                  <p>{{list[16].main.temp}}°F</p>
-                  <p>{{list[16].weather[0].description}}</p>
-                  <p>{{list[16].main.humidity}}% Humidity</p>
-                  <p>{{list[16].wind.speed}} mph winds</p>
-                  <p>{{list[16].main.pressure}} hPa</p>
+                  <p class="temp">{{list[16].main.temp}}°F</p>
+                  <p class="weather-description">{{list[16].weather[0].description}}</p>
+                  <p class="humidity">{{list[16].main.humidity}}% Humidity</p>
+                  <p class="wind">{{list[16].wind.speed}} mph winds</p>
                 </div>
               </mat-grid-tile>
-              <mat-grid-tile>
+              <mat-grid-tile class="grid-tile">
                 <mat-grid-tile-header class="weather-title">
                   {{list[24].dt_txt}}
-                </mat-grid-tile-header>> 
+                </mat-grid-tile-header> 
                 <div class="weather-content">
-                  <p>{{list[24].main.temp}}°F</p>
-                  <p>{{list[24].weather[0].description}}</p>
-                  <p>{{list[24].main.humidity}}% Humidity</p>
-                  <p>{{list[24].wind.speed}} mph winds</p>
-                  <p>{{list[24].main.pressure}} hPa</p>
+                  <p class="temp">{{list[24].main.temp}}°F</p>
+                  <p class="weather-description">{{list[24].weather[0].description}}</p>
+                  <p class="humidity">{{list[24].main.humidity}}% Humidity</p>
+                  <p class="wind">{{list[24].wind.speed}} mph winds</p>
                 </div>
                 </mat-grid-tile>
-                <mat-grid-tile>
+                <mat-grid-tile class="grid-tile">
                   <mat-grid-tile-header class="weather-title">
                     {{list[32].dt_txt}}
-                  </mat-grid-tile-header>> 
+                  </mat-grid-tile-header> 
                   <div class="weather-content">
-                    <p>{{list[32].main.temp}}°F</p>
-                    <p>{{list[32].weather[0].description}}</p>
-                    <p>{{list[32].main.humidity}}% Humidity</p>
-                    <p>{{list[32].wind.speed}} mph winds</p>
-                    <p>{{list[32].main.pressure}} hPa</p>
+                    <p class="temp">{{list[32].main.temp}}°F</p>
+                    <p class="weather-description">{{list[32].weather[0].description}}</p>
+                    <p class="humidity">{{list[32].main.humidity}}% Humidity</p>
+                    <p class="wind">{{list[32].wind.speed}} mph winds</p>
                   </div>
                   </mat-grid-tile>
-            </mat-grid-list>
+              </mat-grid-list>
+            </mat-expansion-panel>
+          </mat-accordion>
           </div>
         </div>   
 
@@ -158,6 +162,7 @@
           
         </form>
     </div>
+      
 
       
       <div *ngIf="editView === false" class="container4">

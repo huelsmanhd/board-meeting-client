@@ -1,13 +1,14 @@
 .eventWrapper{
     position: relative;
     width: 95%;
+    margin: auto;
     padding: 1em;
     border-radius: 3px;
     background-color: rgba(77, 77, 77, 0.605);
     margin-bottom: 1em;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
     grid-gap: 20px;
   
 }
@@ -26,6 +27,8 @@
     overflow: scroll;
     width: 100%;
     margin: 0px 0px 20px 0px;
+    padding-top: 2em;
+    padding-bottom: 2em;
 }
 
 .mat-card {
@@ -59,9 +62,9 @@ mat-accordian {
 
 .container1 {
     position: relative;
-    width: 70%;
-    margin-left: 15%;
-    margin-right: 15%;
+    width: 85%;
+    margin-left: 7.5%;
+    margin-right: 7.5%;
     grid-column: 1;
     grid-row: 1;
     color: #E8DFCD;
@@ -70,16 +73,17 @@ mat-accordian {
 
 .container2 {
     position: relative;
-    width: 30%;
+    width: 70%;
+    margin-left: 15% !important;
+    margin-right: 15% !important;
     grid-column: 2;
     grid-row: 1;
 }
 
 .container3 {
     position: relative;
-    width: 90%;
+    width: 100%;
     grid-column: 1 / 3;
-    grid-row: 2;
     color: #E8DFCD;
     font-family: 'Raleway', sans-serif;
 }
@@ -147,6 +151,7 @@ mat-accordian {
 }
 
 agm-map {
+    z-index: 0 !important;
     position: relative;
     grid-column: 2;
     grid-row: 1;
@@ -155,25 +160,43 @@ agm-map {
     width: 300px;
 }
 
-
-
-
-
-/* .commentBox {
-    position: relative;
-    width: 70%;
-    float: left;
-    padding:1em;
-    border-top: 1px solid black;
+mat-card-header {
+    z-index: 1 !important;
 }
 
-.btnBox {
-    position: relative;
-    width: 15%;
-    text-align:right;
+.weather-mat-card {
+    overflow: visible;
+    height: 14vh;
 
 }
 
-.commentsWrapper {
-    border:1px solid black
-} */
+.mat-expansion-panel-content {
+    font-family: 'Raleway', sans-serif;
+}
+
+.grid-tile {
+    background-color: #ACE4FD;
+    border-radius: 10%;
+    border: .5px black solid;
+    height: 45%;
+    color: rgb(95, 95, 95);
+    font-family: 'Raleway', sans-serif;
+}
+
+mat-grid-tile:hover {
+    box-shadow: 3px 3px 4px rgb(62, 62, 62)!important;
+}
+
+mat-grid-tile .mat-figure {
+    margin-left: .5em;
+    margin-right: .5em;
+}
+
+.weather-title {
+    z-index: 1 !important;
+}
+
+.weather-content {
+    z-index: 1 !important;
+    margin-top: 2em;
+}

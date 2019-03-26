@@ -24,11 +24,6 @@ mat-sidenav-content{
     background-color: #AEB2AF;
 }
 
-/* .mat-card {
-    color: #E8DFCD;
-    font-family: 'Raleway', sans-serif;
-} */
-
 .Snowcard{
     /* background-color: #CC6A72; */
     background-image: url("../../assets/images/pamela-saunders-384317-unsplash.jpg");
@@ -36,6 +31,18 @@ mat-sidenav-content{
     background-position: right;
     background-size: cover;
     background-color: #DBE3E6;
+}
+.Skatecard:hover{
+    box-shadow: 3px 3px 4px rgb(62, 62, 62)!important;
+    
+}
+.Snowcard:hover{
+    box-shadow: 3px 3px 4px rgb(62, 62, 62)!important;
+    
+}
+.Surfcard:hover{
+    box-shadow: 3px 3px 4px rgb(62, 62, 62)!important;
+    
 }
 
 .Skatecard{
@@ -46,13 +53,14 @@ mat-sidenav-content{
     background-size: cover;
     background-color: #509799;
 }
+
 .contentForCard {
     width: 95%;
+    margin: auto;
     padding: 1em;
     border-radius: 3px;
     background-color: rgba(77, 77, 77, 0.605)
 }
-
 
 .Surfcard{
     /* background-color: #DE8A74; */
@@ -102,6 +110,7 @@ mat-sidenav-content{
 
 .sidenav {
     width: 40%;
+    position: fixed;
 }
 
 .main-content {
@@ -125,9 +134,9 @@ mat-sidenav-content{
     /* float: left; */
 }
 
-mat-card:hover {
-    box-shadow: 3px 3px 4px rgb(62, 62, 62)!important;
-    /* filter: drop-shadow(2px 2px 4px black) !important */
+.mat-card {
+    color: #E8DFCD;
+    font-family: 'Raleway', sans-serif;
 }
 
 .filter {
