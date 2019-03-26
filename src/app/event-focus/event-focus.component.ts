@@ -100,7 +100,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
 
   getWeatherData() {
     let apikey = '00726991e168c5c949d3066d0bc61089';
-    return this.http.get(`http://api.openweathermap.org/data/2.5/forecast?lat=${this.lat}&lon=${this.lon}&APPID=${apikey}&units=imperial`)
+    return this.http.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${this.lat}&lon=${this.lon}&APPID=${apikey}&units=imperial`)
     .subscribe(res => {
       this.list = res["list"]
       // console.log(this.list)
