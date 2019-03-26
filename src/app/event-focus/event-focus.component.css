@@ -185,7 +185,7 @@ mat-card-header {
     background-color: #ACE4FD;
     border-radius: 10%;
     border: .5px black solid;
-    height: 30px;
+    height: 100px !important;
     width: 230px !important;
     color: rgb(95, 95, 95);
     font-family: 'Raleway', sans-serif;
@@ -202,15 +202,25 @@ mat-grid-tile .mat-figure {
 
 .weather-title {
     z-index: 1 !important;
+    font-family: "Raleway", sans-serif;
+    font-size: 20px;
+    color: #E8DFCD;
 }
 
 .weather-content {
     z-index: 1 !important;
-    margin-top: 2em;
 }
+
+.temp {
+    font-size: 40px;
+    font-size-adjust: bold;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+
 .h2 {
-    color: #E8DFCD;
-    font-size: 2em;
-    font-family: 'Permanent Marker', cursive;
-    text-shadow: 2px 2px rgb(24, 24, 24);  
+    font-family: 'Raleway', sans-serif;
+
+    text-shadow: 2px 2px rgb(24, 24, 24);
+
 }
