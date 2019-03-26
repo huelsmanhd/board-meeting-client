@@ -1,12 +1,15 @@
 .eventWrapper{
-position: relative;
-    width: 95%;
+    position: relative;
+    width: 94%;
     margin: auto;
     padding: 1em;
     border-radius: 3px;
     background-color: rgba(77, 77, 77, 0.605);
     margin-bottom: 1em;
-  
+}
+
+b {
+    font-family: 'Roboto:300', sans-serif !important;
 }
 
 .sidenav-container {
@@ -32,8 +35,11 @@ position: relative;
     /* float: right; */
 }
 
-mat-accordian {
+.mat-expansion-panel {
     width: 100%;
+    background-color: #c6c6c6 !important;
+
+    color: #566F7C !important;
 }
 
 .sidenav {
@@ -56,7 +62,7 @@ mat-card{
 }
 
 .commentsWrapper .comments {
-    color: blue;
+    color: #566F7C !important;
 }
 
 .commentsWrapper {
@@ -86,7 +92,7 @@ mat-card{
 }
     
 .mat-card {
-    /* color: #E8DFCD; */
+    color: #E8DFCD;
     font-family: 'Raleway', sans-serif;
 }
 
@@ -122,26 +128,3 @@ agm-map {
     height: 300px;
     width: 300px;
 }
-
-
-
-
-
-/* .commentBox {
-    position: relative;
-    width: 70%;
-    float: left;
-    padding:1em;
-    border-top: 1px solid black;
-}
-
-.btnBox {
-    position: relative;
-    width: 15%;
-    text-align:right;
-
-}
-
-.commentsWrapper {
-    border:1px solid black
-} */

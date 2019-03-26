@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, FormControl, FormGroupDirective, NgForm, Valida
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { TokenService } from '../token.service';
-import { ErrorStateMatcher } from '@angular/material/core';
+import { BoardService } from '../board.service';
 
 
 @Component({
@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private userService: UserService,
+    private boardService: BoardService,
     private tokenService: TokenService,
     private fb: FormBuilder,
     private router: Router
@@ -39,6 +40,7 @@ export class LoginComponent implements OnInit {
       email: new FormControl(),
       password: new FormControl()
     })
+    this.boardService.navbarSwitch()
   }
 
   login() {
