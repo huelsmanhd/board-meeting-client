@@ -101,6 +101,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     .subscribe(res => {
       this.list = res["list"]
       console.log(this.list)
+      console.log(this.list[0].dt_txt.slice(0, 11))
     })
     
   }
