@@ -24,7 +24,7 @@ export class CreateEventService {
         "Authorization": token
       })
     }
-    console.log(token);
+    // console.log(token);
     // const createURL2 = 'http://localhost:3000/event/create'
     const createURL = `${APIURL}/event/create`
     return this.http.post(createURL, newEvent, httpOptions)

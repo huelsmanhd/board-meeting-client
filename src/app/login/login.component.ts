@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
     // console.log(this.loginForm.value, this.loginForm.value.email, this.loginForm.value.password);
     this.userService.loginUser(loginString)
     .subscribe(res => {
-      console.log(res)
+      // console.log(res)
       if(res["status"] === 502) {
         this.error = true;
         this.message = "Your password doesn't seem to match our records. Please re-enter your password"
