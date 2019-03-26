@@ -1,9 +1,6 @@
 .parallax1 {
-   
     height: 100vh;
     position: relative;
-    /* padding-top: 200px; 
-    padding-bottom: 200px; */
     overflow: hidden;
     background-attachment: fixed;
     background-position: center center;
@@ -16,8 +13,6 @@
     background-image: url("../../assets/images/img5.jpg");
     height: 75vh;
     position: relative;
-    /* padding-top: 200px; 
-    padding-bottom: 200px; */
     overflow: hidden;
     background-attachment: fixed;
     background-position: center center;
@@ -29,7 +24,6 @@
     text-align: center;
     z-index: 1;
     border-top: 4px rgba(62, 62, 62, 0.653);
-
 }
 
 .logo {
@@ -39,12 +33,8 @@
 .home-info {
     text-align: center;
     vertical-align: middle;
-    /* display: table-cell; */
     font-size: 28px;
-    /* font-family: 'Raleway', sans-serif;
-     */
-     font-family: 'Permanent Marker', cursive;
-/* font-family: 'Monoton', cursive; */
+    font-family: 'Raleway', sans-serif;
     margin-left: 15%;
     margin-right: 15%;
     padding: 1em;

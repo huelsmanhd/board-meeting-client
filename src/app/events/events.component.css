@@ -141,18 +141,16 @@ mat-sidenav-content{
 }
 
 .mat-select-panel{
-    background-color: #566F7C;
+    background-color: #566F7C !important;
 }
 
 .mat-select-placeholder{
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', sans-serif !important;
 }
 
 .mat-option-text{
     color: #E8DFCD !important;
-    font-family: 'Raleway', sans-serif;
-    /* font-family: 'Permanent Marker', cursive !important; */
-/* font-family: 'Monoton', cursive; */
+    font-family: 'Raleway', sans-serif !important;
 }
 
 .sidenav-container {
