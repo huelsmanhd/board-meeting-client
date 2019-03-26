@@ -1,6 +1,6 @@
 .eventWrapper{
     position: relative;
-    width: 95%;
+    width: 94%;
     margin: auto;
     padding: 1em;
     border-radius: 3px;
@@ -47,8 +47,11 @@
     /* float: right; */
 }
 
-mat-accordian {
+.mat-expansion-panel {
     width: 100%;
+    background-color: #c6c6c6 !important;
+
+    color: #566F7C !important;
 }
 
 .sidenav {
@@ -99,7 +102,7 @@ mat-accordian {
 } */
 
 .commentsWrapper .comments {
-    color: blue;
+    color: #566F7C !important;
 }
 
 .commentsWrapper {
@@ -121,6 +124,10 @@ mat-accordian {
     color: beige;
 }
     
+.mat-card {
+    color: #E8DFCD;
+    font-family: 'Raleway', sans-serif;
+}
 
 .Snow{
     /* background-color: #CC6A72; */

@@ -9,7 +9,11 @@
 
       <div class="eventWrapper" *ngIf="editView === false">
 
-        <mat-card-header class="container1">          
+        <mat-card-header>
+
+            <mat-card-title class="title"><h2>{{event.title}}</h2>
+            </mat-card-title>
+          
 
           <div id="optionsFlex"></div>
           <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="event.user.username === editButtonCheck() || deleteButtonCheck()"><mat-icon>settings</mat-icon></button>
@@ -186,24 +190,12 @@
   
           <div *ngFor="let comments of comments">
             <div class="commentsWrapper">
-            <!-- <div class="btnBox"> -->
-              
-              <!-- </div> -->
-              <!-- <div class="commentBox"> -->
                 
                 <span class="comments">{{comments.user.username}}</span> : {{comments.comment}}
               
                 
                 <button *ngIf="comments.user.username === editButtonCheck()" mat-icon-button (click)="editCommentToggle(comments.id)"><mat-icon>create</mat-icon></button>
                 <button *ngIf="comments.user.username === editButtonCheck() || deleteButtonCheck()" mat-icon-button (click)="deleteComment(comments.id)"><mat-icon>delete</mat-icon></button>
-            <!-- <div id="optionsFlex"></div> -->
-            <!-- </div> -->
-            
-            <!-- <div class="btnBox">
-              <button *ngIf="comments.user.username === editButtonCheck()" mat-icon-button (click)="editCommentToggle(comments.id)"><mat-icon>create</mat-icon></button>
-
-              <button *ngIf="comments.user.username === editButtonCheck() || deleteButtonCheck()" mat-icon-button (click)="deleteComment(comments.id)"><mat-icon>delete</mat-icon></button>
-            </div> -->
 
               <div *ngIf="editCommentViewArray[comments.id] === true">
                 <form [formGroup]="commentEditForm" (ngSubmit)="updateComment(comments.id)">

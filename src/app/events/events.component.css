@@ -1,27 +1,87 @@
+body {
+    background-color: #AEB2AF;
+}
+
+mat-sidenav{
+    background-color: #ADADAD !important;
+}
+
+mat-sidenav-container{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
 mat-sidenav-content{
     background-color: rgb(255, 255, 255);
 }
 
-.mat-select-placeholder{
-    font-family: 'Raleway', sans-serif;
-}
-
-.ng-touched{
-    border-color: #566F7C;
-}
-
-.mat-form-field{
-    font-family: 'Raleway', sans-serif;
-    /* color: #E8DFCD !important; */
-}
-
-.mat-form-field-label{
-    font-family: 'Raleway', sans-serif;
-    color: #566F7C !important;
-}
-
 .mat-drawer-container{
     background-color: #AEB2AF;
+}
+
+.sidenav {
+    width: 35%;
+}
+
+.mat-sidenav-content {
+    overflow: visible;
+    width: 90%;
+    margin: auto;
+    
+    padding: 20px;
+    background-color: #C5C8C6 !important;
+
+}
+
+.sidenav-container {
+    overflow: scroll;
+    position: fixed;
+    top: 3.1em;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background-color: #C5C8C6 !important;
+}
+
+.filter {
+    width: 20%
+}
+
+.mat-card {
+    color: #E8DFCD;
+    font-family: 'Raleway', sans-serif;
+}
+
+.mat-card-header{
+    font-family: 'Roboto', sans-serif;
+}
+
+.card-btn {
+    float: right;
+}
+
+.mat-card-actions {
+    margin: 2.5em !important;
+    padding: 1em;
+}
+
+.cardDisplay mat-card {
+    width: 45%;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    float: left;
+}
+
+.contentForCard {
+    width: 94%;
+    margin: auto;
+    padding: 1em;
+    border-radius: 3px;
+    background-color: rgba(77, 77, 77, 0.605)
 }
 
 .Snowcard{
@@ -32,15 +92,8 @@ mat-sidenav-content{
     background-size: cover;
     background-color: #DBE3E6;
 }
-.Skatecard:hover{
-    box-shadow: 3px 3px 4px rgb(62, 62, 62)!important;
-    
-}
+
 .Snowcard:hover{
-    box-shadow: 3px 3px 4px rgb(62, 62, 62)!important;
-    
-}
-.Surfcard:hover{
     box-shadow: 3px 3px 4px rgb(62, 62, 62)!important;
     
 }
@@ -54,23 +107,23 @@ mat-sidenav-content{
     background-color: #509799;
 }
 
-.contentForCard {
-    width: 95%;
-    margin: auto;
-    padding: 1em;
-    border-radius: 3px;
-    background-color: rgba(77, 77, 77, 0.605)
+.Skatecard:hover{
+    box-shadow: 3px 3px 4px rgb(62, 62, 62)!important;
+    
 }
 
 .Surfcard{
-    /* background-color: #DE8A74; */
     background-image: url("../../assets/images/img3.jpg");
     background-repeat: no-repeat;
-    /* background-position: right; */
     background-size: cover;
     background-color: #509799;
 }
 
+.Surfcard:hover{
+    box-shadow: 3px 3px 4px rgb(62, 62, 62)!important;
+
+}
+    
 .mat-card-header{
     font-family: 'Roboto', sans-serif;
     /* font-family: 'Permanent Marker', cursive !important; */
@@ -78,9 +131,21 @@ mat-sidenav-content{
 /* font-family: 'Monoton', cursive; */
 }
 
+.mat-form-field{
+    font-family: 'Raleway', sans-serif;
+}
+
+.mat-form-field-label{
+    font-family: 'Raleway', sans-serif;
+    color: #566F7C !important;
+}
+
 .mat-select-panel{
     background-color: #566F7C;
+}
 
+.mat-select-placeholder{
+    font-family: 'Raleway', sans-serif;
 }
 
 .mat-option-text{
