@@ -84,7 +84,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     navigator.geolocation.getCurrentPosition((location) => {
       this.latitude = location.coords.latitude;
       this.longitude = location.coords.longitude;
-      console.log(this.latitude, this.longitude);
+      // console.log(this.latitude, this.longitude);
       
       
     });
