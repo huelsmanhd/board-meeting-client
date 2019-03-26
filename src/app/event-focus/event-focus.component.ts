@@ -91,7 +91,6 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
       this.setLatLng(parseInt(singleEvent["lat"]), parseInt(singleEvent["long"]))
       console.log(this.lat, this.lon)
       this.getWeatherData()
-      
     })
   }
 
@@ -105,8 +104,6 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     })
     
   }
-
-  
 
   // showWeatherData() {
   //   this.getWeatherData().subscribe()

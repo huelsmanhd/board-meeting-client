@@ -202,6 +202,14 @@ mat-grid-tile .mat-figure {
 
 .weather-content {
     z-index: 1 !important;
+    text-align: center;
+}
+
+.icon {
+    margin-top: 2em;
+    margin-bottom: -4em;
+    width: 100px;
+    height: 100px;
 }
 
 .temp {
