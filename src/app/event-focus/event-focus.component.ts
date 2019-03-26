@@ -21,6 +21,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   eventForm: FormGroup;
   event=<any>[];
   comments=<any>[];
+  list=<any>[];
   comment: string = '';
   editView: boolean = false;
 
@@ -97,9 +98,15 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   getWeatherData() {
     let apikey = '00726991e168c5c949d3066d0bc61089';
     return this.http.get(`http://api.openweathermap.org/data/2.5/forecast?lat=${this.lat}&lon=${this.lon}&APPID=${apikey}&units=imperial`)
-    .subscribe(res => console.log(res))
+    .subscribe(res => {
+      this.list = res["list"]
+      console.log(this.list)
+      console.log(this.list[0].dt_txt.slice(0, 11))
+    })
     
   }
+
+  
 
   // showWeatherData() {
   //   this.getWeatherData().subscribe()
