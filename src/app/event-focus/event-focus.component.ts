@@ -49,8 +49,12 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   ) { }
 
   ngOnInit() {
+    navigator.geolocation.getCurrentPosition((location) => {
+      this.latitude = location.coords.latitude;
+      this.longitude = location.coords.longitude;
+    })
     this.getSingleEvent();
-    this.getDirections();
+    // this.getDirections();
 
     this.eventForm = this.fb.group({
       type: new FormControl(),
@@ -91,6 +95,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
       this.setLatLng(parseInt(singleEvent["lat"]), parseInt(singleEvent["long"]))
       // console.log(this.lat, this.lon)
       this.getWeatherData()
+      
       
     })
   }
