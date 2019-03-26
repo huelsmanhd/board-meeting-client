@@ -212,8 +212,8 @@ mat-grid-tile .mat-figure {
 }
 
 .h2 {
-    color: #E8DFCD;
-    font-size: 2em;
-    font-family: 'Permanent Marker', cursive;
-    text-shadow: 2px 2px rgb(24, 24, 24);  
+    font-family: 'Raleway', sans-serif;
+
+    text-shadow: 2px 2px rgb(24, 24, 24);
+
 }
