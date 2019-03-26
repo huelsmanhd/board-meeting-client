@@ -81,7 +81,10 @@ mat-sidenav-content{
 }
 
 .mat-card-header{
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Permanent Marker', cursive !important;
+    text-shadow: 2px 2px rgb(24, 24, 24);
+/* font-family: 'Monoton', cursive; */
 }
 
 .mat-select-panel{
@@ -92,6 +95,8 @@ mat-sidenav-content{
 .mat-option-text{
     color: #E8DFCD !important;
     font-family: 'Raleway', sans-serif;
+    /* font-family: 'Permanent Marker', cursive !important; */
+/* font-family: 'Monoton', cursive; */
 }
 
 .sidenav-container {
