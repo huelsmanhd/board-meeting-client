@@ -2,9 +2,31 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.4. Board Meeting is the board sports social app for all your meet-ups and events. Create events, connect with friends, and build a community of boarding enthusiasts here. Create an account to view others' events and let them know you're attending.
 
+Collaborators:
+huelsmanhd
+ndeisler
+BrentHolden
+
+Styling for this project was built using Angular Material and some CSS components like CSS Grid. 
+
+Sample Admin Login:
+Email: henry@henry.com
+Password: henry
+
+Client URL: https://board-meeting-client.herokuapp.com/
+
+Server URL: https://board-meeting-sever.herokuapp.com/
+
 ## Prerequisites
 
-Run `npm install` for: `angular/material` `auth0/angular-jwt`
+Run `npm install` for: 
+`angular/material` 
+`@angular/cdk` 
+`@angular/animations` 
+`auth0/angular-jwt` 
+`ng-simple-slideshow`
+`angular/router`
+`angular/forms`
 
 ## Development server
 

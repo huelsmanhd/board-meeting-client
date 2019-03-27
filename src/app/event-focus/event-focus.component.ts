@@ -49,12 +49,12 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   ) { }
 
   ngOnInit() {
-    navigator.geolocation.getCurrentPosition((location) => {
-      this.latitude = location.coords.latitude;
-      this.longitude = location.coords.longitude;
-    })
+    // navigator.geolocation.getCurrentPosition((location) => {
+    //   this.latitude = location.coords.latitude;
+    //   this.longitude = location.coords.longitude;
+    // })
+    this.getDirections();
     this.getSingleEvent();
-    // this.getDirections();
 
     this.eventForm = this.fb.group({
       type: new FormControl(),
@@ -84,7 +84,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     navigator.geolocation.getCurrentPosition((location) => {
       this.latitude = location.coords.latitude;
       this.longitude = location.coords.longitude;
-      // console.log(this.latitude, this.longitude);
+      console.log(this.latitude, this.longitude);
       
       
     });
@@ -92,7 +92,8 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   getSingleEvent() {
     this.boardService.findSingleEvent().subscribe(singleEvent => {
       this.event = singleEvent
-      this.setLatLng(parseInt(singleEvent["lat"]), parseInt(singleEvent["long"]))
+      this.setLatLng(parseFloat(singleEvent["lat"]), parseFloat(singleEvent["long"]))
+      // console.log(parseFloat(singleEvent["lat"]), parseFloat(singleEvent["long"]))
       // console.log(this.lat, this.lon)
       this.getWeatherData()
     })
@@ -100,7 +101,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
 
   getWeatherData() {
     let apikey = '00726991e168c5c949d3066d0bc61089';
-    return this.http.get(`http://api.openweathermap.org/data/2.5/forecast?lat=${this.lat}&lon=${this.lon}&APPID=${apikey}&units=imperial`)
+    return this.http.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${this.lat}&lon=${this.lon}&APPID=${apikey}&units=imperial`)
     .subscribe(res => {
       this.list = res["list"]
       // console.log(this.list)
