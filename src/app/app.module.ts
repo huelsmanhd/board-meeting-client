@@ -12,6 +12,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { EventFocusComponent } from './event-focus/event-focus.component';
 import { HomeComponent } from './home/home.component';
 import { JwtModule, JwtHelperService } from '@auth0/angular-jwt';
+import {FlexLayoutModule } from "@angular/flex-layout";
 
 
 import { 
@@ -87,6 +88,7 @@ import { AgmCoreModule } from "@agm/core";
       apiKey: 'AIzaSyAvqX9e8QwArzR7MSUStK9GaJKio6EoQCo'
 
     }),
+    FlexLayoutModule
 
   ],
   providers: [JwtHelperService],

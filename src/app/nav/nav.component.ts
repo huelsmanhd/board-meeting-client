@@ -6,6 +6,7 @@ import { BoardService } from '../board.service';
 
 
 
+
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
@@ -14,6 +15,7 @@ import { BoardService } from '../board.service';
 export class NavComponent implements OnInit {
   sessionToken: string = "";
   admin: string = "";
+  
   
   logoutButton = false;
   constructor(
@@ -48,9 +50,9 @@ export class NavComponent implements OnInit {
   
 
   viewCreateEvent() {
-    // if (window.location.href === 'http://localhost:4200/home') {
+    if (window.location.href === 'http://localhost:4200/home') {
     
-    if (window.location.href === 'https://board-meeting-client.herokuapp.com/home') {
+    // if (window.location.href === 'https://board-meeting-client.herokuapp.com/home') {
     return false;
   } else {
     return true;

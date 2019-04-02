@@ -1,21 +1,29 @@
-<mat-toolbar class="{{this.boardService.navbarClass}} mat-toolbar mat-toolbar-single-row">
+<div>
+  <mat-toolbar class="{{this.boardService.navbarClass}} mat-toolbar mat-toolbar-single-row">
+    <div fxShow="true" fxHide.gt-sm="true">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+
+
 
   <span>
-    <!-- <img class='logo' alt='boards' src='../../assets/03f8734b-26d7-4d22-80f1-21e101ddc8bb.png' /> -->
     <h2 class="salad">Board Meeting</h2>
   </span>
 
   <div class='nav-spacing'></div>
 
-  <span>
-    <button mat-button routerLink="{{logoutView() ? '/home' : '/login'}}" class="navBtn" >
-      {{logoutView() ? "Home" : "Sign Up"}}
-    </button>
-    <button mat-button *ngIf="logoutView() && viewCreateEvent()" (click)="token.toggleSideNav()" class="navBtn">
-      Create Event
-    </button>
-  </span>
-  <span  *ngIf="logoutView()" class='links'>
+  <div fxShow="true" fxHide.lt-md="true">
+    <span>
+      <button mat-button routerLink="{{logoutView() ? '/home' : '/login'}}" class="navBtn" >
+        {{logoutView() ? "Home" : "Sign Up"}}
+      </button>
+      <button mat-button *ngIf="logoutView() && viewCreateEvent()" (click)="token.toggleSideNav()" class="navBtn">
+        Create Event
+      </button>
+    </span>
+    <span  *ngIf="logoutView()" class='links'>
 
       <button mat-button routerLink='/events' class="navBtn">
         Events
@@ -26,11 +34,43 @@
       <button (click)="logOut()" mat-button routerLink='/login' class="navBtn">
         Logout
       </button>
-
-    
     </span>
+
     <button  *ngIf="!logoutView()" mat-button routerLink='/login'class="navBtn" >
       Login
     </button>
-
+  </div>
+  
 </mat-toolbar>
+<mat-sidenav-container fxFlexFill class="example-container">
+  <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over"  opened="false" fxHide.gt-sm="true">
+    <div fxLayout="column">
+      <span>
+        <button mat-button routerLink="{{logoutView() ? '/home' : '/login'}}" class="navBtn" >
+          {{logoutView() ? "Home" : "Sign Up"}}
+        </button>
+        <button mat-button *ngIf="logoutView() && viewCreateEvent()" (click)="token.toggleSideNav()" class="navBtn">
+          Create Event
+        </button>
+      </span>
+      <span  *ngIf="logoutView()" class='links'>
+
+        <button mat-button routerLink='/events' class="navBtn">
+          Events
+        </button>
+        <button mat-button routerLink='/profile' class="navBtn">
+          Profile
+        </button>
+        <button (click)="logOut()" mat-button routerLink='/login' class="navBtn">
+          Logout
+        </button>
+      </span>
+
+      <button  *ngIf="!logoutView()" mat-button routerLink='/login'class="navBtn" >
+        Login
+      </button>
+      </div>
+    </mat-sidenav>
+</mat-sidenav-container>
+
+</div>
