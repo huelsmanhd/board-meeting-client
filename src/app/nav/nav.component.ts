@@ -47,6 +47,12 @@ export class NavComponent implements OnInit {
     this.token.clearSessionToken();
      
   }
+  signUp() {
+    this.token.number = 1;
+  }
+  login() {
+    this.token.number = 0;
+  }
   
 
   viewCreateEvent() {
