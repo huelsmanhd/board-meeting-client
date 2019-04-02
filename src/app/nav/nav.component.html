@@ -8,8 +8,8 @@
   <div class='nav-spacing'></div>
 
   <span>
-    <button mat-button routerLink='/home' class="navBtn">
-      Home
+    <button mat-button routerLink="{{logoutView() ? '/home' : '/login'}}" class="navBtn" >
+      {{logoutView() ? "Home" : "Sign Up"}}
     </button>
     <button mat-button *ngIf="logoutView() && viewCreateEvent()" (click)="token.toggleSideNav()" class="navBtn">
       Create Event
@@ -29,7 +29,7 @@
 
     
     </span>
-    <button  *ngIf="!logoutView()" mat-button routerLink='/login'class="navBtn">
+    <button  *ngIf="!logoutView()" mat-button routerLink='/login'class="navBtn" >
       Login
     </button>
 
