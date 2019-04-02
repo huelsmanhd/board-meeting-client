@@ -35,7 +35,11 @@ export class LoginComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-   
+    if(this.tokenService.number === 1) {
+      this.newUser();
+    } else if (this.tokenService.number === 0) {
+      this.loginView = true;
+    }
     this.loginForm = this.fb.group({
       email: new FormControl(),
       password: new FormControl()
