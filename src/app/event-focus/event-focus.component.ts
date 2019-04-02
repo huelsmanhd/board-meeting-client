@@ -22,6 +22,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   event=<any>[];
   comments=<any>[];
   list=<any>[];
+  weatherObject=<any>{};
   comment: string = '';
   editView: boolean = false;
 
@@ -54,6 +55,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     //   this.longitude = location.coords.longitude;
     // })
     this.getDirections();
+    this.oneDayWeatherData();
     this.getSingleEvent();
 
     this.eventForm = this.fb.group({
@@ -107,6 +109,15 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
       // console.log(this.list)
     })
     
+  }
+
+  oneDayWeatherData() {
+    let apikey = '00726991e168c5c949d3066d0bc61089';
+    return this.http.get(`https://api.openweathermap.org/data/2.5/weather?lat=${this.lat}&lon=${this.lon}&APPID=${apikey}&units=imperial`)
+    .subscribe(res => {
+      this.weatherObject = res
+      console.log(this.weatherObject)
+    })
   }
 
   // showWeatherData() {
