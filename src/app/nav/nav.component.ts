@@ -5,6 +5,7 @@ import { routerNgProbeToken } from '@angular/router/src/router_module';
 import { BoardService } from '../board.service';
 
 
+
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
@@ -18,7 +19,8 @@ export class NavComponent implements OnInit {
   constructor(
     private token: TokenService,
     public boardService: BoardService,
-    private router: Router) { }
+    private router: Router,
+    ) { }
 
   ngOnInit() {
     // this.sessionToken = sessionStorage.getItem("token");
@@ -43,6 +45,7 @@ export class NavComponent implements OnInit {
     this.token.clearSessionToken();
      
   }
+  
 
   viewCreateEvent() {
     // if (window.location.href === 'http://localhost:4200/home') {
