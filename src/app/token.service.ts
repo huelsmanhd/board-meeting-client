@@ -58,6 +58,7 @@ export class TokenService {
 
   public toggleSideNav() {
     this.sideNav.toggle();
+    console.log(this.sideNav)
   }
 
 }
