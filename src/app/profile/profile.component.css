@@ -209,7 +209,7 @@ mat-sidenav{
     
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 600px) {
     .cardDisplay mat-card {
         width: 90% !important;
         /* margin-right: 1; */
@@ -218,31 +218,35 @@ mat-sidenav{
     }
     .contentForCard {
         width: 90% !important;
-        height: 280px;
+        height: flex;
         margin: auto;
         
         border-radius: 3px;
+        margin-top: 0 !important;
         background-color: rgba(77, 77, 77, 0.605)
     }
     .mat-card-actions {
         margin: 0 !important;
         padding: .5em;
         /* display: inline !important; */
-        width: 100% !important;
+        width: 90% !important;
     }
-
-    .mat-card-actions a button {
-        float: right;
-        width:40px;
+    .mat-card-actions button {
+        position: relative;
+        /* text-align: right !important; */
+        /* width: 40px; */
+        bottom: 0px !important;
+        float: none;
+        /* margin: 2em; */
+        
     }
 
     h2{
-        font-size: 200% !important;
+        font-size: 200%;
     }
 
     .sidenav {
         width: 90% !important;
-        position: fixed;
+        position: fixed !important;
     }
-
 }
