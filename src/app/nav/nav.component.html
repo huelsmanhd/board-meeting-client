@@ -16,8 +16,11 @@
 
   <div fxShow="true" fxHide.lt-md="true">
     <span>
-      <button mat-button routerLink="{{logoutView() ? '/home' : '/login'}}" class="navBtn" >
-        {{logoutView() ? "Home" : "Sign Up"}}
+      <button *ngIf="logoutView()"mat-button routerLink="/home" class="navBtn" >
+        Home
+      </button>
+      <button *ngIf="!logoutView()" mat-button routerLink="/login" class="navBtn" (click)="signUp()">
+        Sign Up
       </button>
       <button mat-button *ngIf="logoutView() && viewCreateEvent()" (click)="token.toggleSideNav()" class="navBtn">
         Create Event
@@ -36,7 +39,7 @@
       </button>
     </span>
 
-    <button  *ngIf="!logoutView()" mat-button routerLink='/login'class="navBtn" >
+    <button  *ngIf="!logoutView()" mat-button routerLink='/login'class="navBtn" (click)="login()">
       Login
     </button>
   </div>

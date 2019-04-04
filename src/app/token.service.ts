@@ -10,6 +10,7 @@ import { APIURL } from '../environments/environment.prod';
 export class TokenService {
   sessionToken: string = '';
   admin: string = "";
+  number: number;
   public sideNav: any;
   
 
