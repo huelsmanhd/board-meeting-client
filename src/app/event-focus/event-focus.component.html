@@ -43,7 +43,7 @@
           </div>
         </div>
 
-        <div class="container3" *ngIf="editView === false && weatherView === false">
+        <div class="container3" *ngIf="editView === false">
           <mat-accordion>
             <mat-expansion-panel>
               <mat-expansion-panel-header>
@@ -116,13 +116,13 @@
             </mat-expansion-panel>
           </mat-accordion>
           </div>
-          <div>
-            <mat-card *ngIf="editView === false && weatherView === true">
-              <img alt="weather icon" src="http://openweathermap.org/img/w/{{weatherObject.weather[0].icon}}.png"/>
-              <h1>{{weatherObject.main.temp}}°F</h1>
-              <p>{{weatherObject.weather[0].description}}</p>
-              <p>{{weatherObject.main.humidity}}% Humidity</p>
-              <p>{{weatherObject.wind.speed}}mph winds</p>
+          <div class="single-day-weather">
+            <mat-card *ngIf="editView === false">
+              <img class="icon" alt="weather icon" src="http://openweathermap.org/img/w/{{weatherObject.weather[0].icon}}.png"/>
+              <h1 class="temp">{{weatherObject.main.temp}}°F</h1>
+              <p class="weather-description">{{weatherObject.weather[0].description}}</p>
+              <p class="humidity">{{weatherObject.main.humidity}}% Humidity</p>
+              <p class="wind">{{weatherObject.wind.speed}}mph winds</p>
             </mat-card>
           </div>
         </div>   

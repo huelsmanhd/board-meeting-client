@@ -25,7 +25,6 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   weatherObject=<any>{};
   comment: string = '';
   editView: boolean = false;
-  weatherView: boolean = false;
 
   lat: number = 5;
   lon: number = 5;
@@ -56,7 +55,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     //   this.longitude = location.coords.longitude;
     // })
     this.getDirections();
-    this.weatherCardSwitch();
+    // this.weatherCardSwitch();
     this.getSingleEvent();
 
     this.eventForm = this.fb.group({
@@ -118,17 +117,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     return this.http.get(`https://api.openweathermap.org/data/2.5/weather?lat=${this.lat}&lon=${this.lon}&APPID=${apikey}&units=imperial`)
     .subscribe(res => {
       this.weatherObject = res
-      console.log(this.weatherObject)
     })
-  }
-
-  weatherCardSwitch() {
-    if ("max-width > 600px") {
-      this.weatherView === false
-    }
-    if ("max-width <= 600px") {
-      this.weatherView === true
-    }
   }
 
   // showWeatherData() {
@@ -198,20 +187,6 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     this.token.sideNav = this.sideNav;
   }
 
-  //WEATHER API FUNCTIONALITY
-  // fetchWeather(lat, lon, key, baseWeatherURL) {
-  //   let weatherURL = baseWeatherURL + 'lat=' + lat + '&lon=' + lon + '&APPID=' + key;
-  //   console.log(weatherURL)
-  //   return this.http.get(weatherURL)
-
-  // }
-
-  // showWeather(weatherURL) {
-  //   this.fetchWeather(weatherURL)
-  //   .subscribe(res => {
-  //     this.
-  //   })
-  // }
 
   //ALL FUNCTIONALITY FOR COMMENTS
 
