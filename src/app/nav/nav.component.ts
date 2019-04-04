@@ -19,7 +19,7 @@ export class NavComponent implements OnInit {
   
   logoutButton = false;
   constructor(
-    private token: TokenService,
+    public token: TokenService,
     public boardService: BoardService,
     private router: Router,
     ) { }
@@ -30,7 +30,7 @@ export class NavComponent implements OnInit {
     // this.admin = this.token.getAdmin();
     this.admin = this.token.getAdmin();
     this.viewCreateEvent();
-    
+    this.token.toggleSideNav();
   }
 
   logoutView() {

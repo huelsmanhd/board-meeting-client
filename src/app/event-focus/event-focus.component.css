@@ -271,10 +271,19 @@ mat-grid-tile .mat-figure {
 
 }
 
+@media only screen and (min-width: 600px) {
+    .single-day-weather  {
+        display: none;
+    }
+}
+
 
 @media only screen and (max-width: 600px) {
     .sidenav {
         width: 90% !important;
         position: fixed;
+    }
+    .container3 {
+        display: none;
     }
 }
