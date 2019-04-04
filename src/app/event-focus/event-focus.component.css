@@ -29,6 +29,8 @@
     margin: 0px 0px 20px 0px;
     padding-top: 2em;
     padding-bottom: 2em;
+    background-color: #C5C8C6 !important;
+    
 }
 
 .mat-card {
@@ -124,12 +126,14 @@ mat-sidenav{
 }
 
 .commentsWrapper {
-    margin: 2em;
+    margin: 1.5em;
+    padding: 1em;
 }
 
 .text-area {
     background-color: whitesmoke;
     border-radius: 5px;
+    margin: 12px;
     padding-top: 1em;
     padding-left: .5em;
 }
@@ -137,7 +141,6 @@ mat-sidenav{
 .mat-icon-button {
     height: 24px;
     width: 24px;
-    vertical-align: none !important;
 }
 
 .commentBtn {
@@ -216,7 +219,7 @@ mat-card-header {
     border-radius: 10%;
     border: .5px black solid;
     height: 100px !important;
-    width: 230px !important;
+    
     color: rgb(95, 95, 95);
     font-family: 'Raleway', sans-serif;
 }
