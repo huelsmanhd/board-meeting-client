@@ -4,7 +4,11 @@ import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { TokenService } from '../token.service';
 import { BoardService } from '../board.service';
+import { Injectable } from "@angular/core"
 
+@Injectable({
+  providedIn: 'root'
+})
 
 @Component({
   selector: 'app-login',
@@ -13,6 +17,7 @@ import { BoardService } from '../board.service';
 })
 export class LoginComponent implements OnInit {
   
+  id: number;
   error: boolean = false;
   message: string = "";
 
@@ -30,6 +35,11 @@ export class LoginComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+    if(this.tokenService.number === 1) {
+      this.newUser();
+    } else if (this.tokenService.number === 0) {
+      this.loginView = true;
+    }
     this.loginForm = this.fb.group({
       email: new FormControl(),
       password: new FormControl()
@@ -42,6 +52,7 @@ export class LoginComponent implements OnInit {
     })
     this.boardService.navbarSwitch()
   }
+  
 
   login() {
     const loginString = JSON.stringify(this.loginForm.value)
@@ -58,7 +69,7 @@ export class LoginComponent implements OnInit {
       } else {
         this.error = false;
         this.tokenService.storeSession(res["user"].admin, res["sessionToken"], res["user"].username)
-        this.router.navigate(["/home"]);
+        this.router.navigate(["/events"]);
       }
     }) 
   }
@@ -77,7 +88,7 @@ export class LoginComponent implements OnInit {
       } else {
       this.error = false;
       this.tokenService.storeSession(res["user"].admin, res["sessionToken"], res["user"].username)
-      this.router.navigate(["/home"]);
+      this.router.navigate(["/events"]);
     }})
 
   }

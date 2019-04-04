@@ -76,6 +76,7 @@ mat-sidenav-content{
     float: left;
 }
 
+
 .contentForCard {
     width: 94%;
     margin: auto;
@@ -217,4 +218,33 @@ mat-sidenav-container{
     bottom: 0;
     left: 0;
     right: 0;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .cardDisplay mat-card {
+        width: 90% !important;
+        /* margin-right: 1; */
+        margin-bottom: 1em;
+        float: left;
+    }
+    .contentForCard {
+        width: 90% !important;
+        height: 280px;
+        margin: auto;
+        
+        border-radius: 3px;
+        background-color: rgba(77, 77, 77, 0.605)
+    }
+    .mat-card-actions {
+        margin: 0 !important;
+        padding: .5em;
+        /* display: inline !important; */
+        width: 100% !important;
+    }
+
+    .mat-card-actions a button {
+        float: right;
+        width:40px;
+    }
 }

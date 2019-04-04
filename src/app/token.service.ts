@@ -10,6 +10,7 @@ import { APIURL } from '../environments/environment.prod';
 export class TokenService {
   sessionToken: string = '';
   admin: string = "";
+  number: number;
   public sideNav: any;
   
 
@@ -58,6 +59,7 @@ export class TokenService {
 
   public toggleSideNav() {
     this.sideNav.toggle();
+    console.log(this.sideNav)
   }
 
 }
