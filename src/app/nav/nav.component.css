@@ -67,4 +67,7 @@ mat-toolbar img {
         display: block !important;
         width: 100% !important;
     }
+    mat-menu-content {
+        width: 200px !important;
+    }
 }

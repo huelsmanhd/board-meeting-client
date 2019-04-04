@@ -244,9 +244,13 @@ mat-sidenav-container{
         /* display: inline !important; */
         width: 100% !important;
     }
-
     .mat-card-actions a button {
         float: right;
         width:40px;
     }
+    .sidenav {
+        width: 90% !important;
+        position: fixed !important;
+    }
 }
+

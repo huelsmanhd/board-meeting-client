@@ -208,3 +208,10 @@ mat-sidenav{
     font-size: 50px;
     
 }
+
+@media only screen and (max-width: 600px) {
+    .sidenav {
+        width: 90% !important;
+        position: fixed;
+    }
+}
