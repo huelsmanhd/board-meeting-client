@@ -25,6 +25,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
   weatherObject=<any>{};
   comment: string = '';
   editView: boolean = false;
+  weatherView: boolean = false;
 
   lat: number = 5;
   lon: number = 5;
@@ -55,7 +56,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     //   this.longitude = location.coords.longitude;
     // })
     this.getDirections();
-    this.oneDayWeatherData();
+    this.weatherCardSwitch();
     this.getSingleEvent();
 
     this.eventForm = this.fb.group({
@@ -98,6 +99,7 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
       // console.log(parseFloat(singleEvent["lat"]), parseFloat(singleEvent["long"]))
       // console.log(this.lat, this.lon)
       this.getWeatherData()
+      this.oneDayWeatherData()
     })
   }
 
@@ -118,6 +120,15 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
       this.weatherObject = res
       console.log(this.weatherObject)
     })
+  }
+
+  weatherCardSwitch() {
+    if ("max-width > 600px") {
+      this.weatherView === false
+    }
+    if ("max-width <= 600px") {
+      this.weatherView === true
+    }
   }
 
   // showWeatherData() {

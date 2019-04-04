@@ -60,3 +60,11 @@ mat-toolbar img {
     font-family: 'Permanent Marker', cursive;
     /* font-family: 'Monoton', cursive; */
 }
+
+@media only screen and (max-width: 600px) {
+    .navBtn {
+        text-align: left;
+        display: block !important;
+        width: 100% !important;
+    }
+}
