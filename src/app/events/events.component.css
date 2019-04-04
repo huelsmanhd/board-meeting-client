@@ -60,9 +60,9 @@ mat-sidenav-content{
     font-family: 'Roboto', sans-serif;
 }
 
-.card-btn {
+/* .card-btn {
     float: right;
-}
+} */
 
 .mat-card-actions {
     margin: 2.5em !important;
@@ -186,13 +186,12 @@ mat-sidenav-content{
     margin-top: 3%;
 }
 
-.card-btn {
-    float: right;
-}
-
 .mat-card-actions {
     margin: 2.5em !important;
     padding: 1em;
+}
+.mat-card-actions button {
+    float: right;
 }
 
 .cardDisplay mat-card {
@@ -217,7 +216,6 @@ mat-sidenav-container{
     top: 0;
     bottom: 0;
     left: 0;
-    right: 0;
 }
 
 
@@ -230,7 +228,7 @@ mat-sidenav-container{
     }
     .contentForCard {
         width: 90% !important;
-        height: 280px;
+        height: flex;
         margin: auto;
         
         border-radius: 3px;
@@ -241,16 +239,24 @@ mat-sidenav-container{
         margin: 0 !important;
         padding: .5em;
         /* display: inline !important; */
-        width: 100% !important;
+        width: 90% !important;
     }
-
-    .mat-card-actions a button {
-        float: right;
-        width:40px;
+    .mat-card-actions button {
+        position: relative;
+        /* text-align: right !important; */
+        /* width: 40px; */
+        bottom: 0px !important;
+        float: none;
+        /* margin: 2em; */
         
     }
 
     h2{
         margin-block-start: 0 !important;
     }
+    .sidenav {
+        width: 90% !important;
+        position: fixed !important;
+    }
 }
+

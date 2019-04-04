@@ -239,5 +239,10 @@ mat-sidenav{
     h2{
         font-size: 200% !important;
     }
-    
+
+    .sidenav {
+        width: 90% !important;
+        position: fixed;
+    }
+
 }
