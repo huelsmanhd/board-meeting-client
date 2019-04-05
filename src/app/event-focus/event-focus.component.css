@@ -36,8 +36,7 @@
 
 .mat-card {
     width: 70%;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin: auto;
     /* display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -55,7 +54,8 @@ mat-sidenav{
 }
 
 .mat-expansion-panel {
-    width: 100%;
+    position: relative;
+    display: inline;
     background-color: #c6c6c6 !important;
 
     color: #566F7C !important;
@@ -206,6 +206,7 @@ mat-card-header {
 }
 
 .weather-mat-card {
+    position: relative;
     overflow: visible;
     height: 14vh;
 
@@ -271,6 +272,11 @@ mat-grid-tile .mat-figure {
 
 }
 
+.single-day-weather {
+    width: 45vw;
+    color: black;
+}
+
 @media only screen and (min-width: 600px) {
     .single-day-weather  {
         display: none;
@@ -279,11 +285,80 @@ mat-grid-tile .mat-figure {
 
 
 @media only screen and (max-width: 600px) {
+    .eventWrapper{
+        position: relative;
+        width: 94%;
+        /* margin: auto; */
+        padding: 1em;
+        border-radius: 3px;
+        background-color: rgba(77, 77, 77, 0.605);
+        margin-bottom: 1em;
+        display: inline-grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-rows: repeat(3, 1fr);
+        grid-gap: 20px;
+      
+    }
+
+    .container1 {
+        position: relative;
+        /* width: 85%; */
+        /* margin: auto; */
+        grid-column: 1;
+        grid-row: 1;
+        color: #E8DFCD;
+        font-family: 'Raleway', sans-serif;
+    }
+
+    .container2 {
+        position: relative;
+        /* width: 70%; */
+        /* margin: auto; */
+        margin-left: 1% !important;
+        margin-right: 1% !important;
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .single-day-weather {
+        position: relative;
+        width: 80%;
+        height: 25%;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: none;
+        grid-column: 1;
+        grid-row: 2;
+        text-align: center;
+    }
+
+    .mat-card {
+        position: relative;
+        justify-content: flex-start;
+        width: 80%;
+        /* margin: auto; */
+        /* display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-gap: 20px; */
+        font-family: 'Raleway', sans-serif;
+    }
+
     .sidenav {
         width: 90% !important;
         position: fixed;
     }
+
     .container3 {
         display: none;
+    }
+
+    agm-map {
+        grid-column: 1;
+        grid-row: 2;
+        width: 300px;
+        height: 300px;
+        z-index: 0 !important;
+        position: relative;
     }
 }
