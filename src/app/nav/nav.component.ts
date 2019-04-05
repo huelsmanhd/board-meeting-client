@@ -6,6 +6,7 @@ import { BoardService } from '../board.service';
 
 
 
+
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
@@ -15,9 +16,10 @@ export class NavComponent implements OnInit {
   sessionToken: string = "";
   admin: string = "";
   
+  
   logoutButton = false;
   constructor(
-    private token: TokenService,
+    public token: TokenService,
     public boardService: BoardService,
     private router: Router,
     ) { }
@@ -28,7 +30,7 @@ export class NavComponent implements OnInit {
     // this.admin = this.token.getAdmin();
     this.admin = this.token.getAdmin();
     this.viewCreateEvent();
-    
+    this.token.toggleSideNav();
   }
 
   logoutView() {
@@ -45,12 +47,18 @@ export class NavComponent implements OnInit {
     this.token.clearSessionToken();
      
   }
+  signUp() {
+    this.token.number = 1;
+  }
+  login() {
+    this.token.number = 0;
+  }
   
 
   viewCreateEvent() {
-    // if (window.location.href === 'http://localhost:4200/home') {
+    if (window.location.href === 'http://localhost:4200/home') {
     
-    if (window.location.href === 'https://board-meeting-client.herokuapp.com/home') {
+    // if (window.location.href === 'https://board-meeting-client.herokuapp.com/home') {
     return false;
   } else {
     return true;
