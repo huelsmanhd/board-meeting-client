@@ -56,9 +56,9 @@ export class NavComponent implements OnInit {
   
 
   viewCreateEvent() {
-    if (window.location.href === 'http://localhost:4200/home') {
+    // if (window.location.href === 'http://localhost:4200/home') {
     
-    // if (window.location.href === 'https://board-meeting-client.herokuapp.com/home') {
+    if (window.location.href === 'https://board-meeting-client.herokuapp.com/home') {
     return false;
   } else {
     return true;
