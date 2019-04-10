@@ -8,6 +8,7 @@ import { jsonpCallbackContext } from '@angular/common/http/src/module';
 import { APIURL } from '../../environments/environment.prod';
 import { Observable } from 'rxjs';
 import { SinglePropOffsetValuesIndex } from '@angular/core/src/render3/interfaces/styling';
+import { setTNodeAndViewData } from '@angular/core/src/render3/state';
 
 
 @Component({
@@ -77,6 +78,8 @@ export class EventFocusComponent implements OnInit, AfterViewInit {
     })
 
     this.getComments()
+
+    // localStorage.setItem('this.getSingleEvent', JSON.stringify(this.getSingleEvent))
   }
   setLatLng(lat, lon) {
     this.lat = lat
