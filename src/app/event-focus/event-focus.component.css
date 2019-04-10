@@ -313,9 +313,9 @@ mat-grid-tile .mat-figure {
     .container2 {
         position: relative;
         /* width: 70%; */
-        /* margin: auto; */
-        margin-left: 1% !important;
-        margin-right: 1% !important;
+        margin: auto;
+        /* margin-left: 1% !important; */
+        /* margin-right: 1% !important; */
         grid-column: 1;
         grid-row: 3;
     }
@@ -323,13 +323,16 @@ mat-grid-tile .mat-figure {
     .single-day-weather {
         position: relative;
         width: 80%;
-        height: 25%;
-        margin-left: 10%;
-        margin-right: 10%;
-        margin-bottom: none;
+        /* height: 25%; */
+        margin: auto;
         grid-column: 1;
         grid-row: 2;
         text-align: center;
+    }
+
+    .single-day-card {
+        background-color: rgba(77, 77, 77, 0.605);
+
     }
 
     .mat-card {
