@@ -287,16 +287,16 @@ mat-grid-tile .mat-figure {
 @media only screen and (max-width: 600px) {
     .eventWrapper{
         position: relative;
-        width: 94%;
-        /* margin: auto; */
-        padding: 1em;
+        width: 90%;
+        margin: auto;
+        
         border-radius: 3px;
         background-color: rgba(77, 77, 77, 0.605);
         margin-bottom: 1em;
         display: inline-grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         grid-template-rows: repeat(3, 1fr);
-        grid-gap: 20px;
+        grid-gap: 0px;
       
     }
 
@@ -359,9 +359,13 @@ mat-grid-tile .mat-figure {
     agm-map {
         grid-column: 1;
         grid-row: 2;
-        width: 300px;
-        height: 300px;
+        width: 200px;
+        height: 200px;
         z-index: 0 !important;
+        margin: auto;
         position: relative;
+    }
+    .directions button {
+        width: 200px;
     }
 }
