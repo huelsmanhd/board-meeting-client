@@ -117,7 +117,7 @@
           </mat-accordion>
           </div>
           <div class="single-day-weather">
-            <mat-card *ngIf="editView === false">
+            <mat-card class="single-day-card" *ngIf="editView === false">
               <img class="icon" alt="weather icon" src="http://openweathermap.org/img/w/{{weatherObject.weather[0].icon}}.png"/>
               <h1 class="temp">{{weatherObject.main.temp}}°F</h1>
               <p class="weather-description">{{weatherObject.weather[0].description}}</p>
